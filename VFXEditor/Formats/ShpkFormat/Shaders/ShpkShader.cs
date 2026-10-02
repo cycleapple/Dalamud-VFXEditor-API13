@@ -144,26 +144,26 @@ namespace VfxEditor.Formats.ShpkFormat.Shaders {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Code" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Code" ) ) ) {
                 if( tab ) DrawCode();
             }
 
-            using( var tab = ImRaii.TabItem( "Constants" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Constants" ) ) ) {
                 if( tab ) ConstantView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Samplers" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Samplers" ) ) ) {
                 if( tab ) SamplerView.Draw();
             }
 
             if( !HasResources ) return;
 
-            using( var tab = ImRaii.TabItem( "Resources" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Resources" ) ) ) {
                 if( tab ) ResourceView.Draw();
             }
 
             if( IsV7 ) {
-                using var tab = ImRaii.TabItem( "Textures" );
+                using var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Textures" ) );
                 if( tab ) TextureView.Draw();
             }
         }
@@ -171,7 +171,7 @@ namespace VfxEditor.Formats.ShpkFormat.Shaders {
         private void DrawCode() {
             using var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing );
 
-            if( ImGui.Button( "Export" ) ) {
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Export" ) ) ) {
                 FileBrowserManager.SaveFileDialog( "Select a Save Location", $".{Extension}", "shader_" + Prefix, Extension, ( ok, res ) => {
                     if( !ok ) return;
                     File.WriteAllBytes( res, Data );
@@ -179,7 +179,7 @@ namespace VfxEditor.Formats.ShpkFormat.Shaders {
             }
 
             ImGui.SameLine();
-            if( ImGui.Button( "Replace" ) ) {
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Replace" ) ) ) {
                 FileBrowserManager.OpenFileDialog( "Select a File", DxVersion == DX.DX11 ? "Shader{.hlsl,." + Extension + "},.*" : $".{Extension},.*", ( ok, res ) => {
                     if( !ok ) return;
 
@@ -224,7 +224,7 @@ namespace VfxEditor.Formats.ShpkFormat.Shaders {
                 if( split.Length > 1 ) {
                     using var commentColor = ImRaii.PushColor( ImGuiCol.Text, ImGui.GetColorU32( ImGuiCol.TextDisabled ) );
                     ImGui.SameLine();
-                    ImGui.Text( "//" );
+                    ImGui.Text( VfxEditor.Localization.ZhTw.Text( "//" ) );
                     ImGui.SameLine();
                     ImGui.Text( split[1] );
                 }

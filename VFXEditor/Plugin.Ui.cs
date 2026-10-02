@@ -49,10 +49,10 @@ namespace VfxEditor {
         public static void DrawFileMenu() {
             using var _ = ImRaii.PushId( "Menu" );
 
-            if( ImGui.BeginMenu( "File" ) ) {
-                if( ImGui.MenuItem( "New" ) ) NewWorkspace();
-                if( ImGui.MenuItem( "Open" ) ) OpenWorkspace( true );
-                if( ImGui.BeginMenu( "Open Recent" ) ) {
+            if( ImGui.BeginMenu( VfxEditor.Localization.ZhTw.Label( "File" ) ) ) {
+                if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "New" ) ) ) NewWorkspace();
+                if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Open" ) ) ) OpenWorkspace( true );
+                if( ImGui.BeginMenu( VfxEditor.Localization.ZhTw.Label( "Open Recent" ) ) ) {
                     foreach( var (recent, idx) in Configuration.RecentWorkspaces.WithIndex() ) {
                         if( ImGui.MenuItem( $"{recent.Item1}##{idx}" ) ) {
                             if( File.Exists( recent.Item2 ) ) {
@@ -66,26 +66,26 @@ namespace VfxEditor {
                     }
                     ImGui.EndMenu();
                 }
-                if( ImGui.MenuItem( "Append" ) ) OpenWorkspace( false );
-                if( ImGui.MenuItem( "Save" ) ) SaveWorkspace();
-                if( ImGui.MenuItem( "Save As" ) ) SaveAsWorkspace();
+                if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Append" ) ) ) OpenWorkspace( false );
+                if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Save" ) ) ) SaveWorkspace();
+                if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Save As" ) ) ) SaveAsWorkspace();
 
                 ImGui.Separator();
-                if( ImGui.MenuItem( "Settings" ) ) Configuration.Show();
-                if( ImGui.MenuItem( "Tools" ) ) ToolsDialog.Show();
-                if( ImGui.BeginMenu( "Help" ) ) {
-                    if( ImGui.MenuItem( "Github" ) ) UiUtils.OpenUrl( "https://github.com/0ceal0t/Dalamud-VFXEditor" );
-                    if( ImGui.MenuItem( "Report an Issue" ) ) UiUtils.OpenUrl( "https://github.com/0ceal0t/Dalamud-VFXEditor/issues" );
-                    if( ImGui.MenuItem( "Wiki" ) ) UiUtils.OpenUrl( "https://github.com/0ceal0t/Dalamud-VFXEditor/wiki" );
+                if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Settings" ) ) ) Configuration.Show();
+                if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Tools" ) ) ) ToolsDialog.Show();
+                if( ImGui.BeginMenu( VfxEditor.Localization.ZhTw.Label( "Help" ) ) ) {
+                    if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Github" ) ) ) UiUtils.OpenUrl( "https://github.com/0ceal0t/Dalamud-VFXEditor" );
+                    if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Report an Issue" ) ) ) UiUtils.OpenUrl( "https://github.com/cycleapple/Dalamud-VFXEditor-API13/issues" );
+                    if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Wiki" ) ) ) UiUtils.OpenUrl( "https://github.com/0ceal0t/Dalamud-VFXEditor/wiki" );
                     ImGui.EndMenu();
                 }
 
                 ImGui.EndMenu();
             }
 
-            if( ImGui.BeginMenu( "Export" ) ) {
-                if( ImGui.MenuItem( "Penumbra" ) ) PenumbraDialog.Show();
-                if( ImGui.MenuItem( "TexTools" ) ) TexToolsDialog.Show();
+            if( ImGui.BeginMenu( VfxEditor.Localization.ZhTw.Label( "Export" ) ) ) {
+                if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Penumbra" ) ) ) PenumbraDialog.Show();
+                if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "TexTools" ) ) ) TexToolsDialog.Show();
                 ImGui.EndMenu();
             }
         }

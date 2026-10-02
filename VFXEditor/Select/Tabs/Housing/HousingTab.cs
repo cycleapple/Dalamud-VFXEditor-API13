@@ -21,7 +21,7 @@ namespace VfxEditor.Select.Tabs.Housing {
         // ===== DRAWING ======
 
         protected override void DrawSelected() {
-            ImGui.Text( "SGB:" );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( "SGB:" ) );
             ImGui.SameLine();
             SelectUiUtils.DisplayPath( Selected.SgbPath );
 

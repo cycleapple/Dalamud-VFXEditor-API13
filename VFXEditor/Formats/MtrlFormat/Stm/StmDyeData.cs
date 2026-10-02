@@ -11,21 +11,21 @@ namespace VfxEditor.Formats.MtrlFormat.Stm {
         public float Power = 0;
 
         public void Draw() {
-            ImGui.ColorEdit3( "##Diffuse", ref Diffuse, ImGuiColorEditFlags.NoInputs | ImGuiColorEditFlags.DisplayRgb | ImGuiColorEditFlags.InputRgb | ImGuiColorEditFlags.NoTooltip );
+            ImGui.ColorEdit3( VfxEditor.Localization.ZhTw.Label( "##Diffuse" ), ref Diffuse, ImGuiColorEditFlags.NoInputs | ImGuiColorEditFlags.DisplayRgb | ImGuiColorEditFlags.InputRgb | ImGuiColorEditFlags.NoTooltip );
 
             ImGui.SameLine();
-            ImGui.ColorEdit3( "##Specular", ref Specular, ImGuiColorEditFlags.NoInputs | ImGuiColorEditFlags.DisplayRgb | ImGuiColorEditFlags.InputRgb | ImGuiColorEditFlags.NoTooltip );
+            ImGui.ColorEdit3( VfxEditor.Localization.ZhTw.Label( "##Specular" ), ref Specular, ImGuiColorEditFlags.NoInputs | ImGuiColorEditFlags.DisplayRgb | ImGuiColorEditFlags.InputRgb | ImGuiColorEditFlags.NoTooltip );
 
             ImGui.SameLine();
-            ImGui.ColorEdit3( "##Emissive", ref Emissive, ImGuiColorEditFlags.NoInputs | ImGuiColorEditFlags.DisplayRgb | ImGuiColorEditFlags.InputRgb | ImGuiColorEditFlags.NoTooltip );
+            ImGui.ColorEdit3( VfxEditor.Localization.ZhTw.Label( "##Emissive" ), ref Emissive, ImGuiColorEditFlags.NoInputs | ImGuiColorEditFlags.DisplayRgb | ImGuiColorEditFlags.InputRgb | ImGuiColorEditFlags.NoTooltip );
 
             using var disabled = ImRaii.Disabled();
             ImGui.SameLine();
             ImGui.SetNextItemWidth( 75 );
-            ImGui.InputFloat( "##Gloss", ref Gloss, 0, 0, $"Gloss: %.1f", ImGuiInputTextFlags.ReadOnly );
+            ImGui.InputFloat( VfxEditor.Localization.ZhTw.Label( "##Gloss" ), ref Gloss, 0, 0, $"Gloss: %.1f", ImGuiInputTextFlags.ReadOnly );
             ImGui.SameLine();
             ImGui.SetNextItemWidth( 75 );
-            ImGui.InputFloat( "##Power", ref Gloss, 0, 0, $"Power: %.1f", ImGuiInputTextFlags.ReadOnly );
+            ImGui.InputFloat( VfxEditor.Localization.ZhTw.Label( "##Power" ), ref Gloss, 0, 0, $"Power: %.1f", ImGuiInputTextFlags.ReadOnly );
         }
     }
 }

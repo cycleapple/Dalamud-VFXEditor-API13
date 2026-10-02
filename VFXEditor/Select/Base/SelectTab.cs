@@ -66,7 +66,7 @@ namespace VfxEditor.Select {
             using var _ = ImRaii.PushId( Name );
 
             using var disabled = ImRaii.Disabled( IsDisabled() );
-            using var tabItem = ImRaii.TabItem( Name );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( Name ) );
             if( !tabItem || IsDisabled() ) return;
 
             Load();
@@ -77,7 +77,7 @@ namespace VfxEditor.Select {
 
             var resetScroll = false;
             DrawExtra();
-            if( ImGui.InputTextWithHint( "##Search", "Search", ref SearchInput, 255 ) ) {
+            if( ImGui.InputTextWithHint( "##Search", VfxEditor.Localization.ZhTw.Text( "Search" ), ref SearchInput, 255 ) ) {
                 Searched = Items.Where( x => CheckMatch( x, SearchInput ) ).ToList();
                 resetScroll = true;
             }
@@ -92,8 +92,8 @@ namespace VfxEditor.Select {
             if( !table ) return;
             style.Dispose();
 
-            ImGui.TableSetupColumn( "##Left", ImGuiTableColumnFlags.WidthFixed, 200 );
-            ImGui.TableSetupColumn( "##Right", ImGuiTableColumnFlags.WidthStretch );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Left" ), ImGuiTableColumnFlags.WidthFixed, 200 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Right" ), ImGuiTableColumnFlags.WidthStretch );
 
             ImGui.TableNextRow();
             ImGui.TableNextColumn();
@@ -114,7 +114,7 @@ namespace VfxEditor.Select {
                     if( iconOnLeft ) {
                         // based on https://github.com/Etheirys/Brio/blob/93950203668f672f8ff67a4fcf9d8758418b783f/Brio/UI/Controls/Selectors/GearSelector.cs#L12
                         var startPos = ImGui.GetCursorPos();
-                        if( ImGui.Selectable( "###Entry", Selected == item, ImGuiSelectableFlags.AllowDoubleClick, new Vector2( 0, itemHeight ) ) && Selected != item ) Select( item );
+                        if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "###Entry" ), Selected == item, ImGuiSelectableFlags.AllowDoubleClick, new Vector2( 0, itemHeight ) ) && Selected != item ) Select( item );
                         var endPos = ImGui.GetCursorPos();
 
                         ImGui.SetCursorPos( startPos );
@@ -152,7 +152,7 @@ namespace VfxEditor.Select {
 
             ImGui.TableNextColumn();
 
-            if( Selected == null ) ImGui.Text( "Select an item..." );
+            if( Selected == null ) ImGui.Text( VfxEditor.Localization.ZhTw.Text( "Select an item..." ) );
             else DrawInner();
         }
 
@@ -219,7 +219,7 @@ namespace VfxEditor.Select {
                 if( ISelectItemWithIcon.HasIcon( Selected, out var iconId ) ) DrawIcon( iconId );
                 DrawSelected();
             }
-            else ImGui.Text( "No data found" );
+            else ImGui.Text( VfxEditor.Localization.ZhTw.Text( "No data found" ) );
         }
 
         private async void LoadItemAsync( T item ) {

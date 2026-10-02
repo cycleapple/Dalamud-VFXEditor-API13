@@ -303,7 +303,7 @@ namespace VfxEditor.AvfxFormat {
 
             ImGui.TextDisabled( $"Version {UiVersion[0]}.{UiVersion[1]}.{UiVersion[2]}.{UiVersion[3]}" );
 
-            if( ImGui.InputFloat( "Revised Scale (Combined)", ref ScaleCombined ) ) {
+            if( ImGui.InputFloat( VfxEditor.Localization.ZhTw.Label( "Revised Scale (Combined)" ), ref ScaleCombined ) ) {
                 RevisedValuesScaleX.Value = ScaleCombined;
                 RevisedValuesScaleY.Value = ScaleCombined;
                 RevisedValuesScaleZ.Value = ScaleCombined;

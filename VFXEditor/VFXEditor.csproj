@@ -4,8 +4,8 @@
         <Company></Company>
         <Product>VFXEditor</Product>
         <Copyright>Copyright © 2020</Copyright>
-        <FileVersion>1.9.2.8</FileVersion>
-        <AssemblyVersion>1.9.2.8</AssemblyVersion>
+        <FileVersion>1.9.2.9</FileVersion>
+        <AssemblyVersion>1.9.2.9</AssemblyVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
@@ -176,5 +176,10 @@
 
     <ItemGroup>
       <PackageReference Update="DalamudPackager" Version="13.0.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="Localization/zh-TW.json" LogicalName="VfxEditor.Localization.zh-TW.json" />
+        <Content Include="../LICENSE" Link="LICENSE" CopyToOutputDirectory="PreserveNewest" />
+        <Content Include="../README.zh-TW.md" Link="README.zh-TW.md" CopyToOutputDirectory="PreserveNewest" />
     </ItemGroup>
 </Project>

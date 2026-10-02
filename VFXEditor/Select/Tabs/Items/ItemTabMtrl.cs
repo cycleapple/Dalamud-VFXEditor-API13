@@ -68,7 +68,7 @@ namespace VfxEditor.Select.Tabs.Items {
             ImGui.Text( $"Variant: {Selected.Variant}" );
 
             if( string.IsNullOrEmpty( Selected.ImcPath ) ) return;
-            ImGui.Text( "IMC: " );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( "IMC: " ) );
             ImGui.SameLine();
             SelectUiUtils.DisplayPath( Selected.ImcPath );
 

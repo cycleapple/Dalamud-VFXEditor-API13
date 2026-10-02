@@ -34,7 +34,7 @@ namespace VfxEditor.FileBrowser {
             if( PathEditing ) {
                 ImGui.SameLine();
                 ImGui.SetNextItemWidth( ImGui.GetContentRegionAvail().X );
-                ImGui.InputText( "##PathEdit", ref PathInput, 255 );
+                ImGui.InputText( VfxEditor.Localization.ZhTw.Label( "##PathEdit" ), ref PathInput, 255 );
 
                 if( ImGui.IsKeyReleased( ImGuiKey.Enter ) ) {
                     if( Directory.Exists( PathInput ) ) SetPath( PathInput, true );
@@ -109,7 +109,7 @@ namespace VfxEditor.FileBrowser {
             }
             else {
                 ImGui.SetNextItemWidth( ImGui.GetContentRegionAvail().X );
-                if( ImGui.InputTextWithHint( "##Search", "Search", ref SearchInput, 255 ) ) UpdateSearchedFiles();
+                if( ImGui.InputTextWithHint( "##Search", VfxEditor.Localization.ZhTw.Text( "Search" ), ref SearchInput, 255 ) ) UpdateSearchedFiles();
             }
         }
 
@@ -120,7 +120,7 @@ namespace VfxEditor.FileBrowser {
             var cancelSize = UiUtils.GetPaddedIconSize( FontAwesomeIcon.Times );
 
             ImGui.SetNextItemWidth( ImGui.GetContentRegionAvail().X - checkSize - cancelSize );
-            ImGui.InputTextWithHint( "##NewFolder", "New Folder Name", ref NewFolderInput, 255 );
+            ImGui.InputTextWithHint( "##NewFolder", VfxEditor.Localization.ZhTw.Text( "New Folder Name" ), ref NewFolderInput, 255 );
 
             using var font = ImRaii.PushFont( UiBuilder.IconFont );
 

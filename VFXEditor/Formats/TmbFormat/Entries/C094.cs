@@ -77,7 +77,7 @@ namespace VfxEditor.TmbFormat.Entries {
         public override void DrawBody() {
             base.DrawBody();
 
-            ImGui.Checkbox( "Extra Data", ref ExtraData );
+            ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Extra Data" ), ref ExtraData );
             if( ExtraData ) {
                 EnableFilter.Draw();
 

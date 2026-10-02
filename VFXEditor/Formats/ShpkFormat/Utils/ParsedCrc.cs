@@ -51,7 +51,7 @@ namespace VfxEditor.Formats.ShpkFormat.Utils {
 
                 if( !Name.StartsWith( "##" ) ) {
                     ImGui.SameLine();
-                    ImGui.Text( Name );
+                    ImGui.Text( VfxEditor.Localization.ZhTw.Text( Name ) );
                 }
             }
             else {
@@ -75,7 +75,7 @@ namespace VfxEditor.Formats.ShpkFormat.Utils {
 
                 if( !Name.StartsWith( "##" ) ) {
                     ImGui.SameLine();
-                    ImGui.Text( Name );
+                    ImGui.Text( VfxEditor.Localization.ZhTw.Text( Name ) );
                 }
             }
         }

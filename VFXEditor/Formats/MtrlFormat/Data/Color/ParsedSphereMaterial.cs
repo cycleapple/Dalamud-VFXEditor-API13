@@ -11,7 +11,7 @@ namespace VfxEditor.Formats.MtrlFormat.Data.Color {
 
         protected override void DrawBody() {
             var text = ( Value >= 0 && Value < Plugin.MtrlManager.Sphere.Count ) ? $"Sphere {Value}" : "[UNKNOWN]";
-            using var combo = ImRaii.Combo( Name, text );
+            using var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( Name ), text );
             if( !combo ) return;
 
             for( var i = 0; i < Plugin.MtrlManager.Sphere.Count; i++ ) {

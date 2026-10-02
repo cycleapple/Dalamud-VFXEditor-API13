@@ -35,7 +35,7 @@ namespace VfxEditor.Parsing {
         protected override void DrawBody() {
             var value = Value;
             if( InTable ) ImGui.SetCursorPosX( ImGui.GetCursorPosX() + ( ImGui.GetContentRegionAvail().X - ImGui.GetFrameHeight() ) / 2f );
-            if( ImGui.Checkbox( Name, ref value ) ) {
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( Name ), ref value ) ) {
                 Update( value );
             }
         }

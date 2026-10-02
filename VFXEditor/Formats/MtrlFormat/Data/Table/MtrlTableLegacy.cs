@@ -39,13 +39,13 @@ namespace VfxEditor.Formats.MtrlFormat.Data.Table {
 
         private void DrawDyeCombo() {
             var v = Stain == null ? new( 0 ) : Stain.Color;
-            ImGui.ColorEdit3( "##Color", ref v, ImGuiColorEditFlags.NoInputs | ImGuiColorEditFlags.DisplayRgb | ImGuiColorEditFlags.InputRgb | ImGuiColorEditFlags.NoTooltip );
+            ImGui.ColorEdit3( VfxEditor.Localization.ZhTw.Label( "##Color" ), ref v, ImGuiColorEditFlags.NoInputs | ImGuiColorEditFlags.DisplayRgb | ImGuiColorEditFlags.InputRgb | ImGuiColorEditFlags.NoTooltip );
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) {
                 ImGui.SameLine();
             }
 
             ImGui.SetNextItemWidth( 200f );
-            using var combo = ImRaii.Combo( "Preview Dye", Stain == null ? "[NONE]" : Stain.Name );
+            using var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( "Preview Dye" ), Stain == null ? "[NONE]" : Stain.Name );
             if( !combo ) return;
 
             DrawDyeComboRow( null, 0 );
@@ -57,7 +57,7 @@ namespace VfxEditor.Formats.MtrlFormat.Data.Table {
             using var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing );
 
             var v = stain == null ? new( 0 ) : stain.Color;
-            ImGui.ColorEdit3( "##Color", ref v, ImGuiColorEditFlags.NoInputs | ImGuiColorEditFlags.DisplayRgb | ImGuiColorEditFlags.InputRgb | ImGuiColorEditFlags.NoTooltip );
+            ImGui.ColorEdit3( VfxEditor.Localization.ZhTw.Label( "##Color" ), ref v, ImGuiColorEditFlags.NoInputs | ImGuiColorEditFlags.DisplayRgb | ImGuiColorEditFlags.InputRgb | ImGuiColorEditFlags.NoTooltip );
 
             ImGui.SameLine();
             if( ImGui.Selectable( stain == null ? "[NONE]" : stain.Name, Stain == stain ) ) {

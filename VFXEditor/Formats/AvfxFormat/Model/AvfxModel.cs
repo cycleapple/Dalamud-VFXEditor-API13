@@ -114,17 +114,17 @@ namespace VfxEditor.AvfxFormat {
             ImGui.TextDisabled( $"Vertices: {Vertexes.Vertexes.Count} Indexes: {Indexes.Indexes.Count}" );
 
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) {
-                if( ImGui.Button( "Export" ) ) ImGui.OpenPopup( "ExportPopup" );
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Export" ) ) ) ImGui.OpenPopup( "ExportPopup" );
 
                 using( var popup = ImRaii.Popup( "ExportPopup" ) ) {
                     if( popup ) {
-                        if( ImGui.Selectable( ".gltf" ) ) ExportDialog();
-                        if( ImGui.Selectable( ".avfx" ) ) Plugin.AvfxManager.ShowExportDialog( this );
+                        if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( ".gltf" ) ) ) ExportDialog();
+                        if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( ".avfx" ) ) ) Plugin.AvfxManager.ShowExportDialog( this );
                     }
                 }
 
                 ImGui.SameLine();
-                if( ImGui.Button( "Replace" ) ) ImportDialog();
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Replace" ) ) ) ImportDialog();
 
                 ImGui.SameLine();
                 UiUtils.WikiButton( "https://github.com/0ceal0t/Dalamud-VFXEditor/wiki/Replacing-textures-and-models#models" );
@@ -135,19 +135,19 @@ namespace VfxEditor.AvfxFormat {
             using var tabBar = ImRaii.TabBar( "ModelTabs" );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "3D View" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "3D View" ) ) ) {
                 if( tab ) DrawModel3D();
             }
 
-            using( var tab = ImRaii.TabItem( "UV View" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "UV View" ) ) ) {
                 if( tab ) UvView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Vertex Order" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Vertex Order" ) ) ) {
                 if( tab ) DrawVertexnumbers();
             }
 
-            using( var tab = ImRaii.TabItem( "Emitter Vertices" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Emitter Vertices" ) ) ) {
                 if( tab ) DrawEmitterVertices();
             }
         }
@@ -179,40 +179,40 @@ namespace VfxEditor.AvfxFormat {
         private void DrawModel3D() {
             using var _ = ImRaii.PushId( "3DModel" );
 
-            if( ImGui.Checkbox( "Wireframe", ref Plugin.Configuration.ModelWireframe ) ) {
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Wireframe" ), ref Plugin.Configuration.ModelWireframe ) ) {
                 Plugin.DirectXManager.ModelPreview.RefreshRasterizeState();
                 Plugin.DirectXManager.ModelPreview.Draw();
                 Plugin.Configuration.Save();
             }
 
             ImGui.SameLine();
-            if( ImGui.Checkbox( "Show Edges", ref Plugin.Configuration.ModelShowEdges ) ) {
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Show Edges" ), ref Plugin.Configuration.ModelShowEdges ) ) {
                 Plugin.DirectXManager.ModelPreview.Draw();
                 Plugin.Configuration.Save();
             }
 
             ImGui.SameLine();
-            if( ImGui.Checkbox( "Show Emitter Vertices", ref Plugin.Configuration.ModelShowEmitters ) ) {
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Show Emitter Vertices" ), ref Plugin.Configuration.ModelShowEmitters ) ) {
                 Plugin.DirectXManager.ModelPreview.Draw();
                 Plugin.Configuration.Save();
             }
 
-            if( ImGui.RadioButton( "Color", ref Mode, ( int )RenderMode.Color ) ) Plugin.DirectXManager.ModelPreview.LoadModel( this, RenderMode.Color );
+            if( ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "Color" ), ref Mode, ( int )RenderMode.Color ) ) Plugin.DirectXManager.ModelPreview.LoadModel( this, RenderMode.Color );
 
             ImGui.SameLine();
-            if( ImGui.RadioButton( "UV 1", ref Mode, ( int )RenderMode.Uv1 ) ) Plugin.DirectXManager.ModelPreview.LoadModel( this, RenderMode.Uv1 );
+            if( ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "UV 1" ), ref Mode, ( int )RenderMode.Uv1 ) ) Plugin.DirectXManager.ModelPreview.LoadModel( this, RenderMode.Uv1 );
 
             ImGui.SameLine();
-            if( ImGui.RadioButton( "UV 2", ref Mode, ( int )RenderMode.Uv2 ) ) Plugin.DirectXManager.ModelPreview.LoadModel( this, RenderMode.Uv2 );
+            if( ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "UV 2" ), ref Mode, ( int )RenderMode.Uv2 ) ) Plugin.DirectXManager.ModelPreview.LoadModel( this, RenderMode.Uv2 );
 
             ImGui.SameLine();
-            if( ImGui.RadioButton( "UV 3", ref Mode, ( int )RenderMode.Uv3 ) ) Plugin.DirectXManager.ModelPreview.LoadModel( this, RenderMode.Uv3 );
+            if( ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "UV 3" ), ref Mode, ( int )RenderMode.Uv3 ) ) Plugin.DirectXManager.ModelPreview.LoadModel( this, RenderMode.Uv3 );
 
             ImGui.SameLine();
-            if( ImGui.RadioButton( "UV 4", ref Mode, ( int )RenderMode.Uv4 ) ) Plugin.DirectXManager.ModelPreview.LoadModel( this, RenderMode.Uv4 );
+            if( ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "UV 4" ), ref Mode, ( int )RenderMode.Uv4 ) ) Plugin.DirectXManager.ModelPreview.LoadModel( this, RenderMode.Uv4 );
 
             ImGui.SameLine();
-            if( ImGui.RadioButton( "Normal", ref Mode, ( int )RenderMode.Normal ) ) Plugin.DirectXManager.ModelPreview.LoadModel( this, RenderMode.Normal );
+            if( ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "Normal" ), ref Mode, ( int )RenderMode.Normal ) ) Plugin.DirectXManager.ModelPreview.LoadModel( this, RenderMode.Normal );
 
             CheckRefresh();
             Plugin.DirectXManager.ModelPreview.DrawInline();

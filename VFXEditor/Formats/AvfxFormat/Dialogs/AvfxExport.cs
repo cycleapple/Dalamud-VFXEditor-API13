@@ -26,16 +26,16 @@ namespace VfxEditor.AvfxFormat.Dialogs {
         public void Draw() {
             using var _ = ImRaii.PushId( "##ExportDialog" );
 
-            ImGui.Checkbox( "Export Dependencies", ref ExportDependencies );
+            ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Export Dependencies" ), ref ExportDependencies );
 
             ImGui.SameLine();
             UiUtils.HelpMarker( @"Exports the selected items, as well as any dependencies they have (such as particles depending on textures). It is recommended to leave this selected." );
 
             ImGui.SameLine();
-            if( ImGui.Button( "Reset" ) ) Reset();
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Reset" ) ) ) Reset();
 
             ImGui.SameLine();
-            if( ImGui.Button( "Export" ) ) SaveDialog();
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Export" ) ) ) SaveDialog();
 
             using var child = ImRaii.Child( "Child", new( -1, -1 ), true );
             Categories.ForEach( cat => cat.Draw() );

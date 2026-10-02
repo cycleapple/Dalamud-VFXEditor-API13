@@ -52,7 +52,7 @@ namespace VfxEditor.Select.Formats {
 
         public override void PlayPopupItems( string path ) {
             ImGui.Separator();
-            if( ImGui.Selectable( "Spawn" ) ) VfxSpawn.OnSelf( path, false );
+            if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "Spawn" ) ) ) VfxSpawn.OnSelf( path, false );
         }
     }
 }

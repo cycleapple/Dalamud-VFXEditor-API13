@@ -26,7 +26,7 @@ namespace VfxEditor.Library.Components {
             ImGui.PushStyleColor( ImGuiCol.Header, Color );
             ImGui.PushStyleColor( ImGuiCol.HeaderHovered, Color * 0.75f );
             ImGui.PushStyleColor( ImGuiCol.HeaderActive, Color * 0.75f );
-            ImGui.TreeNodeEx( Name, ImGuiTreeNodeFlags.Framed | ImGuiTreeNodeFlags.Bullet | ImGuiTreeNodeFlags.FramePadding | ImGuiTreeNodeFlags.NoTreePushOnOpen );
+            ImGui.TreeNodeEx( VfxEditor.Localization.ZhTw.Label( Name ), ImGuiTreeNodeFlags.Framed | ImGuiTreeNodeFlags.Bullet | ImGuiTreeNodeFlags.FramePadding | ImGuiTreeNodeFlags.NoTreePushOnOpen );
             ImGui.PopStyleColor( 3 );
         }
 
@@ -90,7 +90,7 @@ namespace VfxEditor.Library.Components {
                 return true;
             }
 
-            if( ImGui.InputText( "##Rename", ref Name, 128, ImGuiInputTextFlags.AutoSelectAll ) ) {
+            if( ImGui.InputText( VfxEditor.Localization.ZhTw.Label( "##Rename" ), ref Name, 128, ImGuiInputTextFlags.AutoSelectAll ) ) {
                 library.Save();
                 return true;
             }

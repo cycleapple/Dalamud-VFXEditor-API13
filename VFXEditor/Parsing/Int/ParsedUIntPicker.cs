@@ -26,7 +26,7 @@ namespace VfxEditor.Parsing.Int {
             var selected = Selected;
             var text = selected == null ? $"[NONE] 0x{Value:X8}" : GetText( selected, items.IndexOf( selected ) );
 
-            using var combo = ImRaii.Combo( Name, text );
+            using var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( Name ), text );
             if( !combo ) return;
             foreach( var (item, idx) in items.WithIndex() ) {
                 using var _ = ImRaii.PushId( idx );

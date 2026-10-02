@@ -83,19 +83,19 @@ namespace VfxEditor.Formats.ShpkFormat.Nodes {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Parameters" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) ) ) {
                 if( tab ) DrawParameters();
             }
 
-            using( var tab = ImRaii.TabItem( "Passes" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Passes" ) ) ) {
                 if( tab ) PassView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Keys" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Keys" ) ) ) {
                 if( tab ) DrawKeys();
             }
 
-            using( var tab = ImRaii.TabItem( "Unknown" ) )
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Unknown" ) ) )
             {
                 if( tab ) DrawUnknown();
             }
@@ -109,7 +109,7 @@ namespace VfxEditor.Formats.ShpkFormat.Nodes {
 
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 5 );
 
-            ImGui.TextDisabled( "Pass Indexes:" );
+            ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "Pass Indexes:" ) );
             foreach( var passIdx in PassIndexes ) passIdx.Draw();
         }
 
@@ -121,19 +121,19 @@ namespace VfxEditor.Formats.ShpkFormat.Nodes {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "System" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "System" ) ) ) {
                 if( tab ) SystemKeyView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Scene" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Scene" ) ) ) {
                 if( tab ) SceneKeyView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Material" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Material" ) ) ) {
                 if( tab ) MaterialKeyView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Sub-View" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Sub-View" ) ) ) {
                 if( tab ) SubViewKeyView.Draw();
             }
         }

@@ -64,7 +64,7 @@ namespace VfxEditor.ScdFormat.Sound.Data {
         }
 
         public void Draw() {
-            ImGui.Text( "[WIP]" );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( "[WIP]" ) );
             EffectParam.Draw();
         }
     }

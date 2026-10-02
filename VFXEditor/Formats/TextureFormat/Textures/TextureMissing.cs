@@ -15,7 +15,7 @@ namespace VfxEditor.Formats.TextureFormat.Textures {
 
         protected override void DrawControls() {
             ImGui.TextColored( UiUtils.RED_COLOR, "Texture is missing" );
-            if( ImGui.Button( "Import" ) ) ImportDialog();
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Import" ) ) ) ImportDialog();
             DrawSettingsCog();
             DrawSettingsPopup();
         }

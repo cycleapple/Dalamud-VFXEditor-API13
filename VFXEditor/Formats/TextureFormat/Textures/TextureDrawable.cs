@@ -41,10 +41,10 @@ namespace VfxEditor.Formats.TextureFormat.Textures {
 
         protected void DrawExportReplaceButtons() {
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) {
-                if( ImGui.Button( "Export" ) ) ImGui.OpenPopup( "TexExport" );
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Export" ) ) ) ImGui.OpenPopup( "TexExport" );
 
                 ImGui.SameLine();
-                if( ImGui.Button( "Replace" ) ) ImportDialog();
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Replace" ) ) ) ImportDialog();
 
                 ImGui.SameLine();
                 using( var font = ImRaii.PushFont( UiBuilder.IconFont ) ) {
@@ -55,41 +55,41 @@ namespace VfxEditor.Formats.TextureFormat.Textures {
             }
 
             if( ImGui.BeginPopup( "TexExport" ) ) {
-                if( ImGui.Selectable( ".png" ) ) GetRawData()?.SavePngDialog();
-                if( ImGui.Selectable( ".dds" ) ) GetRawData()?.SaveDdsDialog();
-                if( ImGui.Selectable( ".atex" ) ) GetRawData()?.SaveTexDialog( "atex" );
-                if( ImGui.Selectable( ".tex" ) ) GetRawData()?.SaveTexDialog( "tex" );
+                if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( ".png" ) ) ) GetRawData()?.SavePngDialog();
+                if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( ".dds" ) ) ) GetRawData()?.SaveDdsDialog();
+                if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( ".atex" ) ) ) GetRawData()?.SaveTexDialog( "atex" );
+                if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( ".tex" ) ) ) GetRawData()?.SaveTexDialog( "tex" );
                 ImGui.EndPopup();
             }
 
             if( ImGui.BeginPopup( "Edit" ) ) {
                 if( ResizeInput == null && GetPreview() != null ) ResizeInput = [GetPreview().Width, GetPreview().Height];
                 ImGui.SetNextItemWidth( 100f );
-                ImGui.InputInt( "##Resize", ResizeInput );
+                ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "##Resize" ), ResizeInput );
                 using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) {
                     ImGui.SameLine();
-                    if( ImGui.Button( "Resize" ) ) {
+                    if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Resize" ) ) ) {
                         ApplyEdit( surface => surface.Resize( ResizeInput[0], ResizeInput[1], ImageFilter.Box ) );
                     }
                 }
 
-                if( ImGui.Selectable( "Grayscale" ) ) {
+                if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "Grayscale" ) ) ) {
                     ApplyEdit( surface => surface.ConvertTo( ImageConversion.ToGreyscale ) );
                 }
 
-                if( ImGui.Selectable( "Flip Horizontally" ) ) {
+                if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "Flip Horizontally" ) ) ) {
                     ApplyEdit( surface => surface.FlipHorizontally() );
                 }
 
-                if( ImGui.Selectable( "Flip Vertically" ) ) {
+                if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "Flip Vertically" ) ) ) {
                     ApplyEdit( surface => surface.FlipVertically() );
                 }
 
-                if( ImGui.Selectable( "Rotate Left" ) ) {
+                if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "Rotate Left" ) ) ) {
                     ApplyEdit( surface => surface.Rotate( 90 ) );
                 }
 
-                if( ImGui.Selectable( "Rotate Right" ) ) {
+                if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "Rotate Right" ) ) ) {
                     ApplyEdit( surface => surface.Rotate( -90 ) );
                 }
 
@@ -129,7 +129,7 @@ namespace VfxEditor.Formats.TextureFormat.Textures {
             using var popup = ImRaii.Popup( "Settings" );
             if( !popup ) return;
 
-            ImGui.TextDisabled( ".png Import Settings" );
+            ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( ".png Import Settings" ) );
 
             TextureView.DrawPngSettings();
         }

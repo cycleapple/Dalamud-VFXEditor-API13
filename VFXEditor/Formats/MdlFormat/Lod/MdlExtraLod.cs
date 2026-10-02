@@ -83,23 +83,23 @@ namespace VfxEditor.Formats.MdlFormat.Lod {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Parameters" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) ) ) {
                 if( tab ) DrawParameters();
             }
 
-            using( var tab = ImRaii.TabItem( "Light Shafts" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Light Shafts" ) ) ) {
                 if( tab ) LightShaftMeshView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Glass" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Glass" ) ) ) {
                 if( tab ) GlassMeshView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Material Change" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Material Change" ) ) ) {
                 if( tab ) MaterialChangeMeshView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Crest Change" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Crest Change" ) ) ) {
                 if( tab ) CrestChangeMeshView.Draw();
             }
         }

@@ -38,7 +38,7 @@ namespace VfxEditor.Formats.MtrlFormat.Data.Color {
             DrawTabs();
 
             using( var disabled = ImRaii.Disabled( !Table.File.DyeTableEnabled ) )
-            using( var tab = ImRaii.TabItem( "Dye" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Dye" ) ) ) {
                 if( tab ) DrawDye();
             }
 

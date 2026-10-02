@@ -12,24 +12,24 @@ namespace VfxEditor.Select {
         private void DrawPaths() {
             using var _ = ImRaii.PushId( "Paths" );
 
-            using var tabItem = ImRaii.TabItem( "Paths" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Paths" ) );
             if( !tabItem ) return;
 
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 2 );
 
-            ImGui.Text( "Game Path" );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( "Game Path" ) );
             using( var __ = ImRaii.PushId( "Game" ) )
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) {
                 ImGui.InputTextWithHint( "##Path", $"vfx/common/eff/wp_astro1h.{Extensions[0]}", ref GamePathInput, 255 );
 
                 ImGui.SameLine();
-                if( ImGui.Button( "SELECT" ) ) SelectGamePath( GamePathInput );
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "SELECT" ) ) ) SelectGamePath( GamePathInput );
             }
 
             if( ShowLocal ) {
                 ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 5 );
 
-                ImGui.Text( "Local Path" );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "Local Path" ) );
                 using var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing );
                 using var __ = ImRaii.PushId( "Local" );
 
@@ -47,7 +47,7 @@ namespace VfxEditor.Select {
                 }
 
                 ImGui.SameLine();
-                if( ImGui.Button( "SELECT" ) && Path.IsPathRooted( LocalPathInput ) && File.Exists( LocalPathInput ) ) {
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "SELECT" ) ) && Path.IsPathRooted( LocalPathInput ) && File.Exists( LocalPathInput ) ) {
                     Invoke( new SelectResult( SelectResultType.Local, LocalPathInput, "[LOCAL] " + LocalPathInput, LocalPathInput ) );
                     LocalPathInput = "";
                 }
@@ -65,13 +65,13 @@ namespace VfxEditor.Select {
             if( UiUtils.DrawAngleUpDown( ref Plugin.Configuration.SelectDialogLogOpen ) ) Plugin.Configuration.Save();
             if( !Plugin.Configuration.SelectDialogLogOpen ) return;
 
-            if( ImGui.Checkbox( "Log all files", ref Plugin.Configuration.LogAllFiles ) ) Plugin.Configuration.Save();
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Log all files" ), ref Plugin.Configuration.LogAllFiles ) ) Plugin.Configuration.Save();
 
             using var disabled = ImRaii.Disabled( LoggedFiles.Count == 0 && !Plugin.Configuration.LogAllFiles );
 
             ImGui.SameLine();
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) {
-                ImGui.InputTextWithHint( "##Search", "Search", ref LoggedFilesSearch, 255 );
+                ImGui.InputTextWithHint( "##Search", VfxEditor.Localization.ZhTw.Text( "Search" ), ref LoggedFilesSearch, 255 );
 
                 ImGui.SameLine();
                 using var font = ImRaii.PushFont( UiBuilder.IconFont );
@@ -91,7 +91,7 @@ namespace VfxEditor.Select {
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + preItems * itemHeight );
 
             if( ImGui.BeginTable( "Table", 1, ImGuiTableFlags.RowBg ) ) {
-                ImGui.TableSetupColumn( "##Column", ImGuiTableColumnFlags.WidthStretch );
+                ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Column" ), ImGuiTableColumnFlags.WidthStretch );
 
                 var idx = 0;
                 foreach( var file in searched ) {

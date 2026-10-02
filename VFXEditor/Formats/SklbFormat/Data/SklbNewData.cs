@@ -49,14 +49,14 @@ namespace VfxEditor.SklbFormat.Data {
         }
 
         public override void Draw() {
-            ImGui.TextDisabled( "Header Version: [NEW]" );
+            ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "Header Version: [NEW]" ) );
             Parsed.ForEach( x => x.Draw() );
 
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 2 );
             ImGui.Separator();
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 2 );
 
-            ImGui.TextDisabled( "Parents" );
+            ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "Parents" ) );
             ParentsView.Draw();
         }
     }

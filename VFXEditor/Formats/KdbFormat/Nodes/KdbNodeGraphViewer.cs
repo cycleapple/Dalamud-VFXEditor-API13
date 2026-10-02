@@ -20,18 +20,18 @@ namespace VfxEditor.Formats.KdbFormat.Nodes {
 
             using( var popup = ImRaii.Popup( "NewPopup" ) ) {
                 if( popup ) {
-                    if( ImGui.Selectable( "EffectorExpr" ) ) AddToCanvas( new KdbNodeEffectorExpr(), true );
-                    if( ImGui.Selectable( "EffectorEZParamLink" ) ) AddToCanvas( new KdbNodeEffectorEZParamLink(), true );
-                    if( ImGui.Selectable( "EffectorEZParamLinkLinear" ) ) AddToCanvas( new KdbNodeEffectorEZParamLinkLinear(), true );
-                    if( ImGui.Selectable( "SourceRotate" ) ) AddToCanvas( new KdbNodeSourceRotate(), true );
-                    if( ImGui.Selectable( "SourceTranslate" ) ) AddToCanvas( new KdbNodeSourceTranslate(), true );
-                    if( ImGui.Selectable( "TargetBendSTRoll" ) ) AddToCanvas( new KdbNodeTargetBendSTRoll(), true );
-                    if( ImGui.Selectable( "TargetBendRoll" ) ) AddToCanvas( new KdbNodeTargetBendRoll(), true );
-                    if( ImGui.Selectable( "TargetTranslate" ) ) AddToCanvas( new KdbNodeTargetTranslate(), true );
-                    if( ImGui.Selectable( "TargetScale" ) ) AddToCanvas( new KdbNodeTargetScale(), true );
-                    if( ImGui.Selectable( "TargetRotate" ) ) AddToCanvas( new KdbNodeTargetRotate(), true );
-                    if( ImGui.Selectable( "TargetPosConstraint" ) ) AddToCanvas( new KdbNodeTargetPosConstraint(), true );
-                    if( ImGui.Selectable( "TargetOrientationConstraint" ) ) AddToCanvas( new KdbNodeTargetOrientationConstraint(), true );
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "EffectorExpr" ) ) ) AddToCanvas( new KdbNodeEffectorExpr(), true );
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "EffectorEZParamLink" ) ) ) AddToCanvas( new KdbNodeEffectorEZParamLink(), true );
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "EffectorEZParamLinkLinear" ) ) ) AddToCanvas( new KdbNodeEffectorEZParamLinkLinear(), true );
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "SourceRotate" ) ) ) AddToCanvas( new KdbNodeSourceRotate(), true );
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "SourceTranslate" ) ) ) AddToCanvas( new KdbNodeSourceTranslate(), true );
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "TargetBendSTRoll" ) ) ) AddToCanvas( new KdbNodeTargetBendSTRoll(), true );
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "TargetBendRoll" ) ) ) AddToCanvas( new KdbNodeTargetBendRoll(), true );
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "TargetTranslate" ) ) ) AddToCanvas( new KdbNodeTargetTranslate(), true );
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "TargetScale" ) ) ) AddToCanvas( new KdbNodeTargetScale(), true );
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "TargetRotate" ) ) ) AddToCanvas( new KdbNodeTargetRotate(), true );
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "TargetPosConstraint" ) ) ) AddToCanvas( new KdbNodeTargetPosConstraint(), true );
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "TargetOrientationConstraint" ) ) ) AddToCanvas( new KdbNodeTargetOrientationConstraint(), true );
                 }
             }
 

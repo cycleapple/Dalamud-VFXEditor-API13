@@ -46,7 +46,7 @@ namespace VfxEditor.Library {
             }
 
             ImGui.SameLine();
-            ImGui.InputTextWithHint( "##Search", "Search", ref SearchInput, 255 );
+            ImGui.InputTextWithHint( "##Search", VfxEditor.Localization.ZhTw.Text( "Search" ), ref SearchInput, 255 );
 
             // Info circle
 
@@ -117,10 +117,10 @@ namespace VfxEditor.Library {
         // ======== TEXTURES ==============
 
         public void DrawTextureCombo( string currentPath, Action<TextureLeaf> perTexture ) {
-            using var combo = ImRaii.Combo( "##Library", string.Empty, ImGuiComboFlags.NoPreview | ImGuiComboFlags.PopupAlignLeft | ImGuiComboFlags.HeightLargest );
+            using var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( "##Library" ), string.Empty, ImGuiComboFlags.NoPreview | ImGuiComboFlags.PopupAlignLeft | ImGuiComboFlags.HeightLargest );
             if( !combo ) return;
 
-            var resetScroll = ImGui.InputTextWithHint( "##Search", "Search", ref ComboSearchInput, 255 );
+            var resetScroll = ImGui.InputTextWithHint( "##Search", VfxEditor.Localization.ZhTw.Text( "Search" ), ref ComboSearchInput, 255 );
 
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, new Vector2( 4, 4 ) ) ) {
                 ImGui.SameLine();

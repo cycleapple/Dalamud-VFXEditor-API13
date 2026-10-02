@@ -19,7 +19,7 @@ namespace VfxEditor.Parsing {
 
         protected override void DrawBody() {
             var value = ( int )Value;
-            if( ImGui.InputInt( Name, ref value ) ) {
+            if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( Name ), ref value ) ) {
                 Update( ( sbyte )value );
             }
         }

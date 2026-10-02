@@ -257,15 +257,15 @@ namespace VfxEditor.Formats.ShpkFormat {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Vertex Shaders" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Vertex Shaders" ) ) ) {
                 if( tab ) VertexView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Pixel Shaders" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Pixel Shaders" ) ) ) {
                 if( tab ) PixelView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Material Parameters" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Material Parameters" ) ) ) {
                 if( tab ) {
                     if( IsV7 ) HasDefaultMaterialValues.Draw();
                     DrawMaterialTable();
@@ -274,32 +274,32 @@ namespace VfxEditor.Formats.ShpkFormat {
                 }
             }
 
-            using( var tab = ImRaii.TabItem( "Constants" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Constants" ) ) ) {
                 if( tab ) ConstantView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Samplers" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Samplers" ) ) ) {
                 if( tab ) SamplerView.Draw();
             }
 
             if( IsV7 ) {
-                using var tab = ImRaii.TabItem( "Textures" );
+                using var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Textures" ) );
                 if( tab ) TextureView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Resources" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Resources" ) ) ) {
                 if( tab ) ResourceView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Keys" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Keys" ) ) ) {
                 if( tab ) DrawKeys();
             }
 
-            using( var tab = ImRaii.TabItem( "Nodes" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Nodes" ) ) ) {
                 if( tab ) NodeView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Aliases" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Aliases" ) ) ) {
                 if( tab ) AliasView.Draw();
             }
         }
@@ -312,19 +312,19 @@ namespace VfxEditor.Formats.ShpkFormat {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "System" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "System" ) ) ) {
                 if( tab ) SystemKeyView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Scene" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Scene" ) ) ) {
                 if( tab ) SceneKeyView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Material" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Material" ) ) ) {
                 if( tab ) MaterialKeyView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Sub-View" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Sub-View" ) ) ) {
                 if( tab ) SubViewKeyView.Draw();
             }
         }
@@ -339,10 +339,10 @@ namespace VfxEditor.Formats.ShpkFormat {
             using( var font = ImRaii.PushFont( UiBuilder.MonoFont ) ) {
                 ImGui.TableSetupScrollFreeze( 0, 1 );
                 ImGui.TableSetupColumn( string.Empty, ImGuiTableColumnFlags.WidthFixed, 50 );
-                ImGui.TableSetupColumn( "x", ImGuiTableColumnFlags.WidthStretch );
-                ImGui.TableSetupColumn( "y", ImGuiTableColumnFlags.WidthStretch );
-                ImGui.TableSetupColumn( "z", ImGuiTableColumnFlags.WidthStretch );
-                ImGui.TableSetupColumn( "w", ImGuiTableColumnFlags.WidthStretch );
+                ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "x" ), ImGuiTableColumnFlags.WidthStretch );
+                ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "y" ), ImGuiTableColumnFlags.WidthStretch );
+                ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "z" ), ImGuiTableColumnFlags.WidthStretch );
+                ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "w" ), ImGuiTableColumnFlags.WidthStretch );
                 ImGui.TableHeadersRow();
             }
 

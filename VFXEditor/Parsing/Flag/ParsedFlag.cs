@@ -41,7 +41,7 @@ namespace VfxEditor.Parsing {
         protected override void DrawBody() {
             if( ShowIntField ) {
                 var value = IntValue;
-                if( InTable ? ImGui.InputInt( Name, ref value, 0, 0 ) : ImGui.InputInt( Name, ref value ) ) {
+                if( InTable ? ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( Name ), ref value, 0, 0 ) : ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( Name ), ref value ) ) {
                     Update( ( T )( object )value );
                 }
             }
@@ -64,7 +64,7 @@ namespace VfxEditor.Parsing {
 
         public void DrawWithIndent() {
             using var _ = ImRaii.PushId( Name );
-            ImGui.TextDisabled( Name );
+            ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( Name ) );
             using var indent = ImRaii.PushIndent( 10f );
             CopyPaste();
             DrawBody();

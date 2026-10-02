@@ -250,21 +250,21 @@ namespace VfxEditor.AvfxFormat {
             DrawParameters();
             DrawData();
 
-            using( var tab = ImRaii.TabItem( "Animation" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Animation" ) ) ) {
                 if( tab ) AnimationSplitDisplay.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Create Particles" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Create Particles" ) ) ) {
                 if( tab ) ParticleSplit.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Create Emitters" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Create Emitters" ) ) ) {
                 if( tab ) EmitterSplit.Draw();
             }
         }
 
         private void DrawParameters() {
-            using var tabItem = ImRaii.TabItem( "Parameters" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Parameters" );
@@ -284,7 +284,7 @@ namespace VfxEditor.AvfxFormat {
         private void DrawData() {
             if( Data == null ) return;
 
-            using var tabItem = ImRaii.TabItem( "Data" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Data" ) );
             if( !tabItem ) return;
 
             Data.Draw();

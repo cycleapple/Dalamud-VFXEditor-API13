@@ -14,7 +14,7 @@ namespace VfxEditor.Select.Tabs.Cutscenes {
         public override void LoadSelection( CutsceneRow item, out ParsedPaths loaded ) => ParsedPaths.ReadFile( item.Path, SelectDataUtils.AvfxRegex, out loaded );
 
         protected override void DrawSelected() {
-            ImGui.Text( "CUTB:" );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( "CUTB:" ) );
             ImGui.SameLine();
             SelectUiUtils.DisplayPath( Selected.Path );
 

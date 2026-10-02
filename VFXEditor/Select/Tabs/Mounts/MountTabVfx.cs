@@ -40,7 +40,7 @@ namespace VfxEditor.Select.Tabs.Mounts {
 
         protected override void DrawSelected() {
             ImGui.TextDisabled( "Variant: " + Selected.Variant );
-            ImGui.Text( "IMC: " );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( "IMC: " ) );
             ImGui.SameLine();
             SelectUiUtils.DisplayPath( Loaded.ImcPath );
 

@@ -74,7 +74,7 @@ namespace VfxEditor.AvfxFormat {
             ImGui.SetNextItemWidth( inputSize );
 
             var selectedString = ( Selected != null ) ? Selected.GetText() : DefaultText;
-            using var combo = ImRaii.Combo( "##Select", selectedString );
+            using var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( "##Select" ), selectedString );
             if( !combo ) return;
 
             for( var idx = 0; idx < Group.Items.Count; idx++ ) {

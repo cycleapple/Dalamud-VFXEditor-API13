@@ -10,7 +10,7 @@ namespace VfxEditor.FileBrowser {
 
             ImGui.SetNextItemWidth( ImGui.GetContentRegionAvail().X - 100 - ( Filters.Filters.Count == 0 ? 0 : 200 ) );
             using( var disabled = ImRaii.Disabled( SelectOnly ) ) {
-                ImGui.InputText( "##FileName", ref FileNameInput, 255, SelectOnly ? ImGuiInputTextFlags.ReadOnly : ImGuiInputTextFlags.None );
+                ImGui.InputText( VfxEditor.Localization.ZhTw.Label( "##FileName" ), ref FileNameInput, 255, SelectOnly ? ImGuiInputTextFlags.ReadOnly : ImGuiInputTextFlags.None );
             }
 
             Filters.Draw();
@@ -19,7 +19,7 @@ namespace VfxEditor.FileBrowser {
 
             using( var disabled = ImRaii.Disabled( string.IsNullOrEmpty( FileNameInput ) || ( SelectOnly && Selected == null ) ) ) {
                 ImGui.SameLine();
-                if( ImGui.Button( "OK" ) ) {
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "OK" ) ) ) {
                     IsOk = true;
                     res = true;
                 }

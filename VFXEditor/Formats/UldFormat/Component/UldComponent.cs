@@ -164,7 +164,7 @@ namespace VfxEditor.UldFormat.Component {
         }
 
         private void DrawParameters() {
-            using var tabItem = ImRaii.TabItem( "Parameters" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Parameters" );
@@ -178,7 +178,7 @@ namespace VfxEditor.UldFormat.Component {
         private void DrawData() {
             if( Data == null ) return;
 
-            using var tabItem = ImRaii.TabItem( "Data" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Data" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Data" );
@@ -188,7 +188,7 @@ namespace VfxEditor.UldFormat.Component {
         }
 
         private void DrawNodes() {
-            using var tabItem = ImRaii.TabItem( "Nodes" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Nodes" ) );
             if( !tabItem ) return;
 
             NodeSplitView.Draw();

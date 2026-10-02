@@ -53,7 +53,7 @@ namespace VfxEditor.AvfxFormat {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            if( ImGui.BeginTabItem( "Parameters" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) ) ) {
                 Main.Draw();
                 ImGui.EndTabItem();
             }

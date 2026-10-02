@@ -127,13 +127,13 @@ namespace VfxEditor.AvfxFormat {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Parameters" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) ) ) {
                 if( tab ) Parameters.Draw();
             }
 
             DrawData();
 
-            using( var tab = ImRaii.TabItem( "Properties" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Properties" ) ) ) {
                 if( tab ) PropSplitDisplay.Draw();
             }
         }
@@ -141,7 +141,7 @@ namespace VfxEditor.AvfxFormat {
         private void DrawData() {
             if( Data == null ) return;
 
-            using var tabItem = ImRaii.TabItem( "Data" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Data" ) );
             if( !tabItem ) return;
 
             Data.Draw();

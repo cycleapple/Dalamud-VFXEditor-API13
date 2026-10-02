@@ -148,19 +148,19 @@ namespace VfxEditor.AvfxFormat {
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 5 );
 
             if( Type == CurveType.Angle ) {
-                if( ImGui.RadioButton( "Radians", !Plugin.Configuration.UseDegreesForAngles ) ) {
+                if( ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "Radians" ), !Plugin.Configuration.UseDegreesForAngles ) ) {
                     Plugin.Configuration.UseDegreesForAngles = false;
                     Plugin.Configuration.Save();
                 }
                 ImGui.SameLine();
-                if( ImGui.RadioButton( "Degrees", Plugin.Configuration.UseDegreesForAngles ) ) {
+                if( ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "Degrees" ), Plugin.Configuration.UseDegreesForAngles ) ) {
                     Plugin.Configuration.UseDegreesForAngles = true;
                     Plugin.Configuration.Save();
                 }
             }
 
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) {
-                if( ImGui.SmallButton( "Fit" ) ) fit = true;
+                if( ImGui.SmallButton( VfxEditor.Localization.ZhTw.Label( "Fit" ) ) ) fit = true;
 
                 ImGui.SameLine();
                 if( UiUtils.DisabledButton( "Copy", Keys.Count > 0, true ) ) Copy();
@@ -185,17 +185,17 @@ namespace VfxEditor.AvfxFormat {
 
                 ImGui.TextColored( color, "Ctrl+Left Click" );
                 ImGui.SameLine();
-                ImGui.Text( "to add a new point" );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "to add a new point" ) );
 
                 ImGui.TextColored( color, "Left Click" );
                 ImGui.SameLine();
-                ImGui.Text( "to selected a point" );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "to selected a point" ) );
 
-                ImGui.Text( "Hold" );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "Hold" ) );
                 ImGui.SameLine();
                 ImGui.TextColored( color, "Shift" );
                 ImGui.SameLine();
-                ImGui.Text( "to select multiple points" );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "to select multiple points" ) );
 
                 ImGui.EndTooltip();
             }

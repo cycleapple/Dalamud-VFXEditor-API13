@@ -15,7 +15,7 @@ namespace VfxEditor.Library.Node {
         public TextureRoot( List<LibraryProps> items ) : base( "Textures", items ) { }
 
         public override unsafe bool Draw( LibraryManager library, string searchInput ) {
-            ImGui.InputTextWithHint( "##Add", "vfx/action/some_texture.atex", ref AddPath, 256 );
+            ImGui.InputTextWithHint( "##Add", VfxEditor.Localization.ZhTw.Text( "vfx/action/some_texture.atex" ), ref AddPath, 256 );
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, new Vector2( 4, 4 ) ) )
             using( var font = ImRaii.PushFont( UiBuilder.IconFont ) ) {
                 ImGui.SameLine();
@@ -46,7 +46,7 @@ namespace VfxEditor.Library.Node {
 
             using var child = ImRaii.Child( "Child", ImGui.GetContentRegionAvail(), false );
 
-            if( Children.Count == 0 ) ImGui.TextDisabled( "No textures saved..." );
+            if( Children.Count == 0 ) ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "No textures saved..." ) );
             return base.Draw( library, searchInput );
         }
 

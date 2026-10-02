@@ -16,10 +16,10 @@ namespace VfxEditor.FileBrowser {
             using var table = ImRaii.Table( "Table", 4, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.Resizable | ImGuiTableFlags.BordersInnerV | ImGuiTableFlags.NoPadOuterX | ImGuiTableFlags.Hideable );
             style.Dispose();
 
-            ImGui.TableSetupColumn( "##SideBar", ImGuiTableColumnFlags.WidthFixed, 150 );
-            ImGui.TableSetupColumn( "##Files", ImGuiTableColumnFlags.WidthStretch );
-            ImGui.TableSetupColumn( "##Preview", ImGuiTableColumnFlags.WidthFixed, 300 );
-            ImGui.TableSetupColumn( "##PreviewClosed", ImGuiTableColumnFlags.WidthFixed | ImGuiTableColumnFlags.NoResize | ImGuiTableColumnFlags.DefaultHide, 15 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##SideBar" ), ImGuiTableColumnFlags.WidthFixed, 150 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Files" ), ImGuiTableColumnFlags.WidthStretch );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Preview" ), ImGuiTableColumnFlags.WidthFixed, 300 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##PreviewClosed" ), ImGuiTableColumnFlags.WidthFixed | ImGuiTableColumnFlags.NoResize | ImGuiTableColumnFlags.DefaultHide, 15 );
 
             ImGui.TableSetColumnEnabled( 2, EnablePreview && Plugin.Configuration.FileBrowserPreviewOpen );
             ImGui.TableSetColumnEnabled( 3, EnablePreview && !Plugin.Configuration.FileBrowserPreviewOpen );
@@ -53,10 +53,10 @@ namespace VfxEditor.FileBrowser {
 
             ImGui.TableSetupScrollFreeze( 0, 1 );
 
-            ImGui.TableSetupColumn( "  Name", ImGuiTableColumnFlags.WidthStretch, -1, 0 );
-            ImGui.TableSetupColumn( "Type", ImGuiTableColumnFlags.WidthFixed, 100, 1 );
-            ImGui.TableSetupColumn( "Size", ImGuiTableColumnFlags.WidthFixed, 75, 2 );
-            ImGui.TableSetupColumn( "Date  ", ImGuiTableColumnFlags.WidthFixed, -1, 3 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "  Name" ), ImGuiTableColumnFlags.WidthStretch, -1, 0 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "Type" ), ImGuiTableColumnFlags.WidthFixed, 100, 1 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "Size" ), ImGuiTableColumnFlags.WidthFixed, 75, 2 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "Date  " ), ImGuiTableColumnFlags.WidthFixed, -1, 3 );
 
             ImGui.TableNextRow( ImGuiTableRowFlags.Headers );
             for( var column = 0; column < 4; column++ ) {

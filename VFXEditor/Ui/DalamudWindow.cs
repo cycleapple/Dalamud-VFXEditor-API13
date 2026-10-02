@@ -8,7 +8,7 @@ namespace VfxEditor.Ui {
         private bool ExpandNextFrame = false;
 
         public DalamudWindow( string name, bool menuBar, Vector2 size, WindowSystem windowSystem, bool isMainWindow = false ) :
-            base( name, ( menuBar ? ImGuiWindowFlags.MenuBar : ImGuiWindowFlags.None ) | ImGuiWindowFlags.NoDocking ) {
+            base( VfxEditor.Localization.ZhTw.Label( name ), ( menuBar ? ImGuiWindowFlags.MenuBar : ImGuiWindowFlags.None ) | ImGuiWindowFlags.NoDocking ) {
 
             Size = size;
             SizeCondition = ImGuiCond.FirstUseEver;

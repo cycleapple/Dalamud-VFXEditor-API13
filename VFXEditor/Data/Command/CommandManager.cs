@@ -28,8 +28,8 @@ namespace VfxEditor {
         public static void Draw() {
             if( Current == null ) {
                 using var disabled = ImRaii.Disabled();
-                ImGui.MenuItem( "Undo" );
-                ImGui.MenuItem( "Redo" );
+                ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Undo" ) );
+                ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Redo" ) );
                 return;
             }
 
@@ -82,11 +82,11 @@ namespace VfxEditor {
 
         protected unsafe void DrawMenu() {
             using( var dimUndo = ImRaii.PushColor( ImGuiCol.Text, *ImGui.GetStyleColorVec4( ImGuiCol.TextDisabled ), !CanUndo ) ) {
-                if( ImGui.MenuItem( "Undo" ) ) UndoInternal();
+                if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Undo" ) ) ) UndoInternal();
             }
 
             using var dimRedo = ImRaii.PushColor( ImGuiCol.Text, *ImGui.GetStyleColorVec4( ImGuiCol.TextDisabled ), !CanRedo );
-            if( ImGui.MenuItem( "Redo" ) ) RedoInternal();
+            if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Redo" ) ) ) RedoInternal();
         }
 
         public void Dispose() => Commands.Clear();

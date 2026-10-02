@@ -62,11 +62,11 @@ namespace VfxEditor.AvfxFormat {
             using var popup = ImRaii.Popup( "NewPopup" );
             if( !popup ) return;
 
-            if( ImGui.Selectable( "Default" ) ) file.Import( view.GetDefaultPath() );
+            if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "Default" ) ) ) file.Import( view.GetDefaultPath() );
 
-            if( ImGui.Selectable( "Import" ) ) file.ShowImportDialog();
+            if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "Import" ) ) ) file.ShowImportDialog();
 
-            if( selected != null && ImGui.Selectable( "Duplicate" ) ) {
+            if( selected != null && ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "Duplicate" ) ) ) {
                 using var ms = new MemoryStream();
                 using var writer = new BinaryWriter( ms );
                 using var reader = new BinaryReader( ms );

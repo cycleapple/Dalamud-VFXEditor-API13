@@ -41,7 +41,7 @@ namespace VfxEditor.AvfxFormat.Dialogs {
             using var _ = ImRaii.PushId( HeaderText );
 
             var exportAll = Selected.Count == Group.Items.Count && Selected.Count > 0;
-            if( ImGui.Checkbox( "##All", ref exportAll ) ) {
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "##All" ), ref exportAll ) ) {
                 Selected.Clear();
                 if( exportAll ) {
                     foreach( var item in Group.Items ) Selected.Add( item );

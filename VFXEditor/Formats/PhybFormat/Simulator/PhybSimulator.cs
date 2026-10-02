@@ -150,39 +150,39 @@ namespace VfxEditor.PhybFormat.Simulator {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Parameters" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) ) ) {
                 if( tab ) Params.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Collision Objects" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Collision Objects" ) ) ) {
                 if( tab ) CollisionSplitView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Collision Connectors" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Collision Connectors" ) ) ) {
                 if( tab ) CollisionConnectorSplitView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Chains" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Chains" ) ) ) {
                 if( tab ) ChainDropdown.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Connectors" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Connectors" ) ) ) {
                 if( tab ) ConnectorSplitView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Attracts" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Attracts" ) ) ) {
                 if( tab ) AttractSplitView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Pins" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Pins" ) ) ) {
                 if( tab ) PinSplitView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Springs" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Springs" ) ) ) {
                 if( tab ) SpringSplitView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Post Alignments" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Post Alignments" ) ) ) {
                 if( tab ) PostAlignmentSplitView.Draw();
             }
         }

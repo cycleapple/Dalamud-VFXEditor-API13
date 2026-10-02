@@ -158,7 +158,7 @@ namespace VfxEditor.TmbFormat {
             using( var padding = ImRaii.PushStyle( ImGuiStyleVar.FramePadding, new Vector2( 6, 2 ) ) )
             using( var font = ImRaii.PushFont( UiBuilder.MonoFont ) ) {
                 var imguiStyle = ImGui.GetStyle();
-                var width = ImGui.CalcTextSize( text ).X + imguiStyle.FramePadding.X * 2 + 6;
+                var width = ImGui.CalcTextSize( VfxEditor.Localization.ZhTw.Text( text ) ).X + imguiStyle.FramePadding.X * 2 + 6;
 
                 if( first ) {
                     currentX += width;
@@ -175,7 +175,7 @@ namespace VfxEditor.TmbFormat {
                 }
 
                 using var _ = ImRaii.PushColor( ImGuiCol.Button, color );
-                if( ImGui.Button( text ) ) ImGui.OpenPopup( "LuaPopup" );
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( text ) ) ) ImGui.OpenPopup( "LuaPopup" );
             }
 
             using var popup = ImRaii.Popup( "LuaPopup" );
@@ -209,12 +209,12 @@ namespace VfxEditor.TmbFormat {
 
             var update = false;
 
-            if( ImGui.InputInt( "Pool", ref pool ) ) {
+            if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Pool" ), ref pool ) ) {
                 if( pool < 0 ) pool = 0;
                 if( pool > 3 ) pool = 3;
                 update = true;
             }
-            if( ImGui.InputInt( "Index", ref value ) ) {
+            if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Index" ), ref value ) ) {
                 update = true;
             }
 

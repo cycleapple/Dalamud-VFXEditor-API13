@@ -64,7 +64,7 @@ namespace VfxEditor.UldFormat.Timeline {
         }
 
         private static void DrawFrames( string name, CommandSplitView<UldFrame> view ) {
-            using var tabItem = ImRaii.TabItem( name );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( name ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( name );

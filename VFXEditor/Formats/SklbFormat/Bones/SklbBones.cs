@@ -139,24 +139,24 @@ namespace VfxEditor.SklbFormat.Bones {
             var searchSet = GetSearchSet();
 
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) {
-                if( ImGui.Button( "Export" ) ) ImGui.OpenPopup( "ExportPopup" );
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Export" ) ) ) ImGui.OpenPopup( "ExportPopup" );
 
                 using( var popup = ImRaii.Popup( "ExportPopup" ) ) {
                     if( popup ) {
-                        if( ImGui.Selectable( "GLTF" ) ) ExportGltf();
-                        if( ImGui.Selectable( "HKX" ) ) ExportHavok();
+                        if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "GLTF" ) ) ) ExportGltf();
+                        if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "HKX" ) ) ) ExportHavok();
                     }
                 }
 
                 ImGui.SameLine();
-                if( ImGui.Button( "Replace" ) ) ImportDialog();
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Replace" ) ) ) ImportDialog();
 
                 ImGui.SameLine();
                 UiUtils.WikiButton( "https://github.com/0ceal0t/Dalamud-VFXEditor/wiki/Using-Blender-to-Edit-Skeletons-and-Animations" );
             }
 
             ImGui.SameLine();
-            if( ImGui.Checkbox( "Show Bone Names", ref Plugin.Configuration.ShowBoneNames ) ) Plugin.Configuration.Save();
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Show Bone Names" ), ref Plugin.Configuration.ShowBoneNames ) ) Plugin.Configuration.Save();
 
             ImGui.SameLine();
             ImGui.SetNextItemWidth( 200f );
@@ -194,7 +194,7 @@ namespace VfxEditor.SklbFormat.Bones {
 
                     // Search
                     ImGui.SameLine();
-                    ImGui.InputTextWithHint( "##Search", "Search", ref SearchText, 255 );
+                    ImGui.InputTextWithHint( "##Search", VfxEditor.Localization.ZhTw.Text( "Search" ), ref SearchText, 255 );
                 }
 
                 using var left = ImRaii.Child( "Left" );
@@ -247,10 +247,10 @@ namespace VfxEditor.SklbFormat.Bones {
         }
 
         private void DrawParentCombo( SklbBone bone ) {
-            using var combo = ImRaii.Combo( "Parent", bone.Parent == null ? "[NONE]" : bone.Parent.Name.Value );
+            using var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( "Parent" ), bone.Parent == null ? "[NONE]" : bone.Parent.Name.Value );
             if( !combo ) return;
 
-            if( ImGui.Selectable( "[NONE]", bone.Parent == null ) ) {
+            if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "[NONE]" ), bone.Parent == null ) ) {
                 CommandManager.Add( new SklbBoneParentCommand( bone, null ) );
             }
 

@@ -84,9 +84,9 @@ namespace VfxEditor.Ui.Export {
 
         protected override void OnDraw() {
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 2 );
-            if( ImGui.BeginCombo( "##Group", Selected == null ? "Default Mod" : Selected.GetName() ) ) {
+            if( ImGui.BeginCombo( VfxEditor.Localization.ZhTw.Label( "##Group" ), Selected == null ? "Default Mod" : Selected.GetName() ) ) {
                 using( var color = ImRaii.PushColor( ImGuiCol.Text, ImGui.GetColorU32( ImGuiCol.TextDisabled ) ) ) {
-                    if( ImGui.Selectable( "Default Mod" ) ) Selected = null;
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "Default Mod" ) ) ) Selected = null;
                 }
 
                 foreach( var (group, idx) in Groups.WithIndex() ) {

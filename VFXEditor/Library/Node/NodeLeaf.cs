@@ -37,10 +37,10 @@ namespace VfxEditor.Library.Node {
 
         protected override void DrawEditing() {
             var preX = ImGui.GetCursorPosX();
-            ImGui.InputText( "Name", ref Name, 255 );
+            ImGui.InputText( VfxEditor.Localization.ZhTw.Label( "Name" ), ref Name, 255 );
             var w = ImGui.GetCursorPosX() - preX;
-            ImGui.ColorEdit4( "Color", ref Color, ImGuiColorEditFlags.DisplayHex | ImGuiColorEditFlags.AlphaPreviewHalf | ImGuiColorEditFlags.AlphaBar );
-            ImGui.InputTextMultiline( "Description", ref Description, 1000, new Vector2( w, 100 ) );
+            ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Color" ), ref Color, ImGuiColorEditFlags.DisplayHex | ImGuiColorEditFlags.AlphaPreviewHalf | ImGuiColorEditFlags.AlphaBar );
+            ImGui.InputTextMultiline( VfxEditor.Localization.ZhTw.Label( "Description" ), ref Description, 1000, new Vector2( w, 100 ) );
         }
 
         protected override void DrawImport() {

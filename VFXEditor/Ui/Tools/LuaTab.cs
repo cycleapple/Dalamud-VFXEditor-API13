@@ -60,7 +60,7 @@ namespace VfxEditor.Ui.Tools {
         }
 
         private void DrawCombo( string objectName ) {
-            using var combo = ImRaii.Combo( "##Combo", objectName );
+            using var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( "##Combo" ), objectName );
             if( !combo ) return;
 
             foreach( var item in Dalamud.Objects ) {
@@ -92,10 +92,10 @@ namespace VfxEditor.Ui.Tools {
             using var table = ImRaii.Table( "Table", 4, ImGuiTableFlags.RowBg );
             if( !table ) return;
 
-            ImGui.TableSetupColumn( "Index", ImGuiTableColumnFlags.WidthFixed, 60 );
-            ImGui.TableSetupColumn( "Name", ImGuiTableColumnFlags.WidthStretch );
-            ImGui.TableSetupColumn( "Current Value", ImGuiTableColumnFlags.WidthStretch );
-            ImGui.TableSetupColumn( "Hex", ImGuiTableColumnFlags.WidthStretch );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "Index" ), ImGuiTableColumnFlags.WidthFixed, 60 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "Name" ), ImGuiTableColumnFlags.WidthStretch );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "Current Value" ), ImGuiTableColumnFlags.WidthStretch );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "Hex" ), ImGuiTableColumnFlags.WidthStretch );
             ImGui.TableHeadersRow();
 
             for( var i = 0; i < pool.Size; i++ ) {

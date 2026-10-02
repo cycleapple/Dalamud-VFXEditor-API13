@@ -43,7 +43,7 @@ namespace VfxEditor.SklbFormat.Mapping {
         }
 
         public void Draw() {
-            if( ImGui.Checkbox( "Display Raw Indexes", ref Plugin.Configuration.SklbMappingIndexDisplay ) ) Plugin.Configuration.Save();
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Display Raw Indexes" ), ref Plugin.Configuration.SklbMappingIndexDisplay ) ) Plugin.Configuration.Save();
 
             if( Plugin.Configuration.SklbMappingIndexDisplay ) {
                 BoneA.Draw();

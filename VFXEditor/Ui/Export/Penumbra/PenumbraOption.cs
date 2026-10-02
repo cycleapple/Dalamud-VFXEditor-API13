@@ -23,13 +23,13 @@ namespace VfxEditor.Ui.Export.Penumbra {
         }
 
         public void Draw() {
-            ImGui.InputTextWithHint( "##Name", "Name", ref Name, 255 );
+            ImGui.InputTextWithHint( "##Name", VfxEditor.Localization.ZhTw.Text( "Name" ), ref Name, 255 );
 
-            ImGui.Checkbox( "Default", ref Default );
+            ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Default" ), ref Default );
 
             ImGui.SameLine();
             ImGui.SetNextItemWidth( 30 );
-            ImGui.InputInt( "Priority", ref Priority, 0 );
+            ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Priority" ), ref Priority, 0 );
 
             ImGui.Separator();
 

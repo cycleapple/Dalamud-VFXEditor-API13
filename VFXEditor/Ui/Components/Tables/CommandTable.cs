@@ -48,15 +48,15 @@ namespace VfxEditor.Ui.Components.Tables {
             // ===== HEADER =====
 
             if( AllowNewDelete ) {
-                ImGui.TableSetupColumn( "##Controls", ImGuiTableColumnFlags.None, -1 );
+                ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Controls" ), ImGuiTableColumnFlags.None, -1 );
             }
 
             if( ShowRow ) {
-                ImGui.TableSetupColumn( "##Row", ImGuiTableColumnFlags.None, -1 );
+                ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Row" ), ImGuiTableColumnFlags.None, -1 );
             }
 
             foreach( var (name, flags, size) in Columns ) {
-                ImGui.TableSetupColumn( name, flags | ImGuiTableColumnFlags.NoResize, size );
+                ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( name ), flags | ImGuiTableColumnFlags.NoResize, size );
             }
 
             ImGui.TableHeadersRow();

@@ -117,15 +117,15 @@ namespace VfxEditor.Select.Tabs.Character {
             using var tabBar = ImRaii.TabBar( "Tabs" );
             if( !tabBar ) return;
 
-            if( ImGui.BeginTabItem( "General" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "General" ) ) ) {
                 Dialog.DrawPaths( Loaded.General, Selected.Name, SelectResultType.GameCharacter );
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "Poses" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Poses" ) ) ) {
                 Dialog.DrawPaths( Loaded.Poses, Selected.Name, SelectResultType.GameCharacter );
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "Ground Sit" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Ground Sit" ) ) ) {
                 Dialog.DrawPaths( new Dictionary<string, string>() {
                     { "Ground Start", Loaded.GroundStart },
                     { "Ground Sit Default", Loaded.Jmn },
@@ -136,7 +136,7 @@ namespace VfxEditor.Select.Tabs.Character {
 
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "Chair Sit" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Chair Sit" ) ) ) {
                 Dialog.DrawPaths( new Dictionary<string, string>() {
                     { "Chair Start", Loaded.ChairStart },
                     { "Chair Sit Default", Loaded.Sit },
@@ -147,13 +147,13 @@ namespace VfxEditor.Select.Tabs.Character {
 
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "Fashion Accessory" ) )
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Fashion Accessory" ) ) )
             {
                 Dialog.DrawPaths( Loaded.OrnamentPoses, Selected.Name, SelectResultType.GameCharacter );
 
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "Faces" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Faces" ) ) ) {
                 Dialog.DrawPaths( Loaded.FacePaths, Selected.Name, SelectResultType.GameCharacter );
                 ImGui.EndTabItem();
             }

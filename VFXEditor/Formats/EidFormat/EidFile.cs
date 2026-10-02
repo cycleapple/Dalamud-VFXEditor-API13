@@ -66,11 +66,11 @@ namespace VfxEditor.EidFormat {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Bind Points" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Bind Points" ) ) ) {
                 if( tab ) Dropdown.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "3D View" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "3D View" ) ) ) {
                 if( tab ) Skeleton.Draw();
             }
         }

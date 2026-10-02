@@ -170,7 +170,7 @@ namespace VfxEditor.AvfxFormat {
 
                 if( idx == 0 ) {
                     ImGui.SameLine();
-                    ImGui.Text( Name );
+                    ImGui.Text( VfxEditor.Localization.ZhTw.Text( Name ) );
                 }
                 else {
                     // Remove button
@@ -185,7 +185,7 @@ namespace VfxEditor.AvfxFormat {
 
 
             if( Selected.Count == 0 ) {
-                ImGui.Text( Name );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( Name ) );
                 ImGui.TextColored( UiUtils.RED_COLOR, "WARNING: Add an item!" );
             }
 
@@ -201,7 +201,7 @@ namespace VfxEditor.AvfxFormat {
             using var combo = ImRaii.Combo( $"##Combo", Selected[idx] == null ? "[NONE]" : Selected[idx].GetText() );
             if( !combo ) return;
 
-            if( ImGui.Selectable( "[NONE]", Selected[idx] == null ) ) CommandManager.Add( new AvfxNodeSelectListCommand<T>( this, null, idx ) ); // "None" selector
+            if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "[NONE]" ), Selected[idx] == null ) ) CommandManager.Add( new AvfxNodeSelectListCommand<T>( this, null, idx ) ); // "None" selector
             foreach( var item in Group.Items ) {
                 var cycle = Node.IsChildOf( item );
                 using var disabled = ImRaii.Disabled( cycle );

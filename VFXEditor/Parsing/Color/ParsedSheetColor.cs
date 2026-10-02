@@ -23,7 +23,7 @@ namespace VfxEditor.Parsing.Color {
         protected override void DrawBody() {
             DrawCombo();
             ImGui.SameLine();
-            ImGui.Text( Name );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( Name ) );
         }
 
         private void DrawCombo() {

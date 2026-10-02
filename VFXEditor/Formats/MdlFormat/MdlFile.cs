@@ -252,28 +252,28 @@ namespace VfxEditor.Formats.MdlFormat {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Parameters" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) ) ) {
                 if( tab ) DrawParameters();
             }
 
-            using( var tab = ImRaii.TabItem( "Bind Points" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Bind Points" ) ) ) {
                 if( tab ) EidView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Levels of Detail" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Levels of Detail" ) ) ) {
                 if( tab ) LodView.Draw();
             }
 
             if( ExtraLodEnabled ) {
-                using var tab = ImRaii.TabItem( "Extra LoD" );
+                using var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Extra LoD" ) );
                 if( tab ) ExtraLodView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Bone Tables" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Bone Tables" ) ) ) {
                 if( tab ) BoneTables.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Bounding Boxes" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Bounding Boxes" ) ) ) {
                 if( tab ) DrawBoxes();
             }
         }
@@ -304,23 +304,23 @@ namespace VfxEditor.Formats.MdlFormat {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Bones" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Bones" ) ) ) {
                 if( tab ) BoneBoxView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Unknown" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Unknown" ) ) ) {
                 if( tab ) UnknownBoundingBox.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Model" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Model" ) ) ) {
                 if( tab ) ModelBoundingBox.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Vertical Fog" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Vertical Fog" ) ) ) {
                 if( tab ) VerticalFogBoundingBox.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Unknown Boxes" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Unknown Boxes" ) ) ) {
                 if( tab ) UnknownBoxView.Draw();
             }
         }

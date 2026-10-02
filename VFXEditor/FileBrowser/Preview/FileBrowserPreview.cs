@@ -47,7 +47,7 @@ namespace VfxEditor.FileBrowser.Preview {
 
             if( Texture == null ) {
                 var text = "No File to Preview";
-                var textWidth = UiUtils.GetPaddedIconSize( FontAwesomeIcon.InfoCircle ) + ImGui.CalcTextSize( text ).X;
+                var textWidth = UiUtils.GetPaddedIconSize( FontAwesomeIcon.InfoCircle ) + ImGui.CalcTextSize( VfxEditor.Localization.ZhTw.Text( text ) ).X;
 
                 if( size.X < textWidth ) return;
 
@@ -58,7 +58,7 @@ namespace VfxEditor.FileBrowser.Preview {
 
                 ImGui.SameLine();
                 ImGui.SetCursorPos( ImGui.GetCursorPos() + new Vector2( 0, offset ) );
-                ImGui.TextDisabled( text );
+                ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( text ) );
 
                 return;
             }

@@ -191,7 +191,7 @@ namespace VfxEditor.TmbFormat {
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, new Vector2( 4, 4 ) ) ) {
                 ImGui.SameLine();
                 ImGui.SetNextItemWidth( 200f );
-                resetScroll = ImGui.InputTextWithHint( "##Search", "Search", ref NewSearchInput, 255 );
+                resetScroll = ImGui.InputTextWithHint( "##Search", VfxEditor.Localization.ZhTw.Text( "Search" ), ref NewSearchInput, 255 );
             }
 
             ImGui.Separator();

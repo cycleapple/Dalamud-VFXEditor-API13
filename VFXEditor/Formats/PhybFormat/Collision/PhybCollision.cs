@@ -94,23 +94,23 @@ namespace VfxEditor.PhybFormat.Collision {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Capsules" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Capsules" ) ) ) {
                 if( tab ) CapsuleSplitView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Ellipsoids" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Ellipsoids" ) ) ) {
                 if( tab ) EllipsoidSplitView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Normal Planes" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Normal Planes" ) ) ) {
                 if( tab ) NormalPlaneSplitView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Three-Point Planes" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Three-Point Planes" ) ) ) {
                 if( tab ) ThreePointPlaneSplitView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Spheres" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Spheres" ) ) ) {
                 if( tab ) SphereDropdown.Draw();
             }
         }

@@ -48,9 +48,9 @@ namespace VfxEditor.Select {
         }
 
         public static void NpcThankYou() {
-            ImGui.TextDisabled( "Npc file list provided by ResLogger" );
+            ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "Npc file list provided by ResLogger" ) );
             ImGui.SameLine();
-            if( ImGui.SmallButton( "Github##ResLogger" ) ) UiUtils.OpenUrl( "https://github.com/lmcintyre/ResLogger2" );
+            if( ImGui.SmallButton( VfxEditor.Localization.ZhTw.Label( "Github##ResLogger" ) ) ) UiUtils.OpenUrl( "https://github.com/lmcintyre/ResLogger2" );
         }
     }
 }

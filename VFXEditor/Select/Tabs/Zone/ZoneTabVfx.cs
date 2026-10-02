@@ -11,7 +11,7 @@ namespace VfxEditor.Select.Tabs.Zone {
         // ===== DRAWING ======
 
         protected override void DrawSelected() {
-            ImGui.Text( "LGB: " );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( "LGB: " ) );
             ImGui.SameLine();
             SelectUiUtils.DisplayPath( Selected.LgbPath );
 

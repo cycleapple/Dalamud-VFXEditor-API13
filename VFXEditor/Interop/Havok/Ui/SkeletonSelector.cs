@@ -36,7 +36,7 @@ namespace VfxEditor.Interop.Havok.Ui {
             var checkSize = UiUtils.GetPaddedIconSize( FontAwesomeIcon.Sync );
             var inputSize = ImGui.GetContentRegionAvail().X - 400;
             ImGui.SetNextItemWidth( inputSize );
-            ImGui.InputText( "##SklbPath", ref SklbPreviewPath, 255 );
+            ImGui.InputText( VfxEditor.Localization.ZhTw.Label( "##SklbPath" ), ref SklbPreviewPath, 255 );
 
             var imguiStyle = ImGui.GetStyle();
             using var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing );

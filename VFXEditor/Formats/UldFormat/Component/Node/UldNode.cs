@@ -246,7 +246,7 @@ namespace VfxEditor.UldFormat.Component.Node {
             DrawRename();
             Id.Draw();
 
-            if( ImGui.Checkbox( "Is Component Node", ref IsComponentNode ) ) CommandManager.Add( new UldNodeDataCommand( this, true ) );
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Is Component Node" ), ref IsComponentNode ) ) CommandManager.Add( new UldNodeDataCommand( this, true ) );
 
             if( IsComponentNode ) {
                 ComponentTypeId.Draw();
@@ -256,7 +256,7 @@ namespace VfxEditor.UldFormat.Component.Node {
                     if( ImGui.Button( FontAwesomeIcon.Check.ToIconString() ) ) CommandManager.Add( new UldNodeDataCommand( this ) );
                 }
                 ImGui.SameLine();
-                ImGui.Text( "Component Type" );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "Component Type" ) );
             }
             else Type.Draw();
 
@@ -270,7 +270,7 @@ namespace VfxEditor.UldFormat.Component.Node {
         }
 
         private void DrawParameters() {
-            using var tabItem = ImRaii.TabItem( "Parameters" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Parameters" );
@@ -288,7 +288,7 @@ namespace VfxEditor.UldFormat.Component.Node {
         private void DrawData() {
             if( Data == null ) return;
 
-            using var tabItem = ImRaii.TabItem( "Data" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Data" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Data" );

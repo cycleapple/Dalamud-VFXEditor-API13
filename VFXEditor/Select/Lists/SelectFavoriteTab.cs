@@ -26,7 +26,7 @@ namespace VfxEditor.Select.Lists {
             using var style = ImRaii.PushStyle( ImGuiStyleVar.WindowPadding, DefaultWindowPadding );
             if( ImGui.BeginPopup( "FavoritePopup" ) ) {
                 var name = string.IsNullOrEmpty( item.Name ) ? item.DisplayString.Split( "]" )[^1] : item.Name;
-                if( ImGui.InputText( "##Rename", ref name, 128, ImGuiInputTextFlags.AutoSelectAll ) ) {
+                if( ImGui.InputText( VfxEditor.Localization.ZhTw.Label( "##Rename" ), ref name, 128, ImGuiInputTextFlags.AutoSelectAll ) ) {
                     item.Name = name;
                     Plugin.Configuration.Save();
                 }

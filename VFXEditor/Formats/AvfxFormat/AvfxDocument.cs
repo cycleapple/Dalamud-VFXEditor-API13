@@ -71,11 +71,11 @@ namespace VfxEditor.AvfxFormat {
             using var padding = ImRaii.PushStyle( ImGuiStyleVar.FramePadding, new Vector2( 4, 3 ) );
             using( var group = ImRaii.Group() ) {
                 if( VfxSpawn.IsActive ) {
-                    if( ImGui.Button( "Remove", new Vector2( 60, ImGui.GetFrameHeight() ) ) ) VfxSpawn.Clear();
+                    if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Remove" ), new Vector2( 60, ImGui.GetFrameHeight() ) ) ) VfxSpawn.Clear();
                 }
                 else {
                     using var style = ImRaii.PushStyle( ImGuiStyleVar.Alpha, ImGui.GetStyle().Alpha * 0.5f, SpawnDisabled );
-                    if( ImGui.Button( "Spawn", new Vector2( 60, ImGui.GetFrameHeight() ) ) && !SpawnDisabled ) ImGui.OpenPopup( "SpawnPopup" );
+                    if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Spawn" ), new Vector2( 60, ImGui.GetFrameHeight() ) ) && !SpawnDisabled ) ImGui.OpenPopup( "SpawnPopup" );
                 }
 
                 using( var _ = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, new Vector2( 2, 4 ) ) ) {
@@ -86,7 +86,7 @@ namespace VfxEditor.AvfxFormat {
                     if( ImGui.Button( FontAwesomeIcon.Cog.ToIconString(), new Vector2( 28, ImGui.GetFrameHeight() ) ) ) ImGui.OpenPopup( "SettingsPopup" );
                 }
 
-                if( ImGui.Button( "Library", new Vector2( 90, ImGui.GetFrameHeight() ) ) ) Plugin.LibraryManager.Show();
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Library" ), new Vector2( 90, ImGui.GetFrameHeight() ) ) ) Plugin.LibraryManager.Show();
             }
 
             var height = ImGui.GetItemRectSize().Y;
@@ -101,9 +101,9 @@ namespace VfxEditor.AvfxFormat {
             VfxSpawn.DrawPopup( SpawnPath, true );
 
             if( ImGui.BeginPopup( "SettingsPopup" ) ) {
-                if( ImGui.Checkbox( "Loop", ref Plugin.Configuration.VfxSpawnLoop ) ) Plugin.Configuration.Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Loop" ), ref Plugin.Configuration.VfxSpawnLoop ) ) Plugin.Configuration.Save();
                 ImGui.SetNextItemWidth( 150 );
-                if( ImGui.InputFloat( "Delay", ref Plugin.Configuration.VfxSpawnDelay ) ) Plugin.Configuration.Save();
+                if( ImGui.InputFloat( VfxEditor.Localization.ZhTw.Label( "Delay" ), ref Plugin.Configuration.VfxSpawnDelay ) ) Plugin.Configuration.Save();
                 ImGui.EndPopup();
             }
         }

@@ -72,7 +72,7 @@ namespace VfxEditor.AvfxFormat {
             }
 
             var value = Items[0];
-            if( ImGui.InputInt( Name, ref value ) ) {
+            if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( Name ), ref value ) ) {
                 CommandManager.Add( new AvfxIntListCommand( this, value ) );
             }
 

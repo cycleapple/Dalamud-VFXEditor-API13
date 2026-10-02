@@ -1,0 +1,54 @@
+(.png)
+...
+.atex
+.avfx
+.dds
+.gltf
+.ogg
+.png
+.tex
+.wav
+//
+Atomos
+Beta
+Bone Name
+CUTB:
+EffectorEZParamLink
+EffectorEZParamLinkLinear
+EffectorExpr
+Epsilon
+Eta
+GLTF
+Github
+HKX
+Havok
+IMC: 
+LGB: 
+Lua
+New Folder Name
+Penumbra
+Ptr
+SGB:
+SourceRotate
+SourceTranslate
+TMB
+TMB:
+TargetBendRoll
+TargetBendSTRoll
+TargetOrientationConstraint
+TargetPosConstraint
+TargetRotate
+TargetScale
+TargetTranslate
+TexTools
+UV 1
+UV 2
+UV 3
+UV 4
+XIVLauncher Discord
+[Penumbra]
+vfx/action/some_texture.atex
+w
+x
+y
+z

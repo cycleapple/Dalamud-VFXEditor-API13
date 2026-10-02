@@ -38,7 +38,7 @@ namespace VfxEditor.AvfxFormat {
                 return;
             }
 
-            if( !ImGui.CollapsingHeader( "Node Graph", ImGuiTreeNodeFlags.DefaultOpen ) ) return;
+            if( !ImGui.CollapsingHeader( VfxEditor.Localization.ZhTw.Label( "Node Graph" ), ImGuiTreeNodeFlags.DefaultOpen ) ) return;
 
             // now the fun (tm) begins
             var space = ImGui.GetContentRegionAvail();
@@ -143,9 +143,9 @@ namespace VfxEditor.AvfxFormat {
 
         private static string TrimText( string text ) {
             var allowedWidth = BoxSize.X - TextOffset.X - 25;
-            if( ImGui.CalcTextSize( text ).X <= allowedWidth ) return text;
+            if( ImGui.CalcTextSize( VfxEditor.Localization.ZhTw.Text( text ) ).X <= allowedWidth ) return text;
 
-            var ellipWidth = ImGui.CalcTextSize( "..." ).X;
+            var ellipWidth = ImGui.CalcTextSize( VfxEditor.Localization.ZhTw.Text( "..." ) ).X;
             for( var i = 0; i < text.Length; i++ ) {
                 var subText = text[0..^i];
                 if( ( ellipWidth + ImGui.CalcTextSize( subText ).X ) <= allowedWidth ) return subText + "...";

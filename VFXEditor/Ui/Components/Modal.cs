@@ -12,7 +12,7 @@ namespace VfxEditor.Ui.Components {
         protected readonly CommandManager Command;
 
         public Modal( string title, bool showCancel ) {
-            Title = title;
+            Title = VfxEditor.Localization.ZhTw.Label( title );
             ShowCancel = showCancel;
             Command = CommandManager.Current;
         }
@@ -30,7 +30,7 @@ namespace VfxEditor.Ui.Components {
                 DrawBody();
                 ImGui.Separator();
 
-                if( ImGui.Button( "OK", new Vector2( 120, 0 ) ) ) {
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "OK" ), new Vector2( 120, 0 ) ) ) {
                     ImGui.CloseCurrentPopup();
                     Remove();
                     OnOk();
@@ -39,7 +39,7 @@ namespace VfxEditor.Ui.Components {
                 if( ShowCancel ) {
                     ImGui.SameLine();
                     using var style = ImRaii.PushColor( ImGuiCol.Button, UiUtils.RED_COLOR );
-                    if( ImGui.Button( "Cancel", new Vector2( 120, 0 ) ) ) {
+                    if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Cancel" ), new Vector2( 120, 0 ) ) ) {
                         ImGui.CloseCurrentPopup();
                         Remove();
                         OnCancel();
@@ -68,7 +68,7 @@ namespace VfxEditor.Ui.Components {
 
         protected override void DrawBody() {
             ImGui.PushTextWrapPos( 240 );
-            ImGui.TextWrapped( Text );
+            ImGui.TextWrapped( VfxEditor.Localization.ZhTw.Text( Text ) );
             ImGui.PopTextWrapPos();
         }
 

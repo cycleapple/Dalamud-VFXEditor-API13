@@ -69,11 +69,11 @@ namespace VfxEditor.Formats.MdlFormat.Mesh.TerrainShadow {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Mesh" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Mesh" ) ) ) {
                 if( tab ) DrawPreview();
             }
 
-            using( var tab = ImRaii.TabItem( "Sub-Meshes" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Sub-Meshes" ) ) ) {
                 if( tab ) SubmeshView.Draw();
             }
         }

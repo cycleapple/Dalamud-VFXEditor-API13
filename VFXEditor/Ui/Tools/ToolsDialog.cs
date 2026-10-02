@@ -21,19 +21,19 @@ namespace VfxEditor.Ui.Tools {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            if( ImGui.BeginTabItem( "Resources" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Resources" ) ) ) {
                 ResourceTab.Draw();
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "Utilities" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Utilities" ) ) ) {
                 UtilitiesTab.Draw();
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "Loaded Files" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Loaded Files" ) ) ) {
                 LoadedTab.Draw();
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "Lua Variables" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Lua Variables" ) ) ) {
                 LuaTab.Draw();
                 ImGui.EndTabItem();
             }

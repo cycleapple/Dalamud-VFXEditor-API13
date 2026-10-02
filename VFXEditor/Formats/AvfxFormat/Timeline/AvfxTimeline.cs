@@ -104,17 +104,17 @@ namespace VfxEditor.AvfxFormat {
 
             DrawParameters();
 
-            using( var tab = ImRaii.TabItem( "Items" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Items" ) ) ) {
                 if( tab ) ItemSplit.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Clips" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Clips" ) ) ) {
                 if( tab ) ClipSplit.Draw();
             }
         }
 
         private void DrawParameters() {
-            using var tabItem = ImRaii.TabItem( "Parameters" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) );
             if( !tabItem ) return;
 
             using var child = ImRaii.Child( "Child" );

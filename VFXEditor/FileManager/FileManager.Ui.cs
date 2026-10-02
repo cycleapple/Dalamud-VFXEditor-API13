@@ -23,7 +23,7 @@ namespace VfxEditor.FileManager {
 #if BETA
                 $"[BETA] {Title}"
 #else
-                Title
+                VfxEditor.Localization.ZhTw.Text( Title )
 #endif
                 + ( string.IsNullOrEmpty( Plugin.CurrentWorkspaceName ) ? "" : $" [{Plugin.CurrentWorkspaceName}]" )
                 + $"###{Title}";
@@ -44,14 +44,14 @@ namespace VfxEditor.FileManager {
 
             Plugin.DrawFileMenu();
 
-            if( ImGui.BeginMenu( "Edit" ) ) {
+            if( ImGui.BeginMenu( VfxEditor.Localization.ZhTw.Label( "Edit" ) ) ) {
                 CommandManager.Draw();
                 CopyManager.Draw();
                 DrawEditMenuItems();
                 ImGui.EndMenu();
             }
 
-            if( !Plugin.Configuration.ShowTabBar && ImGui.MenuItem( "Documents" ) ) DocumentWindow.Show();
+            if( !Plugin.Configuration.ShowTabBar && ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Documents" ) ) ) DocumentWindow.Show();
 
             ImGui.Separator();
             Plugin.DrawManagersMenu( this );
@@ -129,7 +129,7 @@ namespace VfxEditor.FileManager {
 
             using var color = ImRaii.PushColor( ImGuiCol.Button, new Vector4( 0 ) );
             using var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, new Vector2( 1, 0 ) );
-            using var combo = ImRaii.Combo( "", "", ImGuiComboFlags.NoPreview );
+            using var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( "" ), "", ImGuiComboFlags.NoPreview );
             style.Pop();
             color.Pop();
             if( !combo ) return;

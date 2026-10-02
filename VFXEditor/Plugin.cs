@@ -100,7 +100,7 @@ namespace VfxEditor {
         public Plugin( IDalamudPluginInterface pluginInterface ) {
             pluginInterface.Create<Dalamud>();
 
-            Dalamud.CommandManager.AddHandler( CommandName, new CommandInfo( OnCommand ) { HelpMessage = "toggle ui" } );
+            Dalamud.CommandManager.AddHandler( CommandName, new CommandInfo( OnCommand ) { HelpMessage = "開啟或關閉特效編輯器" } );
 
             RootLocation = Dalamud.PluginInterface.AssemblyLocation.DirectoryName;
             OtterTex.NativeDll.Initialize( pluginInterface.AssemblyLocation.DirectoryName );

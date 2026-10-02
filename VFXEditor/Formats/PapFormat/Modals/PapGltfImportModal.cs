@@ -54,7 +54,7 @@ namespace VfxEditor.PapFormat {
         protected override void DrawBody() {
             if( UiUtils.IconButton( FontAwesomeIcon.InfoCircle, "Wiki" ) ) UiUtils.OpenUrl( "https://github.com/0ceal0t/Dalamud-VFXEditor/wiki/Using-Blender-to-Edit-Skeletons-and-Animations" );
 
-            using var nodes = ImRaii.TreeNode( "Nodes Being Imported" );
+            using var nodes = ImRaii.TreeNode( VfxEditor.Localization.ZhTw.Label( "Nodes Being Imported" ) );
             if( nodes ) {
                 using var child = ImRaii.Child( "Child", new( ImGui.GetContentRegionAvail().X, 300 ) );
                 using var _ = ImRaii.PushIndent();
@@ -64,7 +64,7 @@ namespace VfxEditor.PapFormat {
             }
 
             var text = AnimationNames.Count == 0 ? "[NONE]" : AnimationNames[AnimationIndex];
-            using( var combo = ImRaii.Combo( "Animation to Import", text ) ) {
+            using( var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( "Animation to Import" ), text ) ) {
                 if( combo ) {
                     for( var i = 0; i < AnimationNames.Count; i++ ) {
                         using var _ = ImRaii.PushId( i );
@@ -75,9 +75,9 @@ namespace VfxEditor.PapFormat {
                 }
             }
 
-            ImGui.Checkbox( "Compress Animation", ref Compress );
-            ImGui.Checkbox( "Skip Bones Unanimated in Original Motion", ref SkipOriginal );
-            ImGui.Checkbox( "Exclude Bones", ref Exclude );
+            ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Compress Animation" ), ref Compress );
+            ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Skip Bones Unanimated in Original Motion" ), ref SkipOriginal );
+            ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Exclude Bones" ), ref Exclude );
 
             if( Exclude ) {
                 using var _ = ImRaii.PushId( "Exclude" );
@@ -88,7 +88,7 @@ namespace VfxEditor.PapFormat {
 
         private void DrawExclude() {
             using( var spacing = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) {
-                if( ImGui.BeginCombo( "##List", SelectedExcludeList == null ? "[NONE]" : SelectedExcludeList.Name ) ) {
+                if( ImGui.BeginCombo( VfxEditor.Localization.ZhTw.Label( "##List" ), SelectedExcludeList == null ? "[NONE]" : SelectedExcludeList.Name ) ) {
                     using( var font = ImRaii.PushFont( UiBuilder.IconFont ) ) {
                         if( ImGui.Selectable( FontAwesomeIcon.Plus.ToIconString(), false, ImGuiSelectableFlags.SpanAllColumns ) ) {
                             var newList = new ExcludedBonesConfiguration();
@@ -97,12 +97,12 @@ namespace VfxEditor.PapFormat {
                         }
                     }
                     ImGui.SameLine();
-                    ImGui.Text( "New List" );
+                    ImGui.Text( VfxEditor.Localization.ZhTw.Text( "New List" ) );
 
                     ImGui.Separator();
 
                     using( var _ = ImRaii.PushColor( ImGuiCol.Text, ImGui.GetColorU32( ImGuiCol.TextDisabled ) ) ) {
-                        if( ImGui.Selectable( "[NONE]" ) ) SelectedExcludeList = null;
+                        if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "[NONE]" ) ) ) SelectedExcludeList = null;
                     }
 
                     foreach( var item in Plugin.Configuration.ExcludedBones ) {
@@ -126,7 +126,7 @@ namespace VfxEditor.PapFormat {
 
                     if( SelectedExcludeList != null ) { // Might be removed by previous
                         if( ImGui.BeginPopup( "Rename" ) ) {
-                            ImGui.InputText( "##Name", ref SelectedExcludeList.Name, 255 );
+                            ImGui.InputText( VfxEditor.Localization.ZhTw.Label( "##Name" ), ref SelectedExcludeList.Name, 255 );
                             ImGui.EndPopup();
                         }
                     }

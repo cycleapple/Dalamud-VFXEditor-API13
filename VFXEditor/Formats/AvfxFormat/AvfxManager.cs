@@ -22,20 +22,20 @@ namespace VfxEditor.AvfxFormat {
         protected override AvfxDocument GetWorkspaceDocument( WorkspaceMetaRenamed data, string localPath ) => new( this, NewWriteLocation, localPath, data );
 
         protected override void DrawEditMenuItems() {
-            if( ImGui.BeginMenu( "Templates" ) ) {
-                if( ImGui.MenuItem( "Blank" ) ) ActiveDocument?.OpenTemplate( "default_vfx.avfx" );
-                if( ImGui.MenuItem( "Weapon" ) ) ActiveDocument?.OpenTemplate( "default_weapon.avfx" );
+            if( ImGui.BeginMenu( VfxEditor.Localization.ZhTw.Label( "Templates" ) ) ) {
+                if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Blank" ) ) ) ActiveDocument?.OpenTemplate( "default_vfx.avfx" );
+                if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Weapon" ) ) ) ActiveDocument?.OpenTemplate( "default_weapon.avfx" );
                 ImGui.EndMenu();
             }
 
-            if( ImGui.BeginMenu( "Convert Textures" ) ) {
+            if( ImGui.BeginMenu( VfxEditor.Localization.ZhTw.Label( "Convert Textures" ) ) ) {
                 using var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing );
 
                 ImGui.SetNextItemWidth( 150 );
-                if( ImGui.InputText( "##Prefix", ref Plugin.Configuration.CustomPathPrefix, 255 ) ) Plugin.Configuration.Save();
+                if( ImGui.InputText( VfxEditor.Localization.ZhTw.Label( "##Prefix" ), ref Plugin.Configuration.CustomPathPrefix, 255 ) ) Plugin.Configuration.Save();
 
                 ImGui.SameLine();
-                if( ImGui.Button( "Apply" ) ) {
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Apply" ) ) ) {
                     foreach( var file in Documents.Where( x => x.File != null ).Select( x => x.File ) ) {
                         var commands = new List<ICommand>();
                         file.TextureView.Group.Items.ForEach( x => x.ConvertToCustom( commands ) );
@@ -46,7 +46,7 @@ namespace VfxEditor.AvfxFormat {
             }
 
             using var disabled = ImRaii.Disabled( File == null );
-            if( ImGui.MenuItem( "Clean Up" ) ) File?.Cleanup();
+            if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Clean Up" ) ) ) File?.Cleanup();
         }
 
         public void Import( string path ) => ActiveDocument.Import( path );

@@ -109,7 +109,7 @@ namespace VfxEditor.Formats.SkpFormat {
         private void DrawAnimation() {
             if( !Activated.HasFlag( SkpFlags.Animation ) ) return;
 
-            using var tabItem = ImRaii.TabItem( "Animation" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Animation" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Animation" );
@@ -120,7 +120,7 @@ namespace VfxEditor.Formats.SkpFormat {
         private void DrawLookAt() {
             if( !Activated.HasFlag( SkpFlags.Look_At ) ) return;
 
-            using var tabItem = ImRaii.TabItem( "Look At" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Look At" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Look At" );
@@ -131,7 +131,7 @@ namespace VfxEditor.Formats.SkpFormat {
         private void DrawSlope() {
             if( !NewVersion || !Activated.HasFlag( SkpFlags.Slope ) ) return;
 
-            using var tabItem = ImRaii.TabItem( "Slope" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Slope" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Slope" );

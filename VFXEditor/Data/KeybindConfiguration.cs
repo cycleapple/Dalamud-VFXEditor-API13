@@ -41,7 +41,7 @@ namespace VfxEditor {
             var inputPreview = unassigned ? "[NONE]" : $"{Key.GetFancyName()}";
             ImGui.SetNextItemWidth( 100f );
             ImGui.SameLine();
-            ImGui.InputText( "##Input", ref inputPreview, 255, ImGuiInputTextFlags.ReadOnly );
+            ImGui.InputText( VfxEditor.Localization.ZhTw.Label( "##Input" ), ref inputPreview, 255, ImGuiInputTextFlags.ReadOnly );
             if( ImGui.IsItemActive() ) {
                 foreach( var key in Dalamud.KeyState.GetValidVirtualKeys() ) {
                     if( CheckState( key ) ) {
@@ -67,8 +67,8 @@ namespace VfxEditor {
             ImGui.SameLine();
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() - 1 );
 
-            if( unassigned ) ImGui.TextDisabled( name );
-            else ImGui.Text( name );
+            if( unassigned ) ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( name ) );
+            else ImGui.Text( VfxEditor.Localization.ZhTw.Text( name ) );
 
             return ret;
         }

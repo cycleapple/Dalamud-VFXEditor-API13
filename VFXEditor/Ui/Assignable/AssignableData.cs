@@ -29,7 +29,7 @@ namespace VfxEditor.Ui.Assignable {
 
                 using var disabled = ImRaii.Disabled( !Assigned );
                 ImGui.SameLine();
-                open = ImGui.CollapsingHeader( Name );
+                open = ImGui.CollapsingHeader( VfxEditor.Localization.ZhTw.Label( Name ) );
             }
 
             if( open && Assigned && Data != null ) {

@@ -14,7 +14,7 @@ namespace VfxEditor.Parsing.HalfFloat {
 
         protected override void DrawBody() {
             var prevValue = Value;
-            if( ImGui.ColorEdit3( Name, ref Value, ImGuiColorEditFlags.Float | ImGuiColorEditFlags.NoDragDrop ) ) {
+            if( ImGui.ColorEdit3( VfxEditor.Localization.ZhTw.Label( Name ), ref Value, ImGuiColorEditFlags.Float | ImGuiColorEditFlags.NoDragDrop ) ) {
                 if( !Editing ) {
                     Editing = true;
                     StateBeforeEdit = prevValue;

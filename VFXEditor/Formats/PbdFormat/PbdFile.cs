@@ -62,8 +62,8 @@ namespace VfxEditor.Formats.PbdFormat {
             if( !table ) return;
             style.Dispose();
 
-            ImGui.TableSetupColumn( "##Left", ImGuiTableColumnFlags.WidthFixed, 200 );
-            ImGui.TableSetupColumn( "##Right", ImGuiTableColumnFlags.WidthStretch );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Left" ), ImGuiTableColumnFlags.WidthFixed, 200 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Right" ), ImGuiTableColumnFlags.WidthStretch );
 
             ImGui.TableNextRow();
             ImGui.TableNextColumn();

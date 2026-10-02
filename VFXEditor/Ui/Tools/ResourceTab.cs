@@ -25,7 +25,7 @@ namespace VfxEditor.Ui.Tools {
 
             if( resourceHandler == null ) return;
 
-            ImGui.InputTextWithHint( "##ResourceManager/Search", "Search", ref Search, 256 );
+            ImGui.InputTextWithHint( "##ResourceManager/Search", VfxEditor.Localization.ZhTw.Text( "Search" ), ref Search, 256 );
 
             if( !ImGui.BeginChild( "##ResourceManager", -Vector2.One, true ) ) return;
 
@@ -82,18 +82,18 @@ namespace VfxEditor.Ui.Tools {
 
             if( itemList.Count == 0 && !string.IsNullOrEmpty( Search ) ) return; // all filtered out
 
-            if( !ImGui.TreeNodeEx( label ) ) return;
+            if( !ImGui.TreeNodeEx( VfxEditor.Localization.ZhTw.Label( label ) ) ) return;
 
             if( itemList.Count == 0 || !ImGui.BeginTable( $"##{label}_table", 4, ImGuiTableFlags.SizingFixedFit | ImGuiTableFlags.RowBg ) ) {
                 ImGui.TreePop();
                 return;
             }
 
-            ImGui.TableSetupColumn( "Hash", ImGuiTableColumnFlags.WidthFixed, 100 * ImGuiHelpers.GlobalScale );
-            ImGui.TableSetupColumn( "Ptr", ImGuiTableColumnFlags.WidthFixed, 100 * ImGuiHelpers.GlobalScale );
-            ImGui.TableSetupColumn( "Path", ImGuiTableColumnFlags.WidthFixed,
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "Hash" ), ImGuiTableColumnFlags.WidthFixed, 100 * ImGuiHelpers.GlobalScale );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "Ptr" ), ImGuiTableColumnFlags.WidthFixed, 100 * ImGuiHelpers.GlobalScale );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "Path" ), ImGuiTableColumnFlags.WidthFixed,
                 ( ImGui.GetWindowContentRegionMax().X - ImGui.GetWindowContentRegionMin().X ) - 300 * ImGuiHelpers.GlobalScale );
-            ImGui.TableSetupColumn( "Refs", ImGuiTableColumnFlags.WidthFixed, 30 * ImGuiHelpers.GlobalScale );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "Refs" ), ImGuiTableColumnFlags.WidthFixed, 30 * ImGuiHelpers.GlobalScale );
             ImGui.TableHeadersRow();
 
             foreach( var item in itemList ) {

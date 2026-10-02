@@ -113,11 +113,11 @@ namespace VfxEditor.TmbFormat {
 
             DrawParameters();
 
-            using( var tab = ImRaii.TabItem( "Actors" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Actors" ) ) ) {
                 if( tab ) ActorsDropdown.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "F-Curves" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "F-Curves" ) ) ) {
                 if( tab ) TmfcDropdown.Draw();
             }
 
@@ -125,7 +125,7 @@ namespace VfxEditor.TmbFormat {
         }
 
         private void DrawParameters() {
-            using var tabItem = ImRaii.TabItem( "Parameters" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) );
             if( !tabItem ) return;
 
             HeaderTmdh.Draw();
@@ -135,10 +135,10 @@ namespace VfxEditor.TmbFormat {
         private void DrawUnused() {
             if( UnusedTracks.Count == 0 ) return;
 
-            using var tabItem = ImRaii.TabItem( "Unused" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Unused" ) );
             if( !tabItem ) return;
 
-            ImGui.TextDisabled( "These are leftover tracks which are never actually triggered, and are only useful for research purposes" );
+            ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "These are leftover tracks which are never actually triggered, and are only useful for research purposes" ) );
             ImGui.Separator();
             UnusedTrackView.Draw();
         }
@@ -180,21 +180,21 @@ namespace VfxEditor.TmbFormat {
 
         public static void DetectableWarning() {
             ImGui.PushStyleColor( ImGuiCol.Text, UiUtils.RED_COLOR );
-            ImGui.TextWrapped( "Changes to this file are potentially detectable" );
+            ImGui.TextWrapped( VfxEditor.Localization.ZhTw.Text( "Changes to this file are potentially detectable" ) );
             ImGui.PopStyleColor();
             ImGui.SameLine();
-            if( ImGui.SmallButton( "Guide" ) ) UiUtils.OpenUrl( "https://github.com/0ceal0t/Dalamud-VFXEditor/wiki/Notes-on-TMFC" );
+            if( ImGui.SmallButton( VfxEditor.Localization.ZhTw.Label( "Guide" ) ) ) UiUtils.OpenUrl( "https://github.com/0ceal0t/Dalamud-VFXEditor/wiki/Notes-on-TMFC" );
         }
 
         public static void GenericWarning() {
             ImGui.PushStyleColor( ImGuiCol.Text, UiUtils.RED_COLOR );
-            ImGui.TextWrapped( "Please don't do anything stupid with this" );
+            ImGui.TextWrapped( VfxEditor.Localization.ZhTw.Text( "Please don't do anything stupid with this" ) );
             ImGui.PopStyleColor();
         }
 
         public static void DontAddRemoveWarning() {
             ImGui.PushStyleColor( ImGuiCol.Text, UiUtils.RED_COLOR );
-            ImGui.TextWrapped( "Don't add or remove entries in this file" );
+            ImGui.TextWrapped( VfxEditor.Localization.ZhTw.Text( "Don't add or remove entries in this file" ) );
             ImGui.PopStyleColor();
         }
     }

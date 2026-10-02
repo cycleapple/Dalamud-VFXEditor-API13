@@ -33,7 +33,7 @@ namespace VfxEditor.Parsing {
 
         protected override void DrawBody() {
             var value = ( int )Value;
-            if( InTable ? ImGui.InputInt( Name, ref value, 0, 0 ) : ImGui.InputInt( Name, ref value ) ) {
+            if( InTable ? ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( Name ), ref value, 0, 0 ) : ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( Name ), ref value ) ) {
                 Update( ( uint )value );
             }
         }

@@ -23,12 +23,12 @@ namespace VfxEditor.Select.Lists {
 
             using var _ = ImRaii.PushId( Name );
 
-            using var tabItem = ImRaii.TabItem( Name );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( Name ) );
             if( !tabItem ) return;
 
             DefaultWindowPadding = ImGui.GetStyle().WindowPadding;
 
-            ImGui.InputTextWithHint( "##Search", "Search", ref SearchInput, 255 );
+            ImGui.InputTextWithHint( "##Search", VfxEditor.Localization.ZhTw.Text( "Search" ), ref SearchInput, 255 );
 
             using var style = ImRaii.PushStyle( ImGuiStyleVar.CellPadding, new Vector2( 4, 3 ) );
             using var padding = ImRaii.PushStyle( ImGuiStyleVar.WindowPadding, new Vector2( 0, 0 ) );
@@ -37,9 +37,9 @@ namespace VfxEditor.Select.Lists {
             if( !table ) return;
             padding.Dispose();
 
-            ImGui.TableSetupColumn( "##Column1", ImGuiTableColumnFlags.WidthFixed, 25 );
-            ImGui.TableSetupColumn( "##Column2" );
-            ImGui.TableSetupColumn( "##Column3", ImGuiTableColumnFlags.WidthStretch );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Column1" ), ImGuiTableColumnFlags.WidthFixed, 25 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Column2" ) );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Column3" ), ImGuiTableColumnFlags.WidthStretch );
 
             var idx = 0;
             foreach( var item in Items ) {

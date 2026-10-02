@@ -29,16 +29,16 @@ namespace VfxEditor.Ui.NodeGraphViewer {
 
         public virtual void SetHeader( string header, bool pAutoSizing = true, bool pAdjustWidthOnly = false, bool pChooseGreaterWidth = false ) {
             Name = header;
-            Style.SetHandleTextSize( ImGui.CalcTextSize( Name ) );
+            Style.SetHandleTextSize( ImGui.CalcTextSize( VfxEditor.Localization.ZhTw.Text( Name ) ) );
             if( pAutoSizing ) AdjustSizeToHeader( pAdjustWidthOnly, pChooseGreaterWidth );
         }
 
         public virtual void AdjustSizeToHeader( bool pAdjustWidthOnly = false, bool pChooseGreaterWidth = false ) {
             if( pAdjustWidthOnly ) {
-                var tW = ( ImGui.CalcTextSize( Name ) + NodeInsidePadding * 2 ).X;
+                var tW = ( ImGui.CalcTextSize( VfxEditor.Localization.ZhTw.Text( Name ) ) + NodeInsidePadding * 2 ).X;
                 Style.SetSize( new( pChooseGreaterWidth ? ( tW > Style.GetSize().X ? tW : Style.GetSize().X ) : tW, Style.GetSize().Y ) );
             }
-            else Style.SetSize( ImGui.CalcTextSize( Name ) + NodeInsidePadding * 2 );
+            else Style.SetSize( ImGui.CalcTextSize( VfxEditor.Localization.ZhTw.Text( Name ) ) + NodeInsidePadding * 2 );
         }
 
         protected virtual void DrawHandle( Vector2 pNodeOSP, float canvasScaling, ImDrawListPtr pDrawList, bool selected ) {

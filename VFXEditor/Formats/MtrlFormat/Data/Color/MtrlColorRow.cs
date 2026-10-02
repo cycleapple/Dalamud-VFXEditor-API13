@@ -112,7 +112,7 @@ namespace VfxEditor.Formats.MtrlFormat.Data.Color {
         }
 
         protected override void DrawTabs() {
-            using( var tab = ImRaii.TabItem( "Color" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Color" ) ) ) {
                 if( tab ) {
                     Shader.Draw();
                     Diffuse.Draw();
@@ -121,7 +121,7 @@ namespace VfxEditor.Formats.MtrlFormat.Data.Color {
                 }
             }
 
-            using( var tab = ImRaii.TabItem( "Texture" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Texture" ) ) ) {
                 if( tab ) {
                     SheenRate.Draw();
                     SheenTint.Draw();
@@ -132,7 +132,7 @@ namespace VfxEditor.Formats.MtrlFormat.Data.Color {
                 }
             }
 
-            using( var tab = ImRaii.TabItem( "Tiling and Sphere" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Tiling and Sphere" ) ) ) {
                 if( tab ) {
                     Sphere.Draw();
                     SphereMask.Draw();
@@ -142,7 +142,7 @@ namespace VfxEditor.Formats.MtrlFormat.Data.Color {
                 }
             }
 
-            using( var tab = ImRaii.TabItem( "Unknown" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Unknown" ) ) ) {
                 if( tab ) {
                     Unknown1.Draw();
                     Unknown2.Draw();

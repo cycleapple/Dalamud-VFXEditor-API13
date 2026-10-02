@@ -21,16 +21,16 @@ namespace VfxEditor.FileManager {
             if( UiUtils.IconButton( FontAwesomeIcon.Plus, "New" ) ) Manager.AddDocument();
 
             ImGui.SameLine();
-            if( ImGui.Checkbox( "Show source column", ref Plugin.Configuration.DocumentPopoutShowSource ) ) Plugin.Configuration.Save();
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Show source column" ), ref Plugin.Configuration.DocumentPopoutShowSource ) ) Plugin.Configuration.Save();
 
             using var style = ImRaii.PushStyle( ImGuiStyleVar.WindowPadding, new Vector2( 0, 0 ) );
             using var child = ImRaii.Child( "Child", new Vector2( -1 ), true );
             using var table = ImRaii.Table( "##Table", ShowSourceColumn ? 3 : 2, ImGuiTableFlags.RowBg );
             style.Pop();
 
-            ImGui.TableSetupColumn( "##Column1", ImGuiTableColumnFlags.WidthStretch );
-            if( ShowSourceColumn ) ImGui.TableSetupColumn( "##Column2", ImGuiTableColumnFlags.WidthStretch );
-            ImGui.TableSetupColumn( "##Column3", ImGuiTableColumnFlags.WidthFixed, 25 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Column1" ), ImGuiTableColumnFlags.WidthStretch );
+            if( ShowSourceColumn ) ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Column2" ), ImGuiTableColumnFlags.WidthStretch );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Column3" ), ImGuiTableColumnFlags.WidthFixed, 25 );
 
             foreach( var (document, idx) in Manager.Documents.WithIndex() ) {
                 using var __ = ImRaii.PushId( idx );

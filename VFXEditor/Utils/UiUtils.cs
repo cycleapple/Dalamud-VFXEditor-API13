@@ -53,7 +53,7 @@ namespace VfxEditor.Utils {
 
         public static bool EnumComboBox<T>( string label, string text, T[] options, T currentValue, out T newValue ) {
             newValue = currentValue;
-            using var combo = ImRaii.Combo( label, text );
+            using var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( label ), text );
             if( !combo ) return false;
 
             foreach( var option in options ) {
@@ -69,7 +69,7 @@ namespace VfxEditor.Utils {
 
         public static bool DisabledButton( string label, bool enabled, bool small = false ) {
             using var style = ImRaii.PushStyle( ImGuiStyleVar.Alpha, ImGui.GetStyle().Alpha * 0.5f, !enabled );
-            return ( small ? ImGui.SmallButton( label ) : ImGui.Button( label ) ) && enabled;
+            return ( small ? ImGui.SmallButton( VfxEditor.Localization.ZhTw.Label( label ) ) : ImGui.Button( VfxEditor.Localization.ZhTw.Label( label ) ) ) && enabled;
         }
 
         public static bool DisabledTransparentButton( string label, Vector4 color, bool enabled ) {
@@ -86,7 +86,7 @@ namespace VfxEditor.Utils {
             style.Push( ImGuiCol.ButtonHovered, new Vector4( 0.710f, 0.710f, 0.710f, 0.2f ) );
             style.Push( ImGuiCol.ButtonActive, new Vector4( 0 ) );
             using var col = ImRaii.PushColor( ImGuiCol.Button, new Vector4( 0 ) );
-            return ImGui.Button( label, size );
+            return ImGui.Button( VfxEditor.Localization.ZhTw.Label( label ), size );
         }
 
         public static bool TransparentButton( string label, Vector4 color ) {
@@ -98,12 +98,12 @@ namespace VfxEditor.Utils {
 
         public static bool ColorButton( string label, Vector4 color, bool small ) {
             using var style = ImRaii.PushColor( ImGuiCol.Button, color );
-            return small ? ImGui.SmallButton( label ) : ImGui.Button( label );
+            return small ? ImGui.SmallButton( VfxEditor.Localization.ZhTw.Label( label ) ) : ImGui.Button( VfxEditor.Localization.ZhTw.Label( label ) );
         }
 
         public static void DrawIntText( string label, int value ) {
             using var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing );
-            ImGui.TextDisabled( label );
+            ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( label ) );
             ImGui.SameLine();
             var dalamudColors = StyleModel.GetFromCurrent().BuiltInColors;
             ImGui.Text( $"{value}" );
@@ -111,7 +111,7 @@ namespace VfxEditor.Utils {
 
         public static void DrawBoolText( string label, bool value ) {
             using var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing );
-            ImGui.TextDisabled( label );
+            ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( label ) );
             ImGui.SameLine();
             ImGui.TextColored( value ? PARSED_GREEN : DALAMUD_RED, $"{value}" );
         }
@@ -132,7 +132,7 @@ namespace VfxEditor.Utils {
             if( hovered || ImGui.IsItemHovered() ) {
                 ImGui.BeginTooltip();
                 ImGui.PushTextWrapPos( ImGui.GetFontSize() * 35.0f );
-                ImGui.TextUnformatted( text );
+                ImGui.TextUnformatted( VfxEditor.Localization.ZhTw.Text( text ) );
                 ImGui.PopTextWrapPos();
                 ImGui.EndTooltip();
             }
@@ -178,7 +178,7 @@ namespace VfxEditor.Utils {
             }
 
             ImGui.SameLine();
-            ImGui.TextColored( color, text );
+            ImGui.TextColored( color, VfxEditor.Localization.ZhTw.Text( text ) );
 
             if( verified == VerifiedStatus.UNSUPPORTED ) Tooltip( "Verification is not supported for this file or file type" );
 
@@ -234,7 +234,7 @@ namespace VfxEditor.Utils {
             }
 
             ImGui.SameLine();
-            ImGui.Text( text );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( text ) );
 
             return ret;
         }
@@ -243,7 +243,7 @@ namespace VfxEditor.Utils {
             var buttonClicked = false;
 
             var iconSize = GetIconSize( icon );
-            var textSize = ImGui.CalcTextSize( text );
+            var textSize = ImGui.CalcTextSize( VfxEditor.Localization.ZhTw.Text( text ) );
             var padding = ImGui.GetStyle().FramePadding;
             var spacing = ImGui.GetStyle().ItemSpacing;
 
@@ -261,18 +261,18 @@ namespace VfxEditor.Utils {
             }
 
             ImGui.SameLine();
-            ImGui.Text( text );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( text ) );
 
             return buttonClicked;
         }
 
         private delegate bool DrawRadiansInputDelegate<T>( string label, ref T value );
 
-        public static bool DrawRadians( string name, float oldValue, out float newValue ) => DrawRadians( name, oldValue, out newValue, ToDegrees, ToRadians, ( string label, ref float value ) => ImGui.InputFloat( label, ref value ) );
+        public static bool DrawRadians( string name, float oldValue, out float newValue ) => DrawRadians( name, oldValue, out newValue, ToDegrees, ToRadians, ( string label, ref float value ) => ImGui.InputFloat( VfxEditor.Localization.ZhTw.Label( label ), ref value ) );
 
-        public static bool DrawRadians3( string name, Vector3 oldValue, out Vector3 newValue ) => DrawRadians( name, oldValue, out newValue, ToDegrees, ToRadians, ( string label, ref Vector3 value ) => ImGui.InputFloat3( label, ref value ) );
+        public static bool DrawRadians3( string name, Vector3 oldValue, out Vector3 newValue ) => DrawRadians( name, oldValue, out newValue, ToDegrees, ToRadians, ( string label, ref Vector3 value ) => ImGui.InputFloat3( VfxEditor.Localization.ZhTw.Label( label ), ref value ) );
 
-        public static bool DrawRadians4( string name, Vector4 oldValue, out Vector4 newValue ) => DrawRadians( name, oldValue, out newValue, ToDegrees, ToRadians, ( string label, ref Vector4 value ) => ImGui.InputFloat4( label, ref value ) );
+        public static bool DrawRadians4( string name, Vector4 oldValue, out Vector4 newValue ) => DrawRadians( name, oldValue, out newValue, ToDegrees, ToRadians, ( string label, ref Vector4 value ) => ImGui.InputFloat4( VfxEditor.Localization.ZhTw.Label( label ), ref value ) );
 
         private static bool DrawRadians<T>( string name, T oldValue, out T newValue, Func<T, T> toDegrees, Func<T, T> toRadians, DrawRadiansInputDelegate<T> input ) {
             newValue = oldValue;
@@ -295,7 +295,7 @@ namespace VfxEditor.Utils {
             var value = needToConvert ? ToRadians( oldValue ) : oldValue;
 
             ImGui.SetNextItemWidth( GetOffsetInputSize( 15 + ImGui.GetStyle().ItemInnerSpacing.X ) );
-            if( ImGui.InputFloat3( "##Input", ref value ) ) {
+            if( ImGui.InputFloat3( VfxEditor.Localization.ZhTw.Label( "##Input" ), ref value ) ) {
                 newValue = needToConvert ? ToDegrees( value ) : value;
                 return true;
             }
@@ -315,7 +315,7 @@ namespace VfxEditor.Utils {
             Tooltip( "Switch between degrees and radians" );
 
             ImGui.SameLine();
-            ImGui.Text( name );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( name ) );
         }
 
         public static float ToRadians( float value ) => ( float )( ( Math.PI / 180 ) * value );
@@ -340,7 +340,7 @@ namespace VfxEditor.Utils {
             if( ImGui.BeginDragDropSource( ImGuiDragDropFlags.None ) ) {
                 ImGui.SetDragDropPayload( id, null, 0 );
                 draggingItem = item;
-                ImGui.Text( text );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( text ) );
                 ImGui.EndDragDropSource();
             }
             if( ImGui.BeginDragDropTarget() ) {

@@ -36,7 +36,7 @@ namespace VfxEditor.Utils.Gltf {
         public string BoneName = "";
 
         public void Draw() {
-            ImGui.InputTextWithHint( "##Bone", "Bone Name", ref BoneName, 255 );
+            ImGui.InputTextWithHint( "##Bone", VfxEditor.Localization.ZhTw.Text( "Bone Name" ), ref BoneName, 255 );
         }
     }
 }

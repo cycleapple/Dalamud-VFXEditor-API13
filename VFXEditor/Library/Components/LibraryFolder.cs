@@ -52,7 +52,7 @@ namespace VfxEditor.Library.Components {
                 // Main folder item
 
                 using( var color = ImRaii.PushColor( ImGuiCol.Header, new Vector4( 0 ) ) ) {
-                    open = ImGui.TreeNodeEx( "###Node",
+                    open = ImGui.TreeNodeEx( VfxEditor.Localization.ZhTw.Label( "###Node" ),
                         ImGuiTreeNodeFlags.SpanAvailWidth |
                         ImGuiTreeNodeFlags.FramePadding |
                         ImGuiTreeNodeFlags.Framed
@@ -68,7 +68,7 @@ namespace VfxEditor.Library.Components {
                 }
 
                 ImGui.SameLine();
-                ImGui.Text( Name );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( Name ) );
             }
 
             if( !open ) return listModified;
@@ -133,7 +133,7 @@ namespace VfxEditor.Library.Components {
                 return true;
             }
 
-            if( ImGui.InputText( "##Rename", ref Name, 128, ImGuiInputTextFlags.AutoSelectAll ) ) {
+            if( ImGui.InputText( VfxEditor.Localization.ZhTw.Label( "##Rename" ), ref Name, 128, ImGuiInputTextFlags.AutoSelectAll ) ) {
                 library.Save();
                 return true;
             }

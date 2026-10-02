@@ -21,7 +21,7 @@ namespace VfxEditor.Ui.Export.Categories {
             var id = Manager.GetId();
             using var _ = ImRaii.PushId( id );
 
-            if( ImGui.Checkbox( "##All", ref ExportAll ) ) {
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "##All" ), ref ExportAll ) ) {
                 foreach( var key in ToExport.Keys ) ToExport[key] = ExportAll;
             }
 
@@ -40,9 +40,9 @@ namespace VfxEditor.Ui.Export.Categories {
                 using var table = ImRaii.Table( "##Table", 3, ImGuiTableFlags.RowBg );
                 if( !table ) return;
 
-                ImGui.TableSetupColumn( "##Check", ImGuiTableColumnFlags.WidthFixed, 20 );
-                ImGui.TableSetupColumn( "##Source", ImGuiTableColumnFlags.WidthStretch );
-                ImGui.TableSetupColumn( "##Replace", ImGuiTableColumnFlags.WidthStretch );
+                ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Check" ), ImGuiTableColumnFlags.WidthFixed, 20 );
+                ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Source" ), ImGuiTableColumnFlags.WidthStretch );
+                ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Replace" ), ImGuiTableColumnFlags.WidthStretch );
 
                 var idx = 0;
                 foreach( var item in items ) {
@@ -55,7 +55,7 @@ namespace VfxEditor.Ui.Export.Categories {
                     ImGui.TableNextRow();
 
                     ImGui.TableNextColumn();
-                    if( ImGui.Checkbox( "##Check", ref isChecked ) ) {
+                    if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "##Check" ), ref isChecked ) ) {
                         if( !isChecked && ExportAll ) ExportAll = false;
                     }
 

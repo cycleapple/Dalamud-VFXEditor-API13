@@ -326,19 +326,19 @@ namespace VfxEditor.Formats.KdbFormat {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Nodes" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Nodes" ) ) ) {
                 if( tab ) { DrawNodes(); }
             }
 
-            using( var tab = ImRaii.TabItem( "Parameters" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) ) ) {
                 if( tab ) { DrawParameters(); }
             }
 
-            using( var tab = ImRaii.TabItem( "Unknown B" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Unknown B" ) ) ) {
                 if( tab ) { DrawB(); }
             }
 
-            using( var tab = ImRaii.TabItem( "Unknown F" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Unknown F" ) ) ) {
                 if( tab ) { DrawF(); }
             }
         }

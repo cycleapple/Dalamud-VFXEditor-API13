@@ -136,7 +136,7 @@ namespace VfxEditor.ScdFormat {
             if( soundIndexes.Count > 0 ) {
                 using var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing );
                 using var disabled = ImRaii.Disabled();
-                ImGui.Text( "Sounds: " );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "Sounds: " ) );
                 foreach( var idx in soundIndexes ) {
                     ImGui.SameLine();
                     ImGui.SmallButton( $"{idx}" );
@@ -147,13 +147,13 @@ namespace VfxEditor.ScdFormat {
         }
 
         public void DrawTabs() {
-            if( ImGui.BeginTabItem( "Parameters" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) ) ) {
                 using( var child = ImRaii.Child( "Child" ) ) {
                     Flags.Draw();
                 }
                 ImGui.EndTabItem();
             }
-            if( HasMarker && ImGui.BeginTabItem( "Markers" ) ) {
+            if( HasMarker && ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Markers" ) ) ) {
                 Marker.Draw();
                 ImGui.EndTabItem();
             }

@@ -81,7 +81,7 @@ namespace VfxEditor.PapFormat.Motion {
 
         public void DrawExportAll() {
             Selector.Init();
-            if( ImGui.Button( "Export All Motions" ) ) {
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Export All Motions" ) ) ) {
                 FileBrowserManager.SaveFileDialog( "Select a Save Location", ".gltf", "motion", "gltf", ( ok, res ) => {
                     if( !ok ) return;
                     GltfAnimation.ExportAnimation(

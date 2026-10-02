@@ -23,7 +23,7 @@ namespace VfxEditor.Formats.MtrlFormat.Data.Color {
             var size = Math.Min( Plugin.MtrlManager.TileNormal.Count, Plugin.MtrlManager.TileDiffuse.Count );
 
             var text = ( Value >= 0 && Value < size ) ? $"Tile {Value}" : "[UNKNOWN]";
-            using var combo = ImRaii.Combo( Name, text );
+            using var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( Name ), text );
             if( !combo ) return;
 
             for( var i = 0; i < size; i++ ) {

@@ -171,7 +171,7 @@ namespace VfxEditor.Tracker {
                     else ImGui.Text( item.Path );
 
                     ImGui.SameLine( largestSize.X + 20 );
-                    if( ImGui.Button( "COPY" ) ) ImGui.SetClipboardText( item.Path );
+                    if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "COPY" ) ) ) ImGui.SetClipboardText( item.Path );
                     i++;
                 }
             }

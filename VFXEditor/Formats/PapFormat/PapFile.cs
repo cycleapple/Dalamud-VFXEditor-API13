@@ -145,7 +145,7 @@ namespace VfxEditor.PapFormat {
         }
 
         private void DrawParameters() {
-            using var tabItem = ImRaii.TabItem( "Parameters" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) );
             if( !tabItem ) return;
 
             ModelId.Draw();
@@ -164,11 +164,11 @@ namespace VfxEditor.PapFormat {
         }
 
         private void DrawAnimations() {
-            using var tabItem = ImRaii.TabItem( "Animations" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Animations" ) );
             if( !tabItem ) return;
 
             if( EmptyHavok ) {
-                ImGui.TextDisabled( "No Havok data" );
+                ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "No Havok data" ) );
                 return;
             }
 

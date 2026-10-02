@@ -33,7 +33,7 @@ namespace VfxEditor.UldFormat.PartList {
         }
 
         public void Draw() {
-            ImGui.Checkbox( "Show HD", ref ShowHd );
+            ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Show HD" ), ref ShowHd );
 
             DrawImage( true );
 

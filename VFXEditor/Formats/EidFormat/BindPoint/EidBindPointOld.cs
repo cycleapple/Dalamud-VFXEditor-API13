@@ -36,7 +36,7 @@ namespace VfxEditor.EidFormat {
         public override string GetName() => $"{Id.Value} ({Name.Value})";
 
         public override void Draw() {
-            ImGui.TextDisabled( "Data Version: [OLD]" );
+            ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "Data Version: [OLD]" ) );
 
             Name.Draw();
             Id.Draw();

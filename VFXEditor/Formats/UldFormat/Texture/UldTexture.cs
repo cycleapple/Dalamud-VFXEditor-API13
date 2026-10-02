@@ -41,14 +41,14 @@ namespace VfxEditor.UldFormat.Texture {
             Path.Draw();
 
             if( !string.IsNullOrEmpty( Path.Value ) ) {
-                ImGui.Checkbox( "Show HD", ref ShowHd );
+                ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Show HD" ), ref ShowHd );
                 if( ShowHd ) ImGui.TextDisabled( TexturePath );
                 Plugin.TextureManager.GetTexture( TexturePath )?.Draw();
             }
 
             IconId.Draw();
             if( IconId.Value > 0 ) {
-                ImGui.Checkbox( "Show HD", ref ShowHd );
+                ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Show HD" ), ref ShowHd );
                 ImGui.TextDisabled( IconPath );
                 Plugin.TextureManager.GetTexture( IconPath )?.Draw();
             }

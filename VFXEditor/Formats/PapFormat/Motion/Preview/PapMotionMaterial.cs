@@ -60,15 +60,15 @@ namespace VfxEditor.Formats.PapFormat.Motion.Preview {
 
             // ======== CONTROLS ==========
 
-            if( ImGui.RadioButton( "Color", ref Plugin.Configuration.PapMaterialDisplay, 1 ) ) Plugin.Configuration.Save();
+            if( ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "Color" ), ref Plugin.Configuration.PapMaterialDisplay, 1 ) ) Plugin.Configuration.Save();
             ImGui.SameLine();
-            if( ImGui.RadioButton( "Graph", ref Plugin.Configuration.PapMaterialDisplay, 2 ) ) Plugin.Configuration.Save();
+            if( ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "Graph" ), ref Plugin.Configuration.PapMaterialDisplay, 2 ) ) Plugin.Configuration.Save();
             ImGui.SameLine();
 
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemSpacing with { X = ImGui.GetStyle().ItemInnerSpacing.X } ) ) {
-                if( ImGui.Button( "Export" ) ) ExportDialog( Motion.File.Animations[idx].GetName() );
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Export" ) ) ) ExportDialog( Motion.File.Animations[idx].GetName() );
                 ImGui.SameLine();
-                if( ImGui.Button( "Replace" ) ) ImportDialog( idx );
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Replace" ) ) ) ImportDialog( idx );
                 ImGui.SameLine();
                 UiUtils.WikiButton( "https://github.com/0ceal0t/Dalamud-VFXEditor/wiki/Using-Blender-to-Edit-Skeletons-and-Animations" );
             }
@@ -76,17 +76,17 @@ namespace VfxEditor.Formats.PapFormat.Motion.Preview {
             ImGui.Separator();
 
             if( IsColor ) {
-                if( ImGui.ColorEdit3( "Base Preview Color", ref Plugin.Configuration.PapMaterialBaseColor, ImGuiColorEditFlags.NoInputs ) ) {
+                if( ImGui.ColorEdit3( VfxEditor.Localization.ZhTw.Label( "Base Preview Color" ), ref Plugin.Configuration.PapMaterialBaseColor, ImGuiColorEditFlags.NoInputs ) ) {
                     Plugin.Configuration.Save();
                     UpdatePreview();
                 }
             }
             else {
                 ImGui.SetNextItemWidth( 150f );
-                using( var combo = ImRaii.Combo( "##Material", BoneSelected ) ) {
+                using( var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( "##Material" ), BoneSelected ) ) {
                     if( combo ) {
                         foreach( var name in Data.Keys ) {
-                            if( ImGui.Selectable( name, name == BoneSelected ) ) BoneSelected = name;
+                            if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( name ), name == BoneSelected ) ) BoneSelected = name;
                         }
                     }
                 }

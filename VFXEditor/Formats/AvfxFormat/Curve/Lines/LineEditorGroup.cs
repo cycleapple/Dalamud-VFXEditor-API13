@@ -102,12 +102,12 @@ namespace VfxEditor.Formats.AvfxFormat.Curve.Lines {
 
             ImGui.TableSetupScrollFreeze( 0, 1 );
 
-            ImGui.TableSetupColumn( "##Check", ImGuiTableColumnFlags.None, -1 );
-            ImGui.TableSetupColumn( "##Name", ImGuiTableColumnFlags.None, -1 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Check" ), ImGuiTableColumnFlags.None, -1 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Name" ), ImGuiTableColumnFlags.None, -1 );
 
-            ImGui.TableSetupColumn( "Pre Behavior", ImGuiTableColumnFlags.WidthStretch, -1 );
-            ImGui.TableSetupColumn( "Post Behavior", ImGuiTableColumnFlags.WidthStretch, -1 );
-            ImGui.TableSetupColumn( "Random Type", ImGuiTableColumnFlags.WidthStretch, -1 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "Pre Behavior" ), ImGuiTableColumnFlags.WidthStretch, -1 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "Post Behavior" ), ImGuiTableColumnFlags.WidthStretch, -1 );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "Random Type" ), ImGuiTableColumnFlags.WidthStretch, -1 );
 
             ImGui.TableHeadersRow();
 
@@ -118,7 +118,7 @@ namespace VfxEditor.Formats.AvfxFormat.Curve.Lines {
                 ImGui.TableNextColumn();
                 var assigned = curve.IsAssigned();
                 using( var locked = ImRaii.Disabled( curve.Locked && curve.IsAssigned() ) ) {
-                    if( ImGui.Checkbox( "##Assigned", ref assigned ) ) CommandManager.Add( new AvfxAssignCommand( curve, assigned, recurse: true ) );
+                    if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "##Assigned" ), ref assigned ) ) CommandManager.Add( new AvfxAssignCommand( curve, assigned, recurse: true ) );
                 }
 
                 using var disabled = ImRaii.Disabled( !curve.IsAssigned() );
@@ -168,12 +168,12 @@ namespace VfxEditor.Formats.AvfxFormat.Curve.Lines {
 
             if( Curves.Any( x => x.Type == CurveType.Angle ) ) {
                 ImGui.SameLine();
-                if( ImGui.RadioButton( "Radians", !Plugin.Configuration.UseDegreesForAngles ) ) {
+                if( ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "Radians" ), !Plugin.Configuration.UseDegreesForAngles ) ) {
                     Plugin.Configuration.UseDegreesForAngles = false;
                     Plugin.Configuration.Save();
                 }
                 ImGui.SameLine();
-                if( ImGui.RadioButton( "Degrees", Plugin.Configuration.UseDegreesForAngles ) ) {
+                if( ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "Degrees" ), Plugin.Configuration.UseDegreesForAngles ) ) {
                     Plugin.Configuration.UseDegreesForAngles = true;
                     Plugin.Configuration.Save();
                 }
@@ -189,17 +189,17 @@ namespace VfxEditor.Formats.AvfxFormat.Curve.Lines {
 
                 ImGui.TextColored( color, "Ctrl+Left Click" );
                 ImGui.SameLine();
-                ImGui.Text( "to add a new point" );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "to add a new point" ) );
 
                 ImGui.TextColored( color, "Left Click" );
                 ImGui.SameLine();
-                ImGui.Text( "to selected a point" );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "to selected a point" ) );
 
-                ImGui.Text( "Hold" );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "Hold" ) );
                 ImGui.SameLine();
                 ImGui.TextColored( color, "Shift" );
                 ImGui.SameLine();
-                ImGui.Text( "to select multiple points" );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "to select multiple points" ) );
 
                 ImGui.EndTooltip();
             }

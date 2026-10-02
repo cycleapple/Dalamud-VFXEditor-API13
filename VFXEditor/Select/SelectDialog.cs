@@ -112,7 +112,7 @@ namespace VfxEditor.Select {
             if( GameTabs.Count == 0 ) return;
             using var _ = ImRaii.PushId( "Game" );
 
-            using var tabItem = ImRaii.TabItem( "Game Items" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Game Items" ) );
             if( !tabItem ) return;
 
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 2 );

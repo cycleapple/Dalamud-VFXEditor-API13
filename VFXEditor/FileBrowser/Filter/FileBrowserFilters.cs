@@ -51,7 +51,7 @@ namespace VfxEditor.FileBrowser.Filter {
 
             var text = Selected == null ? "[NONE]" : Selected.Text;
 
-            using var combo = ImRaii.Combo( "##Filters", text, ImGuiComboFlags.None );
+            using var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( "##Filters" ), text, ImGuiComboFlags.None );
             if( !combo ) return;
 
             foreach( var (filter, idx) in Filters.WithIndex() ) {

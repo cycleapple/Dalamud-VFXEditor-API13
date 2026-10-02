@@ -26,11 +26,11 @@ namespace VfxEditor.Formats.KdbFormat.Nodes.Types.TargetConstraint {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Bones" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Bones" ) ) ) {
                 if( tab ) { BoneTable.Draw(); }
             }
 
-            using( var tab = ImRaii.TabItem( "Parameters" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) ) ) {
                 if( tab ) {
                     using var _ = ImRaii.PushId( "Parameters" );
                     using var child = ImRaii.Child( "Child" );

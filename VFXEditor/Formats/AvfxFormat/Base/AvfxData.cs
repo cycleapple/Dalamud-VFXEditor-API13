@@ -44,7 +44,7 @@ namespace VfxEditor.AvfxFormat {
         public void DrawEnableCheckbox() {
             if( !Optional ) return;
             var assigned = Assigned;
-            if( ImGui.Checkbox( "Enable Data", ref assigned ) ) {
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Enable Data" ), ref assigned ) ) {
                 CommandManager.Add( new AvfxAssignCommand( this, assigned ) );
             }
         }

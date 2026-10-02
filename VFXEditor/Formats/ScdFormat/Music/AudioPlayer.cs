@@ -66,7 +66,7 @@ namespace VfxEditor.ScdFormat {
             var drawPos = ImGui.GetCursorScreenPos();
 
             using( var stopped = ImRaii.PushStyle( ImGuiStyleVar.Alpha, 0.5f, State == PlaybackState.Stopped ) ) {
-                if( ImGui.SliderFloat( "##Drag", ref selectedTime, 0, ( float )TotalTime ) ) {
+                if( ImGui.SliderFloat( VfxEditor.Localization.ZhTw.Label( "##Drag" ), ref selectedTime, 0, ( float )TotalTime ) ) {
                     if( State != PlaybackState.Stopped && selectedTime > 0 && selectedTime < TotalTime ) {
                         CurrentOutput.Pause();
                         LeftStream.CurrentTime = TimeSpan.FromSeconds( selectedTime );
@@ -92,7 +92,7 @@ namespace VfxEditor.ScdFormat {
         }
 
         private void DrawPlayer() {
-            using var tabItem = ImRaii.TabItem( "Music" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Music" ) );
             if( !tabItem ) return;
             using var _ = ImRaii.PushId( "Music" );
 
@@ -110,8 +110,8 @@ namespace VfxEditor.ScdFormat {
 
             using( var popup = ImRaii.Popup( "SavePopup" ) ) {
                 if( popup ) {
-                    if( ImGui.Selectable( ".wav" ) ) SaveWaveDialog();
-                    if( ImGui.Selectable( ".ogg" ) ) SaveOggDialog();
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( ".wav" ) ) ) SaveWaveDialog();
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( ".ogg" ) ) ) SaveOggDialog();
                 }
             }
 
@@ -125,10 +125,10 @@ namespace VfxEditor.ScdFormat {
 
             var loop = Entry.LoopTime;
             ImGui.SetNextItemWidth( 246f );
-            if( ImGui.InputFloat2( "##LoopStartEnd", ref loop ) ) Entry.LoopTime = loop;
+            if( ImGui.InputFloat2( VfxEditor.Localization.ZhTw.Label( "##LoopStartEnd" ), ref loop ) ) Entry.LoopTime = loop;
 
             ImGui.SameLine();
-            ImGui.Text( "Loop Time" );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( "Loop Time" ) );
 
             ImGui.TextDisabled( $"{Entry.Format} / {Entry.NumChannels} Ch / {Entry.SampleRate}Hz / 0x{Entry.DataLength:X8} bytes" );
         }
@@ -136,28 +136,28 @@ namespace VfxEditor.ScdFormat {
         private void DrawChannels() {
             if( !ShowChannelSelect ) return;
 
-            using var tabItem = ImRaii.TabItem( "Channels" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Channels" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Channels" );
 
-            ImGui.TextDisabled( "Which channels to play when previewing the audio file. Does not affect the .scd file" );
+            ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "Which channels to play when previewing the audio file. Does not affect the .scd file" ) );
 
-            if( ImGui.BeginCombo( "Preview Channel 1", $"Channel #{Channel1}" ) ) {
+            if( ImGui.BeginCombo( VfxEditor.Localization.ZhTw.Label( "Preview Channel 1" ), $"Channel #{Channel1}" ) ) {
                 for( var i = 0; i < Entry.NumChannels; i++ ) {
                     if( ImGui.Selectable( $"Channel #{i}", Channel1 == i ) ) Channel1 = i;
                 }
                 ImGui.EndCombo();
             }
 
-            if( ImGui.BeginCombo( "Preview Channel 2", $"Channel #{Channel2}" ) ) {
+            if( ImGui.BeginCombo( VfxEditor.Localization.ZhTw.Label( "Preview Channel 2" ), $"Channel #{Channel2}" ) ) {
                 for( var i = 0; i < Entry.NumChannels; i++ ) {
                     if( ImGui.Selectable( $"Channel #{i}", Channel2 == i ) ) Channel2 = i;
                 }
                 ImGui.EndCombo();
             }
 
-            if( ImGui.Button( "Update" ) ) Reset();
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Update" ) ) ) Reset();
         }
 
         private void ProcessQueue() {

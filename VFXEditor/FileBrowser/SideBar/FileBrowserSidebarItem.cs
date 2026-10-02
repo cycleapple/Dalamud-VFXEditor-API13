@@ -16,7 +16,7 @@ namespace VfxEditor.FileBrowser.SideBar {
                 if( ImGui.Selectable( Icon.ToIconString(), selected ) ) ret = true;
             }
             ImGui.SameLine();
-            ImGui.Text( Text );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( Text ) );
 
             return ret;
         }

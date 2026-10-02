@@ -28,9 +28,9 @@ namespace VfxEditor.Library.Texture {
         protected override void DrawTooltip() { }
 
         protected override void DrawEditing() {
-            ImGui.InputText( "Name", ref Name, 255 );
-            ImGui.InputText( "Path", ref Path, 255 );
-            ImGui.ColorEdit4( "Color", ref Color, ImGuiColorEditFlags.DisplayHex | ImGuiColorEditFlags.AlphaPreviewHalf | ImGuiColorEditFlags.AlphaBar );
+            ImGui.InputText( VfxEditor.Localization.ZhTw.Label( "Name" ), ref Name, 255 );
+            ImGui.InputText( VfxEditor.Localization.ZhTw.Label( "Path" ), ref Path, 255 );
+            ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Color" ), ref Color, ImGuiColorEditFlags.DisplayHex | ImGuiColorEditFlags.AlphaPreviewHalf | ImGuiColorEditFlags.AlphaBar );
         }
 
         protected override void DrawImport() {

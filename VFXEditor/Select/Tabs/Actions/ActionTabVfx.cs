@@ -40,7 +40,7 @@ namespace VfxEditor.Select.Tabs.Actions {
                 }
 
                 ImGui.SameLine();
-                ImGui.Text( "TMB:" );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "TMB:" ) );
                 ImGui.SameLine();
                 SelectUiUtils.DisplayPath( Loaded.OriginalPath );
             }

@@ -36,7 +36,7 @@ namespace VfxEditor.Interop.Havok.Ui {
 
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) {
                 ImGui.SameLine();
-                if( ImGui.Checkbox( "Show Bone Names", ref Plugin.Configuration.ShowBoneNames ) ) Plugin.Configuration.Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Show Bone Names" ), ref Plugin.Configuration.ShowBoneNames ) ) Plugin.Configuration.Save();
             }
 
             if( Bones == null ) return;

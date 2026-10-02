@@ -307,11 +307,11 @@ namespace VfxEditor.FileManager {
 
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 2 );
             ImGui.SetCursorPosX( ImGui.GetCursorPosX() + 25 );
-            ImGui.Text( $"Loaded {Id}" );
+            ImGui.Text( $"已載入的 {Id}" );
 
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 5 );
             ImGui.SetCursorPosX( ImGui.GetCursorPosX() + 25 );
-            ImGui.Text( $"{Id} Being Replaced" );
+            ImGui.Text( $"被取代的 {Id}" );
         }
 
         private static float DegreesToRadians( float degrees ) => MathF.PI / 180 * degrees;
@@ -493,7 +493,7 @@ namespace VfxEditor.FileManager {
             var buttonWidth = ImGui.GetContentRegionMax().X - ImGui.GetStyle().FramePadding.X * 2;
 
             ImGui.PushStyleColor( ImGuiCol.Button, new Vector4( 0.41764705882f, 0.41764705882f, 0.41764705882f, 1 ) );
-            if( ImGui.Button( "Wiki + Guides", new Vector2( buttonWidth, 0 ) ) ) {
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Wiki + Guides" ), new Vector2( buttonWidth, 0 ) ) ) {
                 UiUtils.OpenUrl( "https://github.com/0ceal0t/Dalamud-VFXEditor/wiki" );
             }
             ImGui.PopStyleColor();
@@ -501,7 +501,7 @@ namespace VfxEditor.FileManager {
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 2 );
 
             ImGui.PushStyleColor( ImGuiCol.Button, new Vector4( 0.21764705882f, 0.21764705882f, 0.21764705882f, 1 ) );
-            if( ImGui.Button( "Github", new Vector2( buttonWidth, 0 ) ) ) {
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Github" ), new Vector2( buttonWidth, 0 ) ) ) {
                 UiUtils.OpenUrl( "https://github.com/0ceal0t/Dalamud-VFXEditor" );
             }
             ImGui.PopStyleColor();
@@ -509,7 +509,7 @@ namespace VfxEditor.FileManager {
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 2 );
 
             ImGui.PushStyleColor( ImGuiCol.Button, new Vector4( 0.21764705882f, 0.21764705882f, 0.21764705882f, 1 ) );
-            if( ImGui.Button( "Report an Issue", new Vector2( buttonWidth, 0 ) ) ) {
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Report an Issue" ), new Vector2( buttonWidth, 0 ) ) ) {
                 UiUtils.OpenUrl( "https://github.com/0ceal0t/Dalamud-VFXEditor/issues" );
             }
             ImGui.PopStyleColor();
@@ -517,7 +517,7 @@ namespace VfxEditor.FileManager {
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 2 );
 
             ImGui.PushStyleColor( ImGuiCol.Button, new Vector4( 0.33725490196f, 0.38431372549f, 0.96470588235f, 1 ) );
-            if( ImGui.Button( "XIVLauncher Discord", new Vector2( buttonWidth, 0 ) ) ) {
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "XIVLauncher Discord" ), new Vector2( buttonWidth, 0 ) ) ) {
                 UiUtils.OpenUrl( "https://discord.gg/3NMcUV5" );
             }
             ImGui.PopStyleColor();

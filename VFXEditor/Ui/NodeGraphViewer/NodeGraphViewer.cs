@@ -36,7 +36,7 @@ namespace VfxEditor.Ui.NodeGraphViewer {
             using var spacing = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing );
             var scaling = ( int )( Canvas.GetScaling() * 100 );
             ImGui.SetNextItemWidth( 50 );
-            if( ImGui.DragInt( "##sldScaling", ref scaling, NodeCanvas.StepScale * 100, ( int )( NodeCanvas.MinScale * 100 ), ( int )( NodeCanvas.MaxScale * 100 ), "%d%%" ) ) {
+            if( ImGui.DragInt( VfxEditor.Localization.ZhTw.Label( "##sldScaling" ), ref scaling, NodeCanvas.StepScale * 100, ( int )( NodeCanvas.MinScale * 100 ), ( int )( NodeCanvas.MaxScale * 100 ), "%d%%" ) ) {
                 Canvas.SetScaling( ( float )scaling / 100 );
             }
 
@@ -195,7 +195,7 @@ namespace VfxEditor.Ui.NodeGraphViewer {
             var cursor = ImGui.GetCursorScreenPos();
 
             if( pTextBoxWidth != null ) ImGui.SetNextItemWidth( pTextBoxWidth.Value );
-            ImGui.InputTextWithHint( "", "Search", ref SearchInput, 200 );
+            ImGui.InputTextWithHint( "", VfxEditor.Localization.ZhTw.Text( "Search" ), ref SearchInput, 200 );
             var tIsInputActive = ImGui.IsItemActive();
             var tIsItemPUOpened = false;
 

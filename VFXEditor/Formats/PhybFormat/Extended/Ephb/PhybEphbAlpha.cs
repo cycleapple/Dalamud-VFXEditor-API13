@@ -45,15 +45,15 @@ namespace VfxEditor.Formats.PhybFormat.Extended.Ephb {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Beta" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Beta" ) ) ) {
                 if( tab ) BetaView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Eta" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Eta" ) ) ) {
                 if( tab ) EtaView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Epsilon" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Epsilon" ) ) ) {
                 if( tab ) EpsilonView.Draw();
             }
         }

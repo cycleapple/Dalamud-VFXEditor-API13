@@ -54,20 +54,20 @@ namespace VfxEditor.AvfxFormat {
         public void Draw() {
             using var _ = ImRaii.PushId( "UV" );
 
-            ImGui.RadioButton( "UV 1", ref UvMode, 1 );
+            ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "UV 1" ), ref UvMode, 1 );
 
             ImGui.SameLine();
-            ImGui.RadioButton( "UV 2", ref UvMode, 2 );
+            ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "UV 2" ), ref UvMode, 2 );
 
             ImGui.SameLine();
-            ImGui.RadioButton( "UV 3", ref UvMode, 3 );
+            ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "UV 3" ), ref UvMode, 3 );
 
             ImGui.SameLine();
-            ImGui.RadioButton( "UV 4", ref UvMode, 4 );
+            ImGui.RadioButton( VfxEditor.Localization.ZhTw.Label( "UV 4" ), ref UvMode, 4 );
 
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 5 );
 
-            if( !DrawOnce || ImGui.Button( "Fit To Contents" ) ) {
+            if( !DrawOnce || ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Fit To Contents" ) ) ) {
                 ImPlot.SetNextAxesToFit();
                 DrawOnce = true;
             }

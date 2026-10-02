@@ -100,7 +100,7 @@ namespace VfxEditor.SklbFormat {
         }
 
         private void DrawData() {
-            using var tabItem = ImRaii.TabItem( "Data" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Data" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Data" );
@@ -110,7 +110,7 @@ namespace VfxEditor.SklbFormat {
         }
 
         private void DrawLayers() {
-            using var tabItem = ImRaii.TabItem( "Layers" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Layers" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Layers" );
@@ -119,7 +119,7 @@ namespace VfxEditor.SklbFormat {
         }
 
         private void DrawBones() {
-            using var tabItem = ImRaii.TabItem( "Bones" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Bones" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Bones" );
@@ -128,7 +128,7 @@ namespace VfxEditor.SklbFormat {
         }
 
         private void DrawBoneList() {
-            using var tabItem = ImRaii.TabItem( "Bone List" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Bone List" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "BoneList" );
@@ -137,7 +137,7 @@ namespace VfxEditor.SklbFormat {
         }
 
         private void DrawMappings() {
-            using var tabItem = ImRaii.TabItem( "Mappings" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Mappings" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Mappings" );

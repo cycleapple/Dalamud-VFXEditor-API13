@@ -33,7 +33,7 @@ namespace VfxEditor.Select.Tabs.Gimmick {
             }
 
             ImGui.SameLine();
-            ImGui.Text( "TMB:" );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( "TMB:" ) );
             ImGui.SameLine();
             SelectUiUtils.DisplayPath( Selected.TmbPath );
 

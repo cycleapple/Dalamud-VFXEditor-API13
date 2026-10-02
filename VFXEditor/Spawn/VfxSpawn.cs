@@ -44,9 +44,9 @@ namespace VfxEditor.Spawn {
             using var popup = ImRaii.Popup( "SpawnPopup" );
             if( !popup ) return;
 
-            if( ImGui.Selectable( "Self" ) ) OnSelf( path, loop );
-            if( ImGui.Selectable( "Ground" ) ) OnGround( path, loop );
-            if( ImGui.Selectable( "Target" ) ) OnTarget( path, loop );
+            if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "Self" ) ) ) OnSelf( path, loop );
+            if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "Ground" ) ) ) OnGround( path, loop );
+            if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "Target" ) ) ) OnTarget( path, loop );
         }
 
         public static void OnGround( string path, bool canLoop ) {

@@ -78,18 +78,18 @@ namespace VfxEditor.PhybFormat.Simulator.Chain {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Parameters" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) ) ) {
                 if( tab ) {
                     using var child = ImRaii.Child( "Child", new Vector2( -1 ), false );
                     foreach( var parsed in Parsed ) parsed.Draw();
                 }
             }
 
-            using( var tab = ImRaii.TabItem( "Collision Objects" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Collision Objects" ) ) ) {
                 if( tab ) CollisionSplitView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Nodes" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Nodes" ) ) ) {
                 if( tab ) NodeSplitView.Draw();
             }
         }

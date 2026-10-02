@@ -89,7 +89,7 @@ namespace VfxEditor.Ui.NodeGraphViewer.Nodes {
             ImGui.SetCursorScreenPos( cursor );
 
             NodeUtils.PushFontScale( scaling );
-            var textSize = ImGui.CalcTextSize( Name );
+            var textSize = ImGui.CalcTextSize( VfxEditor.Localization.ZhTw.Text( Name ) );
             drawList.AddText(
                 position + new Vector2( IsInput ? 10f : ( -10f - textSize.X ), -textSize.Y / 2f ),
                 IsUnconnected() && IsInput ? ImGui.GetColorU32( ImGuiCol.TextDisabled ) : ImGui.GetColorU32( ImGuiCol.Text ), Name );

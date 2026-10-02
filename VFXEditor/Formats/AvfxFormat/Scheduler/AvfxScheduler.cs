@@ -99,11 +99,11 @@ namespace VfxEditor.AvfxFormat {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Items" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Items" ) ) ) {
                 if( tab ) ItemTable.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Triggers" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Triggers" ) ) ) {
                 if( tab ) TriggerTable.Draw();
             }
         }

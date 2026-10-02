@@ -69,7 +69,7 @@ namespace VfxEditor.Formats.TextureFormat.Textures {
             if( Penumbra ) {
                 ImGui.SameLine();
                 using var color = ImRaii.PushColor( ImGuiCol.Text, UiUtils.DALAMUD_ORANGE );
-                ImGui.Text( "[Penumbra]" );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "[Penumbra]" ) );
             }
 
             DrawExportReplaceButtons();

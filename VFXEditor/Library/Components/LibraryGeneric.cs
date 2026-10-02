@@ -25,7 +25,7 @@ namespace VfxEditor.Library.Components {
         protected void DragDrop( LibraryManager library, string text, ref bool listModified ) {
             if( ImGui.BeginDragDropSource( ImGuiDragDropFlags.None ) ) {
                 library.StartDragging( this );
-                ImGui.Text( text );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( text ) );
                 ImGui.EndDragDropSource();
             }
 

@@ -38,7 +38,7 @@ namespace VfxEditor.Ui.Components {
                 }
             }
 
-            if( ImGui.Button( "+ New" ) ) { // NEW
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "+ New" ) ) ) { // NEW
                 CommandManager.Add( new ListAddCommand<T>( Items, NewAction.Invoke() ) );
             }
         }

@@ -49,12 +49,12 @@ namespace VfxEditor.Select.Tabs.Character {
             using var tabBar = ImRaii.TabBar( "Tabs" );
             if( !tabBar ) return;
 
-            if( ImGui.BeginTabItem( "Hair" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Hair" ) ) ) {
                 Dialog.DrawPaths( Loaded.HairPaths, Selected.Name, SelectResultType.GameCharacter );
                 ImGui.EndTabItem();
             }
 
-            if( ImGui.BeginTabItem( "Face" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Face" ) ) ) {
                 Dialog.DrawPaths( Loaded.FacePaths, Selected.Name, SelectResultType.GameCharacter );
                 ImGui.EndTabItem();
             }

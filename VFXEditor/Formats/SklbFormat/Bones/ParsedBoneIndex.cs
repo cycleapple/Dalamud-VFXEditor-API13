@@ -29,10 +29,10 @@ namespace VfxEditor.SklbFormat.Bones {
             var text = Value == -1 ? "[NONE]" : ( Value >= names.Count ? "[UNKNOWN]" : names[Value] );
 
             using var _ = ImRaii.PushId( Name );
-            using var combo = ImRaii.Combo( Name, text );
+            using var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( Name ), text );
             if( !combo ) return;
 
-            if( ImGui.Selectable( "[NONE]", Value == -1 ) ) {
+            if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "[NONE]" ), Value == -1 ) ) {
                 CommandManager.Add( new ParsedSimpleCommand<int>( this, -1 ) );
             }
 

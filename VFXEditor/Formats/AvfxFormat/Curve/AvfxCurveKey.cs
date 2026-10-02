@@ -132,7 +132,7 @@ namespace VfxEditor.AvfxFormat {
             if( IsColor ) DrawColor( editor );
             else {
                 var data = Converted;
-                if( ImGui.InputFloat3( "Value", ref data ) ) {
+                if( ImGui.InputFloat3( VfxEditor.Localization.ZhTw.Label( "Value" ), ref data ) ) {
                     CommandManager.Add( new CompoundCommand( new[] {
                         new ParsedSimpleCommand<Vector3>( Data, new Vector3( data.X, data.Y,(float)Curve.ToRadians( data.Z ) )  )
                     }, onChangeAction: editor.OnUpdate ) );
@@ -150,7 +150,7 @@ namespace VfxEditor.AvfxFormat {
             var imguiStyle = ImGui.GetStyle();
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, new Vector2( imguiStyle.ItemInnerSpacing.X, imguiStyle.ItemSpacing.Y ) ) ) {
                 ImGui.SetNextItemWidth( ImGui.GetWindowSize().X * 0.65f - imguiStyle.ItemInnerSpacing.X - ImGui.GetFrameHeight() );
-                if( ImGui.ColorEdit3( "##ColorInput", ref color, ImGuiColorEditFlags.NoAlpha | ImGuiColorEditFlags.NoSidePreview | ImGuiColorEditFlags.NoSmallPreview | ImGuiColorEditFlags.Float ) ) {
+                if( ImGui.ColorEdit3( VfxEditor.Localization.ZhTw.Label( "##ColorInput" ), ref color, ImGuiColorEditFlags.NoAlpha | ImGuiColorEditFlags.NoSidePreview | ImGuiColorEditFlags.NoSmallPreview | ImGuiColorEditFlags.Float ) ) {
                     changed = true;
                     Data.Value = color;
                 }
@@ -161,7 +161,7 @@ namespace VfxEditor.AvfxFormat {
                 }
 
                 ImGui.SameLine();
-                ImGui.Text( "Color" );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "Color" ) );
             }
 
             if( DrawPalettePopup( color, BackupColor, out var popupColor ) ) {
@@ -201,10 +201,10 @@ namespace VfxEditor.AvfxFormat {
             ImGui.SameLine();
             using var group = ImRaii.Group();
 
-            ImGui.Text( "Current" );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( "Current" ) );
             ImGui.ColorButton( "##Current", new Vector4( currentColor, 1 ), ImGuiColorEditFlags.NoPicker, new Vector2( 60, 40 ) );
 
-            ImGui.Text( "Previous" );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( "Previous" ) );
             if( ImGui.ColorButton( "##Previous", new Vector4( backupColor, 1 ), ImGuiColorEditFlags.NoPicker, new Vector2( 60, 40 ) ) ) {
                 color = backupColor;
                 ret = true;

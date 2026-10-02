@@ -88,7 +88,7 @@ namespace VfxEditor.SklbFormat.Mapping {
         }
 
         private void DrawParameters() {
-            using var tabItem = ImRaii.TabItem( "Parameters" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) );
             if( !tabItem ) return;
 
             using var child = ImRaii.Child( "Child" );
@@ -101,12 +101,12 @@ namespace VfxEditor.SklbFormat.Mapping {
         }
 
         private void DrawSimpleMappings( int idx ) {
-            using var tabItem = ImRaii.TabItem( "Simple Mappings" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Simple Mappings" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "SimpleMappings" );
 
-            if( ImGui.Button( "Replace Skeleton" ) ) {
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Replace Skeleton" ) ) ) {
                 FileBrowserManager.OpenFileDialog( "Select a Skeleton", "Skeleton{.hkx,.sklb},.*", ( ok, res ) => {
                     if( !ok ) return;
 
@@ -124,11 +124,11 @@ namespace VfxEditor.SklbFormat.Mapping {
             ImGui.SameLine();
 
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) {
-                if( ImGui.Button( "Generate" ) ) {
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Generate" ) ) ) {
                     GenerateMapping( idx, Plugin.Configuration.SklbMappingUpdateExisting );
                 }
                 ImGui.SameLine();
-                if( ImGui.Checkbox( "Update Existing", ref Plugin.Configuration.SklbMappingUpdateExisting ) ) Plugin.Configuration.Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Update Existing" ), ref Plugin.Configuration.SklbMappingUpdateExisting ) ) Plugin.Configuration.Save();
             }
 
             ImGui.Separator();

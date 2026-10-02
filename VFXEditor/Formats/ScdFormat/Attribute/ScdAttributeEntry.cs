@@ -73,7 +73,7 @@ namespace VfxEditor.ScdFormat {
         }
 
         private void DrawResult() {
-            using var tabItem = ImRaii.TabItem( "Result" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Result" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Result" );
@@ -82,7 +82,7 @@ namespace VfxEditor.ScdFormat {
         }
 
         private static void DrawExtendData( string name, AttributeExtendData extendData ) {
-            using var tabItem = ImRaii.TabItem( name );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( name ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( name );

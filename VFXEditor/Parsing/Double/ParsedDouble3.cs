@@ -38,7 +38,7 @@ namespace VfxEditor.Parsing {
 
         protected override void DrawBody() {
             var value = Value.Vec3;
-            if( ImGui.InputFloat3( Name, ref value ) ) Update( new( value ) );
+            if( ImGui.InputFloat3( VfxEditor.Localization.ZhTw.Label( Name ), ref value ) ) Update( new( value ) );
         }
     }
 }

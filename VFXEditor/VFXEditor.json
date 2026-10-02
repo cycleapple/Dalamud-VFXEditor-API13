@@ -1,13 +1,17 @@
 {
-    "Author": "ocealot",
-    "Name": "VFXEditor",
-    "Punchline": "VFX editor and viewer",
-    "Description": "VFX, animation, and sound editing plugin. Icon by PAPACHIN",
-    "InternalName": "VFXEditor",
-    "AssemblyVersion": "1.9.2.8",
-    "RepoUrl": "https://github.com/0ceal0t/Dalamud-VFXEditor",
-    "ApplicableVersion": "any",
-    "Tags": [ "VFX", "AVFX" ],
-    "DalamudApiLevel": 13,
-    "LoadPriority": 69
+  "Author": "ocealot / cycleapple（API 13 繁中版）",
+  "Name": "VFXEditor（繁體中文）",
+  "Punchline": "特效、動畫與音效編輯器（API 13／繁體中文）",
+  "Description": "編輯及預覽 FFXIV 特效、動畫、音效、貼圖與模型。以最後一版上游 API 13 原始碼為基底，主要操作介面為繁體中文，部分進階格式欄位保留英文。圖示：PAPACHIN。尚未完成繁中客戶端遊戲內實測。",
+  "InternalName": "VFXEditor",
+  "AssemblyVersion": "1.9.2.9",
+  "RepoUrl": "https://github.com/cycleapple/Dalamud-VFXEditor-API13",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "VFX",
+    "AVFX"
+  ],
+  "DalamudApiLevel": 13,
+  "LoadPriority": 69,
+  "AcceptsFeedback": false
 }

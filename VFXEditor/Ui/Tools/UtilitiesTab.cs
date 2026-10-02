@@ -12,14 +12,14 @@ namespace VfxEditor.Ui.Tools {
 
         public void Draw() {
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 2 );
-            ImGui.TextDisabled( "Extract Raw Game File" );
+            ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "Extract Raw Game File" ) );
 
             using( ImRaii.PushIndent() )
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, new Vector2( 4, 3 ) ) ) {
-                ImGui.InputTextWithHint( "##Extract", "Game Path", ref ExtractPath, 255 );
+                ImGui.InputTextWithHint( "##Extract", VfxEditor.Localization.ZhTw.Text( "Game Path" ), ref ExtractPath, 255 );
 
                 ImGui.SameLine();
-                if( ImGui.Button( "Extract" ) ) {
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Extract" ) ) ) {
                     var cleanedPath = ExtractPath.Replace( "\\", "/" );
                     if( Dalamud.DataManager.FileExists( cleanedPath ) ) {
                         try {
@@ -41,11 +41,11 @@ namespace VfxEditor.Ui.Tools {
             }
 
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 5 );
-            ImGui.TextDisabled( "Image Conversion" );
+            ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "Image Conversion" ) );
 
             using var _ = ImRaii.PushIndent();
 
-            if( ImGui.Button( ".atex to PNG" ) ) {
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( ".atex to PNG" ) ) ) {
                 FileBrowserManager.OpenFileDialog( "Select a File", ".atex,.*", ( ok, res ) => {
                     if( !ok ) return;
                     var texFile = TextureDataFile.LoadFromLocal( res );
@@ -54,7 +54,7 @@ namespace VfxEditor.Ui.Tools {
             }
 
             ImGui.SameLine();
-            if( ImGui.Button( ".atex to DDS" ) ) {
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( ".atex to DDS" ) ) ) {
                 FileBrowserManager.OpenFileDialog( "Select a File", ".atex,.*", ( ok, res ) => {
                     if( !ok ) return;
                     var texFile = TextureDataFile.LoadFromLocal( res );

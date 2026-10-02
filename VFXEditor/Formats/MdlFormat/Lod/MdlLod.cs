@@ -89,27 +89,27 @@ namespace VfxEditor.Formats.MdlFormat.Lod {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Meshes" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Meshes" ) ) ) {
                 if( tab ) MeshView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Terrain Shadows" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Terrain Shadows" ) ) ) {
                 if( tab ) TerrainShadowView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Water" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Water" ) ) ) {
                 if( tab ) WaterMeshView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Shadows" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Shadows" ) ) ) {
                 if( tab ) ShadowMeshView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Vertical Fog" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Vertical Fog" ) ) ) {
                 if( tab ) VerticalFogMeshView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Parameters" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) ) ) {
                 if( tab ) {
                     ModelRange.Draw();
                     TextureRange.Draw();

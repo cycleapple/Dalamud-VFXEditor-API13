@@ -121,15 +121,15 @@ namespace VfxEditor.PhybFormat {
 
                 SkeletonTabOpen = false;
 
-                using( var tab = ImRaii.TabItem( "Collision" ) ) {
+                using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Collision" ) ) ) {
                     if( tab ) Collision.Draw();
                 }
 
-                using( var tab = ImRaii.TabItem( "Simulation" ) ) {
+                using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Simulation" ) ) ) {
                     if( tab ) Simulation.Draw();
                 }
 
-                using( var tab = ImRaii.TabItem( "3D View" ) ) {
+                using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "3D View" ) ) ) {
                     if( tab ) {
                         Skeleton.Draw();
                         SkeletonTabOpen = true;
@@ -137,7 +137,7 @@ namespace VfxEditor.PhybFormat {
                 }
 
                 if( Extended != null ) {
-                    using var tab = ImRaii.TabItem( "Extended" );
+                    using var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Extended" ) );
                     if( tab ) Extended.Draw();
                 }
             }

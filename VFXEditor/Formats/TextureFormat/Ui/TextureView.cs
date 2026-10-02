@@ -59,7 +59,7 @@ namespace VfxEditor.Formats.TextureFormat.Ui {
             if( UiUtils.IconButton( FontAwesomeIcon.Download, "Extract" ) ) ImGui.OpenPopup( "ExtractTex" );
 
             ImGui.SameLine();
-            ImGui.InputTextWithHint( "##Search", "Search", ref SearchText, 255 );
+            ImGui.InputTextWithHint( "##Search", VfxEditor.Localization.ZhTw.Text( "Search" ), ref SearchText, 255 );
 
             // ==== IMPORT ==========
 
@@ -111,7 +111,7 @@ namespace VfxEditor.Formats.TextureFormat.Ui {
 
         protected override void DrawLeftColumn() {
             if( Items.Count == 0 ) {
-                ImGui.TextDisabled( "No textures have been replaced..." );
+                ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "No textures have been replaced..." ) );
                 return;
             }
 
@@ -123,7 +123,7 @@ namespace VfxEditor.Formats.TextureFormat.Ui {
                 using( var _ = ImRaii.PushId( idx ) ) {
                     using var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing );
 
-                    if( ImGui.Selectable( "##{Name}", item == Selected, ImGuiSelectableFlags.SpanAllColumns ) ) Selected = item;
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "##{Name}" ), item == Selected, ImGuiSelectableFlags.SpanAllColumns ) ) Selected = item;
                 }
 
                 if( UiUtils.DrawDragDrop( Items, item, item.GetExportReplace(), ref DraggingItem, $"TEXTUREVIEW-SPLIT", false ) ) break;
@@ -132,7 +132,7 @@ namespace VfxEditor.Formats.TextureFormat.Ui {
                     ImGui.SameLine();
                     DrawHd( item.IsHd() );
                     ImGui.SameLine();
-                    ImGui.Text( name );
+                    ImGui.Text( VfxEditor.Localization.ZhTw.Text( name ) );
                 }
             }
 
@@ -169,11 +169,11 @@ namespace VfxEditor.Formats.TextureFormat.Ui {
 
         public static void DrawPngSettings() {
             ImGui.SetNextItemWidth( 150 );
-            if( ImGui.InputInt( "Mips", ref Plugin.Configuration.PngMips ) ) Plugin.Configuration.Save();
+            if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Mips" ), ref Plugin.Configuration.PngMips ) ) Plugin.Configuration.Save();
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) {
                 ImGui.SameLine();
             }
-            ImGui.TextDisabled( "(.png)" );
+            ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "(.png)" ) );
 
             ImGui.SetNextItemWidth( 150 );
             if( UiUtils.EnumComboBox( "Format", ValidPngFormat, Plugin.Configuration.PngFormat, out var newPngFormat ) ) {
@@ -183,7 +183,7 @@ namespace VfxEditor.Formats.TextureFormat.Ui {
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) {
                 ImGui.SameLine();
             }
-            ImGui.TextDisabled( "(.png)" );
+            ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "(.png)" ) );
         }
     }
 }

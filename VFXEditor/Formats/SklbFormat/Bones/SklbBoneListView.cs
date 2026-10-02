@@ -22,12 +22,12 @@ namespace VfxEditor.Formats.SklbFormat.Bones {
                     ImGui.Text( FontAwesomeIcon.InfoCircle.ToIconString() );
                 }
                 ImGui.SameLine();
-                ImGui.Text( "Bones can be re-ordered by dragging them" );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "Bones can be re-ordered by dragging them" ) );
             }
 
             foreach( var (bone, idx) in Bones.WithIndex() ) {
                 var text = $"[{idx:D3}]  {bone.Name.Value}";
-                ImGui.TreeNodeEx( text, ImGuiTreeNodeFlags.Framed | ImGuiTreeNodeFlags.Bullet | ImGuiTreeNodeFlags.FramePadding | ImGuiTreeNodeFlags.NoTreePushOnOpen );
+                ImGui.TreeNodeEx( VfxEditor.Localization.ZhTw.Label( text ), ImGuiTreeNodeFlags.Framed | ImGuiTreeNodeFlags.Bullet | ImGuiTreeNodeFlags.FramePadding | ImGuiTreeNodeFlags.NoTreePushOnOpen );
                 if( UiUtils.DrawDragDrop( Bones, bone, text, ref DraggingItem, "BONE-LIST", true ) ) break;
             }
         }

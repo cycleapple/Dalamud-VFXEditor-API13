@@ -54,7 +54,7 @@ namespace VfxEditor.Formats.PapFormat.Motion.Preview {
 
             ImGui.SameLine();
             ImGui.SetNextItemWidth( 100f );
-            if( ImGui.InputInt( "Frame", ref Frame ) ) {
+            if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Frame" ), ref Frame ) ) {
                 if( Frame < 0 ) Frame = 0;
                 if( Frame >= Motion.TotalFrames ) Frame = Motion.TotalFrames - 1;
             }
@@ -86,9 +86,9 @@ namespace VfxEditor.Formats.PapFormat.Motion.Preview {
 
             ImGui.SameLine();
             ImGui.SetCursorPosX( ImGui.GetCursorPosX() + 5 );
-            if( ImGui.Button( "Export" ) ) ExportDialog( Motion.File.Animations[idx].GetName() );
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Export" ) ) ) ExportDialog( Motion.File.Animations[idx].GetName() );
             ImGui.SameLine();
-            if( ImGui.Button( "Replace" ) ) ImportDialog( idx );
+            if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Replace" ) ) ) ImportDialog( idx );
             ImGui.SameLine();
             UiUtils.WikiButton( "https://github.com/0ceal0t/Dalamud-VFXEditor/wiki/Using-Blender-to-Edit-Skeletons-and-Animations" );
 

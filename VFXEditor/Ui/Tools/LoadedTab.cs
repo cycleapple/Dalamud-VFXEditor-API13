@@ -31,7 +31,7 @@ namespace VfxEditor.Ui.Tools {
 
                 ImGui.TextDisabled( $"[{id:X8}] 0x{item.Address:X8}" );
                 ImGui.SameLine();
-                if( ImGui.SmallButton( "Copy" ) ) ImGui.SetClipboardText( $"{item.Address:X8}" );
+                if( ImGui.SmallButton( VfxEditor.Localization.ZhTw.Label( "Copy" ) ) ) ImGui.SetClipboardText( $"{item.Address:X8}" );
 
                 DrawCharacterBase( ( CharacterBase* )drawObject );
 
@@ -39,7 +39,7 @@ namespace VfxEditor.Ui.Tools {
                 if( childObject != null && childObject->GetObjectType() == ObjectType.CharacterBase ) {
                     using var __ = ImRaii.PushId( "Child Object" );
 
-                    using var tree = ImRaii.TreeNode( "Child Object" );
+                    using var tree = ImRaii.TreeNode( VfxEditor.Localization.ZhTw.Label( "Child Object" ) );
                     if( !tree ) continue;
 
                     using var indent2 = ImRaii.PushIndent();
@@ -68,7 +68,7 @@ namespace VfxEditor.Ui.Tools {
 
                 var name = $"TABLE {idx}";
                 using var __ = ImRaii.PushId( name );
-                using var tree = ImRaii.TreeNode( name );
+                using var tree = ImRaii.TreeNode( VfxEditor.Localization.ZhTw.Label( name ) );
                 if( tree ) {
                     if( GetResource( Marshal.ReadIntPtr( tablePtr ), out var fileName ) ) DrawResource( fileName );
                     DrawAnimationTable( tablePtr + 8, "PAP" );
@@ -97,7 +97,7 @@ namespace VfxEditor.Ui.Tools {
         private static void DrawTable( IntPtr tablePtr, IntPtr nextTable, string name, bool stopAtZero ) {
             using var _ = ImRaii.PushId( name );
 
-            using var tree = ImRaii.TreeNode( name );
+            using var tree = ImRaii.TreeNode( VfxEditor.Localization.ZhTw.Label( name ) );
             if( !tree ) return;
 
             var resources = GetResourcesFromTable( tablePtr, nextTable, stopAtZero );

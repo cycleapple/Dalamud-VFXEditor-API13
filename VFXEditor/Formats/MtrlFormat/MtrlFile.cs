@@ -257,24 +257,24 @@ namespace VfxEditor.Formats.MtrlFormat {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Parameters" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) ) ) {
                 if( tab ) DrawParameters();
             }
 
-            using( var tab = ImRaii.TabItem( "Textures" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Textures" ) ) ) {
                 if( tab ) TextureView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "UV Sets" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "UV Sets" ) ) ) {
                 if( tab ) UvSetView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Color Sets" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Color Sets" ) ) ) {
                 if( tab ) ColorSetView.Draw();
             }
 
             if( ColorTableEnabled && Table != null ) {
-                using var tab = ImRaii.TabItem( "Color Table" );
+                using var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Color Table" ) );
                 if( tab ) Table?.Draw();
             }
         }
@@ -302,15 +302,15 @@ namespace VfxEditor.Formats.MtrlFormat {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Keys" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Keys" ) ) ) {
                 if( tab ) KeyView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Material Parameters" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Material Parameters" ) ) ) {
                 if( tab ) MaterialParameterView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Samplers" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Samplers" ) ) ) {
                 if( tab ) SamplerView.Draw();
             }
         }

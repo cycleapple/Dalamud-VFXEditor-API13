@@ -78,9 +78,9 @@ namespace VfxEditor.FileBrowser {
                 var name = "Overwrite This File?";
                 ImGui.OpenPopup( name );
                 if( ImGui.BeginPopupModal( name, ref open, ImGuiWindowFlags.AlwaysAutoResize | ImGuiWindowFlags.NoResize | ImGuiWindowFlags.NoMove ) ) {
-                    if( ImGui.Checkbox( "Never ask me again", ref Plugin.Configuration.FileBrowserOverwriteDontAsk ) ) Plugin.Configuration.Save();
+                    if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Never ask me again" ), ref Plugin.Configuration.FileBrowserOverwriteDontAsk ) ) Plugin.Configuration.Save();
 
-                    if( ImGui.Button( "OK", new Vector2( 120, 0 ) ) ) {
+                    if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "OK" ), new Vector2( 120, 0 ) ) ) {
                         WaitingForConfirmation = false;
                         IsOk = true;
                         confirmed = true;
@@ -89,7 +89,7 @@ namespace VfxEditor.FileBrowser {
 
                     ImGui.SameLine();
                     using var style = ImRaii.PushColor( ImGuiCol.Button, UiUtils.RED_COLOR );
-                    if( ImGui.Button( "Cancel", new Vector2( 120, 0 ) ) ) {
+                    if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Cancel" ), new Vector2( 120, 0 ) ) ) {
                         WaitingForConfirmation = false;
                         IsOk = false;
                         confirmed = false;

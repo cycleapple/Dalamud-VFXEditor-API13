@@ -318,21 +318,21 @@ namespace VfxEditor.AvfxFormat {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Parameters" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Parameters" ) ) ) {
                 if( tab ) Parameters.Draw();
             }
 
             DrawData();
 
-            using( var tab = ImRaii.TabItem( "Animation" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Animation" ) ) ) {
                 if( tab ) AnimationSplitDisplay.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "UV Sets" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "UV Sets" ) ) ) {
                 if( tab ) UvView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Textures" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Textures" ) ) ) {
                 if( tab ) TextureDisplaySplit.Draw();
             }
         }
@@ -340,7 +340,7 @@ namespace VfxEditor.AvfxFormat {
         private void DrawData() {
             if( Data == null || ( Data.Optional && !Data.IsAssigned() ) ) return;
 
-            using var tabItem = ImRaii.TabItem( "Data" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Data" ) );
             if( !tabItem ) return;
 
             Data.Draw();

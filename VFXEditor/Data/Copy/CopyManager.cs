@@ -76,8 +76,8 @@ namespace VfxEditor.Data.Copy {
         }
 
         protected void DrawInternal() {
-            if( ImGui.MenuItem( "Copy" ) ) CopyInternal();
-            if( ImGui.MenuItem( "Paste" ) ) PasteInternal();
+            if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Copy" ) ) ) CopyInternal();
+            if( ImGui.MenuItem( VfxEditor.Localization.ZhTw.Label( "Paste" ) ) ) PasteInternal();
         }
 
         private void CopyInternal() {

@@ -34,7 +34,7 @@ namespace VfxEditor.AvfxFormat {
             var spacing = ImGui.GetStyle().ItemSpacing.X;
             var comboWidth = ImGui.GetContentRegionAvail().X * 0.65f - 100 - spacing;
             ImGui.SetNextItemWidth( 100 );
-            if( ImGui.InputInt( "##MainInput", ref value ) ) CommandManager.Add( new ParsedSimpleCommand<int>( Literal.Parsed, value ) );
+            if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "##MainInput" ), ref value ) ) CommandManager.Add( new ParsedSimpleCommand<int>( Literal.Parsed, value ) );
 
             ImGui.SameLine( 100 + spacing );
             ImGui.SetNextItemWidth( comboWidth );
@@ -45,7 +45,7 @@ namespace VfxEditor.AvfxFormat {
         }
 
         private void DrawCombo( int value ) {
-            using var combo = ImRaii.Combo( Name, DisplayText );
+            using var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( Name ), DisplayText );
             if( !combo ) return;
 
             var idx = 0;

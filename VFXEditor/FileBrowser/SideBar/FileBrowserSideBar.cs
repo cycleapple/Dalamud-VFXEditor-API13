@@ -137,7 +137,7 @@ namespace VfxEditor.FileBrowser.SideBar {
             using var tree = ImRaii.TreeNode( icon.ToIconString(), ImGuiTreeNodeFlags.DefaultOpen );
             font.Dispose();
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) { ImGui.SameLine(); }
-            ImGui.Text( name );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( name ) );
             disabled.Dispose();
 
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 5 );

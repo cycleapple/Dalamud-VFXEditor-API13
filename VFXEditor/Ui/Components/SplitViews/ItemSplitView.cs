@@ -21,7 +21,7 @@ namespace VfxEditor.Ui.Components.SplitViews {
         protected abstract bool DrawLeftItem( T item, int idx );
 
         protected override void DrawRightColumn() {
-            if( Selected == null ) ImGui.TextDisabled( "Select an item..." );
+            if( Selected == null ) ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "Select an item..." ) );
             else DrawSelected();
         }
 

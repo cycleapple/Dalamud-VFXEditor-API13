@@ -30,19 +30,19 @@ namespace VfxEditor.Ui.Export.Penumbra {
         }
 
         public void Draw() {
-            ImGui.InputTextWithHint( "##Name", "Name", ref Name, 255 );
+            ImGui.InputTextWithHint( "##Name", VfxEditor.Localization.ZhTw.Text( "Name" ), ref Name, 255 );
 
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) {
                 ImGui.SetNextItemWidth( 100 );
-                if( ImGui.BeginCombo( "##Type", Type ) ) {
-                    if( ImGui.Selectable( "Single" ) ) Type = "Single";
-                    if( ImGui.Selectable( "Multi" ) ) Type = "Multi";
+                if( ImGui.BeginCombo( VfxEditor.Localization.ZhTw.Label( "##Type" ), Type ) ) {
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "Single" ) ) ) Type = "Single";
+                    if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "Multi" ) ) ) Type = "Multi";
                     ImGui.EndCombo();
                 }
 
                 ImGui.SameLine();
                 ImGui.SetNextItemWidth( 30 );
-                ImGui.InputInt( "Priority", ref Priority, 0 );
+                ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Priority" ), ref Priority, 0 );
             }
 
             ImGui.Separator();

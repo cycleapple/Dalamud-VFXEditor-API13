@@ -71,7 +71,7 @@ namespace VfxEditor.Select {
                 }
 
                 using var style = ImRaii.PushStyle( ImGuiStyleVar.FramePadding, ImGui.GetStyle().FramePadding with { Y = 12f }, showIcon );
-                if( ImGui.CollapsingHeader( name, ImGuiTreeNodeFlags.DefaultOpen ) ) {
+                if( ImGui.CollapsingHeader( VfxEditor.Localization.ZhTw.Label( name ), ImGuiTreeNodeFlags.DefaultOpen ) ) {
                     style.Dispose();
                     DrawPaths( paths, resultName, resultType );
                 }
@@ -116,11 +116,11 @@ namespace VfxEditor.Select {
             if( !table ) return;
             padding.Dispose();
 
-            ImGui.TableSetupColumn( "##Icon", ImGuiTableColumnFlags.None );
-            ImGui.TableSetupColumn( "##FavoriteName", ImGuiTableColumnFlags.None );
-            ImGui.TableSetupColumn( "##Path", ImGuiTableColumnFlags.WidthStretch );
-            ImGui.TableSetupColumn( "##Controls", ImGuiTableColumnFlags.None );
-            ImGui.TableSetupColumn( "##Play", ImGuiTableColumnFlags.None );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Icon" ), ImGuiTableColumnFlags.None );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##FavoriteName" ), ImGuiTableColumnFlags.None );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Path" ), ImGuiTableColumnFlags.WidthStretch );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Controls" ), ImGuiTableColumnFlags.None );
+            ImGui.TableSetupColumn( VfxEditor.Localization.ZhTw.Label( "##Play" ), ImGuiTableColumnFlags.None );
 
             ImGui.TableSetColumnEnabled( 0, paths.Where( x => x.Item2 > 0 ).Any() ); // show icon?
             ImGui.TableSetColumnEnabled( 4, CanPlay && resultType != SelectResultType.Local ); // show play button?
@@ -156,7 +156,7 @@ namespace VfxEditor.Select {
             DrawFavorite( path, resultName, resultType );
             if( !string.IsNullOrEmpty( label ) ) {
                 ImGui.SameLine();
-                ImGui.Text( label );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( label ) );
             }
 
             using var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing );

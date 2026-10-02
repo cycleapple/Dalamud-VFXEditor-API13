@@ -260,31 +260,31 @@ namespace VfxEditor {
             using var tabBar = ImRaii.TabBar( "Tabs" );
             if( !tabBar ) return;
 
-            if( ImGui.BeginTabItem( "Configuration" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Configuration" ) ) ) {
                 DrawConfiguration();
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "Keybinds" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Keybinds" ) ) ) {
                 DrawKeybinds();
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "File Browser" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "File Browser" ) ) ) {
                 DrawFileBrowser();
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "3D Preview" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "3D Preview" ) ) ) {
                 Draw3DView();
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "Vfx" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Vfx" ) ) ) {
                 DrawVfx();
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "Tmb" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Tmb" ) ) ) {
                 DrawTmb();
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "File Editors" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "File Editors" ) ) ) {
                 DrawEditorSpecific();
                 ImGui.EndTabItem();
             }
@@ -293,54 +293,54 @@ namespace VfxEditor {
         private void DrawConfiguration() {
             using var child = ImRaii.Child( "Config" );
 
-            if( ImGui.CollapsingHeader( "Saving", ImGuiTreeNodeFlags.DefaultOpen ) ) {
+            if( ImGui.CollapsingHeader( VfxEditor.Localization.ZhTw.Label( "Saving" ), ImGuiTreeNodeFlags.DefaultOpen ) ) {
                 using var _ = ImRaii.PushIndent( 10f );
-                ImGui.TextDisabled( "Changes to the temp file location may require a restart to take effect" );
-                if( ImGui.InputText( "Write Location", ref WriteLocation, 255 ) ) Save();
+                ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "Changes to the temp file location may require a restart to take effect" ) );
+                if( ImGui.InputText( VfxEditor.Localization.ZhTw.Label( "Write Location" ), ref WriteLocation, 255 ) ) Save();
 
-                if( ImGui.Checkbox( "Autosave Workspace", ref AutosaveEnabled ) ) Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Autosave Workspace" ), ref AutosaveEnabled ) ) Save();
                 using var disabled = ImRaii.Disabled( !AutosaveEnabled );
                 using var indent = ImRaii.PushIndent();
                 ImGui.SetNextItemWidth( 120 );
-                if( ImGui.InputInt( "Autosave Time (seconds)", ref AutosaveSeconds ) ) Save();
-                if( ImGui.Checkbox( "Backup Instead of Overwriting", ref AutosaveBackups ) ) Save();
+                if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Autosave Time (seconds)" ), ref AutosaveSeconds ) ) Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Backup Instead of Overwriting" ), ref AutosaveBackups ) ) Save();
                 using var disabled2 = ImRaii.Disabled( !AutosaveBackups );
                 ImGui.SetNextItemWidth( 120 );
-                if( ImGui.InputInt( "Backup Count", ref BackupCount ) ) Save();
+                if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Backup Count" ), ref BackupCount ) ) Save();
             }
 
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 5 );
 
-            if( ImGui.CollapsingHeader( "Logging", ImGuiTreeNodeFlags.DefaultOpen ) ) {
+            if( ImGui.CollapsingHeader( VfxEditor.Localization.ZhTw.Label( "Logging" ), ImGuiTreeNodeFlags.DefaultOpen ) ) {
                 using var _ = ImRaii.PushIndent( 10f );
-                if( ImGui.Checkbox( "All Files", ref LogAllFiles ) ) Save();
-                if( ImGui.Checkbox( "Debug Information", ref LogDebug ) ) Save();
-                if( ImGui.Checkbox( "Vfx Debug Information", ref LogVfxDebug ) ) Save();
-                if( ImGui.Checkbox( "Vfx Triggers", ref LogVfxTriggers ) ) Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "All Files" ), ref LogAllFiles ) ) Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Debug Information" ), ref LogDebug ) ) Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Vfx Debug Information" ), ref LogVfxDebug ) ) Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Vfx Triggers" ), ref LogVfxTriggers ) ) Save();
             }
 
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 5 );
 
-            if( ImGui.CollapsingHeader( "UI", ImGuiTreeNodeFlags.DefaultOpen ) ) {
+            if( ImGui.CollapsingHeader( VfxEditor.Localization.ZhTw.Label( "UI" ), ImGuiTreeNodeFlags.DefaultOpen ) ) {
                 using var _ = ImRaii.PushIndent( 10f );
-                if( ImGui.Checkbox( "Hide with Game UI", ref HideWithUI ) ) Save();
-                if( ImGui.Checkbox( "Show Tab Bar", ref ShowTabBar ) ) Save();
-                if( ImGui.Checkbox( "Lock Main Windows", ref LockMainWindows ) ) Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Hide with Game UI" ), ref HideWithUI ) ) Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Show Tab Bar" ), ref ShowTabBar ) ) Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Lock Main Windows" ), ref LockMainWindows ) ) Save();
                 ImGui.SetNextItemWidth( 135 );
-                if( ImGui.InputInt( "Recent File Limit", ref SaveRecentLimit ) ) {
+                if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Recent File Limit" ), ref SaveRecentLimit ) ) {
                     SaveRecentLimit = Math.Max( SaveRecentLimit, 0 );
                     Save();
                 }
                 ImGui.SetNextItemWidth( 135 );
-                if( ImGui.InputFloat( "Overlay Remove Delay", ref OverlayRemoveDelay ) ) Save();
-                if( ImGui.Checkbox( "Limit Overlay by Distance", ref OverlayLimit ) ) Save();
-                if( ImGui.Checkbox( "Show Icons in Select Dialog", ref SelectDialogIconsOnLeft ) ) Save();
-                if( ImGui.InputText( "Default Mod Author", ref DefaultAuthor, 255 ) ) Save();
+                if( ImGui.InputFloat( VfxEditor.Localization.ZhTw.Label( "Overlay Remove Delay" ), ref OverlayRemoveDelay ) ) Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Limit Overlay by Distance" ), ref OverlayLimit ) ) Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Show Icons in Select Dialog" ), ref SelectDialogIconsOnLeft ) ) Save();
+                if( ImGui.InputText( VfxEditor.Localization.ZhTw.Label( "Default Mod Author" ), ref DefaultAuthor, 255 ) ) Save();
             }
         }
 
         private void DrawKeybinds() {
-            if( ImGui.Checkbox( "Block Game Inputs When VFXEditor is Focused", ref BlockGameInputsWhenFocused ) ) Save();
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Block Game Inputs When VFXEditor is Focused" ), ref BlockGameInputsWhenFocused ) ) Save();
 
             using var child = ImRaii.Child( "Keybinds", new Vector2( -1 ), false );
 
@@ -360,56 +360,56 @@ namespace VfxEditor {
         private void DrawVfx() {
             using var child = ImRaii.Child( "Vfx" );
 
-            if( ImGui.CollapsingHeader( "Curve Editor", ImGuiTreeNodeFlags.DefaultOpen ) ) {
+            if( ImGui.CollapsingHeader( VfxEditor.Localization.ZhTw.Label( "Curve Editor" ), ImGuiTreeNodeFlags.DefaultOpen ) ) {
                 using var indent = ImRaii.PushIndent( 10f );
 
-                if( ImGui.ColorEdit4( "Line Color", ref CurveEditorLineColor ) ) Save();
-                if( ImGui.ColorEdit4( "Point Color", ref CurveEditorPointColor ) ) Save();
-                if( ImGui.ColorEdit4( "Primary Selected Color", ref CurveEditorPrimarySelectedColor ) ) Save();
-                if( ImGui.ColorEdit4( "Selected Color", ref CurveEditorSelectedColor ) ) Save();
+                if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Line Color" ), ref CurveEditorLineColor ) ) Save();
+                if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Point Color" ), ref CurveEditorPointColor ) ) Save();
+                if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Primary Selected Color" ), ref CurveEditorPrimarySelectedColor ) ) Save();
+                if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Selected Color" ), ref CurveEditorSelectedColor ) ) Save();
 
-                if( ImGui.InputInt( "Line Width", ref CurveEditorLineWidth ) ) Save();
-                if( ImGui.InputInt( "Color Ring Width", ref CurveEditorColorRingSize ) ) Save();
-                if( ImGui.InputInt( "Point Size", ref CurveEditorPointSize ) ) Save();
-                if( ImGui.InputInt( "Primary Selected Size", ref CurveEditorPrimarySelectedSize ) ) Save();
-                if( ImGui.InputInt( "Selected Size", ref CurveEditorSelectedSize ) ) Save();
-                if( ImGui.InputInt( "Grab Distance", ref CurveEditorGrabbingDistance ) ) Save();
+                if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Line Width" ), ref CurveEditorLineWidth ) ) Save();
+                if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Color Ring Width" ), ref CurveEditorColorRingSize ) ) Save();
+                if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Point Size" ), ref CurveEditorPointSize ) ) Save();
+                if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Primary Selected Size" ), ref CurveEditorPrimarySelectedSize ) ) Save();
+                if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Selected Size" ), ref CurveEditorSelectedSize ) ) Save();
+                if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Grab Distance" ), ref CurveEditorGrabbingDistance ) ) Save();
             }
 
-            if( ImGui.CollapsingHeader( "Timeline Editor", ImGuiTreeNodeFlags.DefaultOpen ) ) {
+            if( ImGui.CollapsingHeader( VfxEditor.Localization.ZhTw.Label( "Timeline Editor" ), ImGuiTreeNodeFlags.DefaultOpen ) ) {
                 using var indent = ImRaii.PushIndent( 10f );
 
-                if( ImGui.ColorEdit4( "Selected Color", ref TimelineSelectedColor ) ) Save();
-                if( ImGui.ColorEdit4( "Bar Color", ref TimelineBarColor ) ) Save();
+                if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Selected Color" ), ref TimelineSelectedColor ) ) Save();
+                if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Bar Color" ), ref TimelineBarColor ) ) Save();
             }
         }
 
         private void DrawTmb() {
             using var child = ImRaii.Child( "Tmb" );
 
-            if( ImGui.CollapsingHeader( "Lua", ImGuiTreeNodeFlags.DefaultOpen ) ) {
+            if( ImGui.CollapsingHeader( VfxEditor.Localization.ZhTw.Label( "Lua" ), ImGuiTreeNodeFlags.DefaultOpen ) ) {
                 using var indent = ImRaii.PushIndent( 10f );
 
-                if( ImGui.ColorEdit4( "Parentheses Color", ref LuaParensColor ) ) Save();
-                if( ImGui.ColorEdit4( "Function Color", ref LuaFunctionColor ) ) Save();
-                if( ImGui.ColorEdit4( "Literal Color", ref LuaLiteralColor ) ) Save();
-                if( ImGui.ColorEdit4( "Variable Color", ref LuaVariableColor ) ) Save();
+                if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Parentheses Color" ), ref LuaParensColor ) ) Save();
+                if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Function Color" ), ref LuaFunctionColor ) ) Save();
+                if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Literal Color" ), ref LuaLiteralColor ) ) Save();
+                if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Variable Color" ), ref LuaVariableColor ) ) Save();
             }
         }
 
         private void DrawFileBrowser() {
             using var child = ImRaii.Child( "FileBrowser" );
 
-            if( ImGui.Checkbox( "Preview Images", ref FileBrowserImagePreview ) ) Save();
-            if( ImGui.Checkbox( "Skip File Overwriting Confirmation", ref FileBrowserOverwriteDontAsk ) ) Save();
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Preview Images" ), ref FileBrowserImagePreview ) ) Save();
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Skip File Overwriting Confirmation" ), ref FileBrowserOverwriteDontAsk ) ) Save();
 
-            if( ImGui.ColorEdit4( "Selected Color", ref FileBrowserSelectedColor ) ) Save();
-            if( ImGui.ColorEdit4( "Folder Color", ref FileBrowserFolderColor ) ) Save();
-            if( ImGui.ColorEdit4( "Code File Color", ref FileBrowserCodeColor ) ) Save();
-            if( ImGui.ColorEdit4( "Misc File Color", ref FileBrowserMiscColor ) ) Save();
-            if( ImGui.ColorEdit4( "Image File Color", ref FileBrowserImageColor ) ) Save();
-            if( ImGui.ColorEdit4( "Archive File Color", ref FileBrowserArchiveColor ) ) Save();
-            if( ImGui.ColorEdit4( "FFXIV File Color", ref FileBrowserFfxivColor ) ) Save();
+            if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Selected Color" ), ref FileBrowserSelectedColor ) ) Save();
+            if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Folder Color" ), ref FileBrowserFolderColor ) ) Save();
+            if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Code File Color" ), ref FileBrowserCodeColor ) ) Save();
+            if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Misc File Color" ), ref FileBrowserMiscColor ) ) Save();
+            if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Image File Color" ), ref FileBrowserImageColor ) ) Save();
+            if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Archive File Color" ), ref FileBrowserArchiveColor ) ) Save();
+            if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "FFXIV File Color" ), ref FileBrowserFfxivColor ) ) Save();
         }
 
         private void Draw3DView() {
@@ -417,45 +417,45 @@ namespace VfxEditor {
 
             DrawDirectXCommon();
 
-            if( ImGui.CollapsingHeader( "Skeleton" ) ) {
+            if( ImGui.CollapsingHeader( VfxEditor.Localization.ZhTw.Label( "Skeleton" ) ) ) {
                 using var _ = ImRaii.PushIndent( 10f );
                 DrawDirectXSkeleton();
             }
 
-            if( ImGui.CollapsingHeader( "Material" ) ) {
+            if( ImGui.CollapsingHeader( VfxEditor.Localization.ZhTw.Label( "Material" ) ) ) {
                 using var _ = ImRaii.PushIndent( 10f );
                 DrawDirectXMaterials();
             }
 
-            if( ImGui.CollapsingHeader( "Vfx" ) ) {
+            if( ImGui.CollapsingHeader( VfxEditor.Localization.ZhTw.Label( "Vfx" ) ) ) {
                 using var _ = ImRaii.PushIndent( 10f );
                 DrawDirectXVfx();
             }
         }
 
         public void DrawDirectXCommon() {
-            if( ImGui.ColorEdit4( "Background Color", ref RendererBackground ) ) {
+            if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Background Color" ), ref RendererBackground ) ) {
                 Plugin.DirectXManager.Redraw();
                 Save();
             }
         }
 
         public void DrawDirectXSkeleton() {
-            if( ImGui.ColorEdit4( "Bone Name Color", ref SkeletonBoneNameColor ) ) Save();
-            if( ImGui.ColorEdit4( "Connecting Line Color", ref SkeletonBoneLineColor ) ) Save();
+            if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Bone Name Color" ), ref SkeletonBoneNameColor ) ) Save();
+            if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Connecting Line Color" ), ref SkeletonBoneLineColor ) ) Save();
         }
 
         public void DrawDirectXMaterials() {
             var updated = false;
-            updated |= ImGui.ColorEdit3( "Ambient Color", ref MaterialAmbientColor );
+            updated |= ImGui.ColorEdit3( VfxEditor.Localization.ZhTw.Label( "Ambient Color" ), ref MaterialAmbientColor );
 
-            if( ImGui.CollapsingHeader( "Light 1" ) ) {
+            if( ImGui.CollapsingHeader( VfxEditor.Localization.ZhTw.Label( "Light 1" ) ) ) {
                 using var _ = ImRaii.PushIndent( 10f );
                 using var __ = ImRaii.PushId( "Light1" );
                 updated |= Light1.Draw();
             }
 
-            if( ImGui.CollapsingHeader( "Light 2" ) ) {
+            if( ImGui.CollapsingHeader( VfxEditor.Localization.ZhTw.Label( "Light 2" ) ) ) {
                 using var _ = ImRaii.PushIndent( 10f );
                 using var __ = ImRaii.PushId( "Light2" );
                 updated |= Light2.Draw();
@@ -468,7 +468,7 @@ namespace VfxEditor {
         }
 
         public void DrawDirectXVfx() {
-            if( ImGui.InputFloat2( "Preview Pyramid Size", ref ModelEmittersSize ) ) {
+            if( ImGui.InputFloat2( VfxEditor.Localization.ZhTw.Label( "Preview Pyramid Size" ), ref ModelEmittersSize ) ) {
                 Save();
                 Plugin.DirectXManager.ModelPreview.UpdatePyramidMesh();
                 Plugin.DirectXManager.ModelPreview.Draw();
@@ -484,11 +484,11 @@ namespace VfxEditor {
                 if( ImGui.CollapsingHeader( config.Key ) ) {
                     using var indent = ImRaii.PushIndent( 5f );
 
-                    ImGui.Checkbox( "Use Custom Window Color", ref config.Value.UseCustomWindowColor );
+                    ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Use Custom Window Color" ), ref config.Value.UseCustomWindowColor );
                     if( config.Value.UseCustomWindowColor ) {
-                        if( ImGui.ColorEdit4( "Background", ref config.Value.TitleBg ) ) Save();
-                        if( ImGui.ColorEdit4( "Active", ref config.Value.TitleBgActive ) ) Save();
-                        if( ImGui.ColorEdit4( "Collapsed", ref config.Value.TitleBgCollapsed ) ) Save();
+                        if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Background" ), ref config.Value.TitleBg ) ) Save();
+                        if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Active" ), ref config.Value.TitleBgActive ) ) Save();
+                        if( ImGui.ColorEdit4( VfxEditor.Localization.ZhTw.Label( "Collapsed" ), ref config.Value.TitleBgCollapsed ) ) Save();
                     }
                 }
             }

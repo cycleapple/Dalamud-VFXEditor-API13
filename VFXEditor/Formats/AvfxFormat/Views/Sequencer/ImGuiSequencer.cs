@@ -465,7 +465,7 @@ namespace VfxEditor.AvfxFormat {
                 Selected.Draw();
             }
             else {
-                ImGui.Text( "Select an item..." );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "Select an item..." ) );
             }
         }
 

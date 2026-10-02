@@ -48,7 +48,7 @@ namespace VfxEditor.Parsing {
 
             var prevValue = Value;
             var value = Value == true;
-            if( ImGui.Checkbox( Name, ref value ) ) {
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( Name ), ref value ) ) {
                 if( prevValue == null ) Update( true ); // null -> true
                 else if( prevValue == true ) Update( false ); // true -> false
                 else if( prevValue == false ) Update( null ); // false -> null

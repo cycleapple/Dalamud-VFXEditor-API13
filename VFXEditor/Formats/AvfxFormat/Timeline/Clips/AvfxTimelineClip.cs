@@ -64,28 +64,28 @@ namespace VfxEditor.AvfxFormat {
 
         private void DrawKill() {
             var duration = RawInts.Value.X;
-            if( ImGui.InputInt( "Fade Out Duration", ref duration ) ) {
+            if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Fade Out Duration" ), ref duration ) ) {
                 CommandManager.Add( new ParsedSimpleCommand<Int4>( RawInts, RawInts.Value with {
                     X = duration
                 } ) );
             }
 
             var hide = RawInts.Value.W == 1;
-            if( ImGui.Checkbox( "Hide", ref hide ) ) {
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Hide" ), ref hide ) ) {
                 CommandManager.Add( new ParsedSimpleCommand<Int4>( RawInts, RawInts.Value with {
                     W = hide ? 1 : 0
                 } ) );
             }
 
             var allowShow = RawFloats.Value.X != -1f;
-            if( ImGui.Checkbox( "Allow Show", ref allowShow ) ) {
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Allow Show" ), ref allowShow ) ) {
                 CommandManager.Add( new ParsedSimpleCommand<Vector4>( RawFloats, RawFloats.Value with {
                     X = allowShow ? 0 : -1f
                 } ) );
             }
 
             var startHidden = RawFloats.Value.Y != -1f;
-            if( ImGui.Checkbox( "Start Hidden", ref startHidden ) ) {
+            if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Start Hidden" ), ref startHidden ) ) {
                 CommandManager.Add( new ParsedSimpleCommand<Vector4>( RawFloats, RawFloats.Value with {
                     Y = startHidden ? 0 : -1f
                 } ) );
@@ -94,14 +94,14 @@ namespace VfxEditor.AvfxFormat {
 
         private void DrawRandomTrigger() {
             var min = RawInts.Value.X;
-            if( ImGui.InputInt( "Minimum Trigger", ref min ) ) {
+            if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Minimum Trigger" ), ref min ) ) {
                 CommandManager.Add( new ParsedSimpleCommand<Int4>( RawInts, RawInts.Value with {
                     X = min
                 } ) );
             }
 
             var max = RawInts.Value.Y;
-            if( ImGui.InputInt( "Maximum Trigger", ref max ) ) {
+            if( ImGui.InputInt( VfxEditor.Localization.ZhTw.Label( "Maximum Trigger" ), ref max ) ) {
                 CommandManager.Add( new ParsedSimpleCommand<Int4>( RawInts, RawInts.Value with {
                     Y = max
                 } ) );

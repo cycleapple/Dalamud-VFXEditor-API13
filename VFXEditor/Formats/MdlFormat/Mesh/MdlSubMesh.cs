@@ -57,15 +57,15 @@ namespace VfxEditor.Formats.MdlFormat.Mesh {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Preview" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Preview" ) ) ) {
                 if( tab ) DrawPreview();
             }
 
-            using( var tab = ImRaii.TabItem( "Bones" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Bones" ) ) ) {
                 if( tab ) BoneView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Attributes" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Attributes" ) ) ) {
                 if( tab ) AttributeView.Draw();
             }
         }

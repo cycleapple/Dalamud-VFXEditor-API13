@@ -13,25 +13,25 @@ namespace VfxEditor.Ui.Export {
         public override void DrawBody() {
             using var _ = ImRaii.PushId( WindowName );
 
-            var width = ImGui.GetContentRegionAvail().X - ImGui.CalcTextSize( "Export" ).X - ImGui.GetStyle().ItemInnerSpacing.X - ImGui.GetStyle().FramePadding.X * 2;
+            var width = ImGui.GetContentRegionAvail().X - ImGui.CalcTextSize( VfxEditor.Localization.ZhTw.Text( "Export" ) ).X - ImGui.GetStyle().ItemInnerSpacing.X - ImGui.GetStyle().FramePadding.X * 2;
             var inputWidth = width / 3.0f - ImGui.GetStyle().ItemInnerSpacing.X;
 
             using( var spacing = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing ) ) {
                 ImGui.SetNextItemWidth( inputWidth );
-                ImGui.InputTextWithHint( "##Name", "Mod Name", ref ModName, 255 );
+                ImGui.InputTextWithHint( "##Name", VfxEditor.Localization.ZhTw.Text( "Mod Name" ), ref ModName, 255 );
 
                 if( string.IsNullOrEmpty( Author ) ) Author = Plugin.Configuration.DefaultAuthor;
 
                 ImGui.SameLine();
                 ImGui.SetNextItemWidth( inputWidth );
-                ImGui.InputTextWithHint( "##Author", "Author", ref Author, 255 );
+                ImGui.InputTextWithHint( "##Author", VfxEditor.Localization.ZhTw.Text( "Author" ), ref Author, 255 );
 
                 ImGui.SameLine();
                 ImGui.SetNextItemWidth( inputWidth );
-                ImGui.InputTextWithHint( "##Version", "Version", ref Version, 255 );
+                ImGui.InputTextWithHint( "##Version", VfxEditor.Localization.ZhTw.Text( "Version" ), ref Version, 255 );
 
                 ImGui.SameLine();
-                if( ImGui.Button( "Export" ) ) OnExport();
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Export" ) ) ) OnExport();
             }
 
             ImGui.Separator();

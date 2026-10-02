@@ -111,7 +111,7 @@ namespace VfxEditor.PapFormat {
                     ImGui.Text( FontAwesomeIcon.InfoCircle.ToIconString() );
                 }
                 ImGui.SameLine();
-                ImGui.TextWrapped( "Animation name must start with a valid prefix, such as cbbm_" );
+                ImGui.TextWrapped( VfxEditor.Localization.ZhTw.Text( "Animation name must start with a valid prefix, such as cbbm_" ) );
             }
 
             Type.Draw();
@@ -130,16 +130,16 @@ namespace VfxEditor.PapFormat {
         }
 
         private void DrawTmb() {
-            using var tabItem = ImRaii.TabItem( "TMB" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "TMB" ) );
             if( !tabItem ) return;
 
             ImGui.SetCursorPosY( ImGui.GetCursorPosY() + 2 );
 
             using( var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, new Vector2( 4, 4 ) ) ) {
-                if( ImGui.Button( "Export" ) ) UiUtils.WriteBytesDialog( ".tmb", Tmb.ToBytes(), "tmb", "ExportedTmb" );
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Export" ) ) ) UiUtils.WriteBytesDialog( ".tmb", Tmb.ToBytes(), "tmb", "ExportedTmb" );
 
                 ImGui.SameLine();
-                if( ImGui.Button( "Replace" ) ) {
+                if( ImGui.Button( VfxEditor.Localization.ZhTw.Label( "Replace" ) ) ) {
                     FileBrowserManager.OpenFileDialog( "Select a File", ".tmb,.*", ( ok, res ) => {
                         if( ok ) {
                             CommandManager.Add( new PapReplaceTmbCommand( this, TmbFile.FromPapEmbedded( res, File.Command ) ) );
@@ -156,14 +156,14 @@ namespace VfxEditor.PapFormat {
         }
 
         private void DrawMotion() {
-            using var tabItem = ImRaii.TabItem( "Motion" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Motion" ) );
             if( !tabItem ) return;
 
             File.MotionData.Draw( HavokIndex );
         }
 
         private void DrawHavok() {
-            using var tabItem = ImRaii.TabItem( "Havok" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Havok" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Havok" );

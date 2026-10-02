@@ -55,7 +55,7 @@ namespace VfxEditor.Parsing.Int {
             }
 
             ImGui.SameLine();
-            ImGui.Text( Name );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( Name ) );
         }
     }
 }

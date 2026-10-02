@@ -1,4 +1,7 @@
-# VFXEditor [![Download count](https://img.shields.io/endpoint?url=https%3A%2F%2Fvz32sgcoal.execute-api.us-east-1.amazonaws.com%2FVFXEditor)](https://github.com/0ceal0t/Dalamud-VFXEditor)
+# VFXEditor — API 13 繁體中文版
+
+此 Fork 的維護分支為 `api13-zh-tw`，版本 **1.9.2.9**，提供 API 13／.NET 9 及主要介面繁中翻譯。
+安裝、建置與測試限制請見 [繁體中文說明](README.zh-TW.md)。以下保留上游文件。
 
 **[Wiki](https://xiv.dev/game-data/visual-effects)** | **[Guides](https://github.com/0ceal0t/Dalamud-VFXEditor/wiki)** | Icon by [PAPACHIN](https://www.xivmodarchive.com/user/192152)
 

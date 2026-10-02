@@ -39,11 +39,11 @@ namespace VfxEditor.Formats.SkpFormat.LookAt {
             using var tabBar = ImRaii.TabBar( "Tabs", ImGuiTabBarFlags.NoCloseWithMiddleMouseButton );
             if( !tabBar ) return;
 
-            using( var tab = ImRaii.TabItem( "Setup Parameters" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Setup Parameters" ) ) ) {
                 if( tab ) ParamView.Draw();
             }
 
-            using( var tab = ImRaii.TabItem( "Groups" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Groups" ) ) ) {
                 if( tab ) GroupView.Draw();
             }
         }

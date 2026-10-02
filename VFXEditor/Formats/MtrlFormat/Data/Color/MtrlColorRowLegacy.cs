@@ -67,7 +67,7 @@ namespace VfxEditor.Formats.MtrlFormat.Data.Color {
         }
 
         protected override void DrawTabs() {
-            using( var tab = ImRaii.TabItem( "Color" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Color" ) ) ) {
                 if( tab ) {
                     Diffuse.Draw();
                     SpecularStrength.Draw();
@@ -77,7 +77,7 @@ namespace VfxEditor.Formats.MtrlFormat.Data.Color {
                 }
             }
 
-            using( var tab = ImRaii.TabItem( "Tiling" ) ) {
+            using( var tab = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Tiling" ) ) ) {
                 if( tab ) {
                     TileMaterial.Draw();
                     TileRepeatX.Draw();
@@ -93,7 +93,7 @@ namespace VfxEditor.Formats.MtrlFormat.Data.Color {
             if( Stain != null ) {
                 using var child = ImRaii.Child( "Child", new( -1, ImGui.GetFrameHeight() + ImGui.GetStyle().WindowPadding.Y * 2 ), true );
                 using var style = ImRaii.PushStyle( ImGuiStyleVar.ItemSpacing, ImGui.GetStyle().ItemInnerSpacing );
-                if( StainTemplate == null ) ImGui.TextDisabled( "[NO DYE VALUE]" );
+                if( StainTemplate == null ) ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "[NO DYE VALUE]" ) );
                 else StainTemplate.Draw();
             }
 

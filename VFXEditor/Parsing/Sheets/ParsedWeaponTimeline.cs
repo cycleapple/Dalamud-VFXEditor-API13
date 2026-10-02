@@ -22,11 +22,11 @@ namespace VfxEditor.Parsing.Sheets {
         protected override void DrawBody() {
             DrawCombo();
             ImGui.SameLine();
-            ImGui.Text( Name );
+            ImGui.Text( VfxEditor.Localization.ZhTw.Text( Name ) );
         }
 
         private void DrawCombo() {
-            using var combo = ImRaii.Combo( "##Combo", $"[{Value}] {CurrentTimeline}" );
+            using var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( "##Combo" ), $"[{Value}] {CurrentTimeline}" );
             if( !combo ) return;
 
             foreach( var option in SheetData.WeaponTimelines ) {

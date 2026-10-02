@@ -90,20 +90,20 @@ namespace VfxEditor.ScdFormat {
         }
 
         private void DrawAudio() {
-            using var tabItem = ImRaii.TabItem( "Audio" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Audio" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Audio" );
 
-            if( ImGui.CollapsingHeader( "Settings" ) ) {
+            if( ImGui.CollapsingHeader( VfxEditor.Localization.ZhTw.Label( "Settings" ) ) ) {
                 using var indent = ImRaii.PushIndent( 10f );
 
-                ImGui.TextDisabled( "Audio player settings. These do not have any effect on the .scd file" );
-                if( ImGui.Checkbox( "Loop Music", ref Plugin.Configuration.LoopMusic ) ) Plugin.Configuration.Save();
-                if( ImGui.Checkbox( "Loop Sound Effects", ref Plugin.Configuration.LoopSoundEffects ) ) Plugin.Configuration.Save();
-                if( ImGui.Checkbox( "Simulate Loop Start/End", ref Plugin.Configuration.SimulateScdLoop ) ) Plugin.Configuration.Save();
+                ImGui.TextDisabled( VfxEditor.Localization.ZhTw.Text( "Audio player settings. These do not have any effect on the .scd file" ) );
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Loop Music" ), ref Plugin.Configuration.LoopMusic ) ) Plugin.Configuration.Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Loop Sound Effects" ), ref Plugin.Configuration.LoopSoundEffects ) ) Plugin.Configuration.Save();
+                if( ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Simulate Loop Start/End" ), ref Plugin.Configuration.SimulateScdLoop ) ) Plugin.Configuration.Save();
                 ImGui.SetNextItemWidth( 50 );
-                if( ImGui.InputFloat( "Volume", ref Plugin.Configuration.ScdVolume ) ) {
+                if( ImGui.InputFloat( VfxEditor.Localization.ZhTw.Label( "Volume" ), ref Plugin.Configuration.ScdVolume ) ) {
                     Plugin.Configuration.Save();
                     Audio.ForEach( x => x.Player.UpdateVolume() );
                 }
@@ -117,7 +117,7 @@ namespace VfxEditor.ScdFormat {
         }
 
         private void DrawSounds() {
-            using var tabItem = ImRaii.TabItem( "Sounds" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Sounds" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Sounds" );
@@ -125,7 +125,7 @@ namespace VfxEditor.ScdFormat {
         }
 
         private void DrawTracks() {
-            using var tabItem = ImRaii.TabItem( "Tracks" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Tracks" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Tracks" );
@@ -133,7 +133,7 @@ namespace VfxEditor.ScdFormat {
         }
 
         private void DrawAttributes() {
-            using var tabItem = ImRaii.TabItem( "Attributes" );
+            using var tabItem = ImRaii.TabItem( VfxEditor.Localization.ZhTw.Label( "Attributes" ) );
             if( !tabItem ) return;
 
             using var _ = ImRaii.PushId( "Attributes" );

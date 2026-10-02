@@ -198,15 +198,15 @@ namespace VfxEditor.AvfxFormat {
 
             if( !Name.StartsWith( "##" ) ) {
                 ImGui.SameLine();
-                ImGui.Text( Name );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( Name ) );
             }
         }
 
         private void DrawCombo() {
-            using var combo = ImRaii.Combo( "##MainCombo", GetText() );
+            using var combo = ImRaii.Combo( VfxEditor.Localization.ZhTw.Label( "##MainCombo" ), GetText() );
             if( !combo ) return;
 
-            if( ImGui.Selectable( "[NONE]", Selected == null ) ) CommandManager.Add( new AvfxNodeSelectCommand<T>( this, null ) ); // "None" selector
+            if( ImGui.Selectable( VfxEditor.Localization.ZhTw.Label( "[NONE]" ), Selected == null ) ) CommandManager.Add( new AvfxNodeSelectCommand<T>( this, null ) ); // "None" selector
             foreach( var item in Group.Items ) {
                 var cycle = Node.IsChildOf( item );
                 using var disabled = ImRaii.Disabled( cycle );

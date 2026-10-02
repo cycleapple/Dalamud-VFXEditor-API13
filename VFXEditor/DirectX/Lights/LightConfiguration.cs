@@ -28,10 +28,10 @@ namespace VfxEditor.DirectX.Lights {
         public bool Draw() {
             var updated = false;
 
-            updated |= ImGui.InputFloat3( "Light Position", ref Position );
-            updated |= ImGui.ColorEdit3( "Light Color", ref Color );
-            updated |= ImGui.InputFloat( "Light Radius", ref Radius );
-            updated |= ImGui.InputFloat( "Light Falloff", ref Falloff );
+            updated |= ImGui.InputFloat3( VfxEditor.Localization.ZhTw.Label( "Light Position" ), ref Position );
+            updated |= ImGui.ColorEdit3( VfxEditor.Localization.ZhTw.Label( "Light Color" ), ref Color );
+            updated |= ImGui.InputFloat( VfxEditor.Localization.ZhTw.Label( "Light Radius" ), ref Radius );
+            updated |= ImGui.InputFloat( VfxEditor.Localization.ZhTw.Label( "Light Falloff" ), ref Falloff );
 
             return updated;
         }

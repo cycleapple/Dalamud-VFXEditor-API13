@@ -130,7 +130,7 @@ namespace VfxEditor.Formats.TextureFormat.Textures {
             ImGui.InputTextWithHint( "Name", TrimPath( GamePath ), ref Name, 255 );
 
             ImGui.SetNextItemWidth( width );
-            ImGui.InputText( "Path", ref GamePath, 255 );
+            ImGui.InputText( VfxEditor.Localization.ZhTw.Label( "Path" ), ref GamePath, 255 );
 
             DrawImage();
             DrawControls();
@@ -149,7 +149,7 @@ namespace VfxEditor.Formats.TextureFormat.Textures {
 
             ImGui.SameLine();
             using( var color = ImRaii.PushColor( ImGuiCol.Text, UiUtils.PARSED_GREEN ) ) {
-                ImGui.Text( "[Replaced]" );
+                ImGui.Text( VfxEditor.Localization.ZhTw.Text( "[Replaced]" ) );
             }
 
             DrawExportReplaceButtons();

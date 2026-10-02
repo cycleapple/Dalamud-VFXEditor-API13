@@ -19,7 +19,7 @@ namespace VfxEditor.PapFormat {
         }
 
         protected override void DrawBody() {
-            ImGui.Checkbox( "Skip Unanimated Bones", ref SkipUnanimated );
+            ImGui.Checkbox( VfxEditor.Localization.ZhTw.Label( "Skip Unanimated Bones" ), ref SkipUnanimated );
         }
 
         protected override void OnCancel() { }

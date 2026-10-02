@@ -88,15 +88,15 @@ namespace VfxEditor.Select.Tabs.Job {
             using var tabBar = ImRaii.TabBar( "Tabs" );
             if( !tabBar ) return;
 
-            if( ImGui.BeginTabItem( "General" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "General" ) ) ) {
                 Dialog.DrawPaths( Loaded.General, Selected.Name, SelectResultType.GameJob );
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "Poses" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Poses" ) ) ) {
                 Dialog.DrawPaths( Loaded.Poses, Selected.Name, SelectResultType.GameJob );
                 ImGui.EndTabItem();
             }
-            if( ImGui.BeginTabItem( "Auto-Attack" ) ) {
+            if( ImGui.BeginTabItem( VfxEditor.Localization.ZhTw.Label( "Auto-Attack" ) ) ) {
                 Dialog.DrawPaths( Loaded.AutoAttack, Selected.Name, SelectResultType.GameJob );
                 ImGui.EndTabItem();
             }
