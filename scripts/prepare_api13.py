@@ -11,13 +11,13 @@ for kind in ('File', 'Atch', 'Eid', 'Shcd', 'Pbd', 'Uld', 'Sklb', 'Skp', 'Shpk',
     translations[f'{kind} Select [REPLACED]'] = f'選擇 {name}［取代目標］'
 (p / 'Localization/zh-TW.json').write_text(json.dumps(translations, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 project = p / 'VFXEditor.csproj'
-s = project.read_text(encoding='utf-8-sig').replace('1.9.2.8', '1.9.2.9')
+s = project.read_text(encoding='utf-8-sig').replace('1.9.2.8', '1.9.2.10')
 if 'LogicalName="VfxEditor.Localization.zh-TW.json"' not in s:
     s = s.replace('</Project>', '    <ItemGroup>\n        <EmbeddedResource Include="Localization/zh-TW.json" LogicalName="VfxEditor.Localization.zh-TW.json" />\n    </ItemGroup>\n</Project>')
 project.write_text(s, encoding='utf-8')
 manifest = p / 'VFXEditor.json'
 data = json.loads(manifest.read_text(encoding='utf-8-sig'))
-data.update(Name='VFXEditor（繁體中文）', AssemblyVersion='1.9.2.9', DalamudApiLevel=13,
+data.update(Name='VFXEditor（繁體中文）', AssemblyVersion='1.9.2.10', DalamudApiLevel=13,
     Author='ocealot / cycleapple（API 13 繁中版）',
     Punchline='特效、動畫與音效編輯器（API 13／繁體中文）',
     Description='編輯及預覽 FFXIV 特效、動畫、音效、貼圖與模型。以最後一版上游 API 13 原始碼為基底，主要操作介面為繁體中文，部分進階格式欄位保留英文。圖示：PAPACHIN。尚未完成繁中客戶端遊戲內實測。',

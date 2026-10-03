@@ -6,6 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="../VFXEditor/Localization/ZhTw.cs" Link="ZhTw.cs" />
+    <Compile Include="../VFXEditor/Interop/Constants.cs" Link="Constants.cs" />
     <EmbeddedResource Include="../VFXEditor/Localization/zh-TW.json" LogicalName="VfxEditor.Localization.zh-TW.json" />
   </ItemGroup>
 </Project>
