@@ -32,7 +32,7 @@ namespace VfxEditor.Data.Excel {
         public readonly bool IsFeature => HasIcon && Graphics[0] == 0;
     }
 
-    [Sheet( "CharaMakeType" )]
+    [Sheet( "CharaMakeType", 0x50CDBEEF )]
     public struct CharaMakeType( uint row ) : IExcelRow<CharaMakeType> {
         public ExcelPage ExcelPage { get; private set; }
         public uint RowOffset { get; private set; }
@@ -57,52 +57,38 @@ namespace VfxEditor.Data.Excel {
 
         public RowRef<HairMakeType> FeatureMake { get; set; }
 
+        // Decode from the API14 SDK schema, then adapt to the existing editor menus.
         public static CharaMakeType Create( ExcelPage page, uint offset, uint row ) {
+            var native = new Lumina.Excel.Sheets.CharaMakeType(page, offset, row);
             var features = new int[FacialFeaturesCt];
-            for( var i = 0; i < FacialFeaturesCt; i++ )
-                features[i] = page.ReadColumn<int>( 3291 + i, offset );
-
+            for (var face = 0; face < native.FacialFeatureOption.Count; face++) {
+                var entry = native.FacialFeatureOption[face];
+                int[] values = [entry.Option1, entry.Option2, entry.Option3, entry.Option4, entry.Option5, entry.Option6, entry.Option7];
+                for (var option = 0; option < 7; option++) features[face * 7 + option] = values[option];
+            }
             var menus = new Menu[MenuCt];
-            for( var i = 0; i < MenuCt; i++ ) {
-                var ct = page.ReadColumn<byte>( 3 + 3 * MenuCt + i, offset );
-                var lobby = page.ReadRowRef<Lobby>( 3 + i, offset );
-                var menu = new Menu() {
-                    Name = lobby.IsValid ? lobby.Value.Text.ExtractText() : string.Empty,
-                    Default = page.ReadColumn<byte>( 3 + 1 * MenuCt + i, offset ),
-                    Type = ( MenuType )page.ReadColumn<byte>( 3 + 2 * MenuCt + i, offset ),
-                    Count = ct,
-                    Index = ( CustomizeIndex )page.ReadColumn<uint>( 3 + 6 * MenuCt + i, offset ),
-                    Params = new uint[ct],
-                    Graphics = new byte[GraphicCt]
+            for (var i = 0; i < MenuCt; i++) {
+                var entry = native.CharaMakeStruct[i];
+                var count = entry.SubMenuNum;
+                var menu = new Menu {
+                    Name = entry.Menu.IsValid ? entry.Menu.Value.Text.ExtractText() : string.Empty,
+                    Default = entry.InitVal, Type = (MenuType)entry.SubMenuType, Count = count,
+                    Index = (CustomizeIndex)entry.Customize, Params = new uint[count], Graphics = new byte[GraphicCt]
                 };
-
-                if( menu.HasIcon || menu.Type == MenuType.List ) {
-                    for( var p = 0; p < ct; p++ )
-                        menu.Params[p] = page.ReadColumn<uint>( 3 + ( 7 + p ) * MenuCt + i, offset );
-                    for( var g = 0; g < GraphicCt; g++ )
-                        menu.Graphics[g] = page.ReadColumn<byte>( 3 + ( 107 + g ) * MenuCt + i, offset );
+                if (menu.HasIcon || menu.Type == MenuType.List) {
+                    for (var j = 0; j < count && j < entry.SubMenuParam.Count; j++) menu.Params[j] = entry.SubMenuParam[j];
+                    for (var j = 0; j < GraphicCt; j++) menu.Graphics[j] = entry.SubMenuGraphic[j];
                 }
-
-                if( menu.IsFeature ) {
-                    var feats = new RowRef<CharaMakeCustomize>[ct];
-                    for( var x = 0; x < ct; x++ )
-                        feats[x] = new RowRef<CharaMakeCustomize>( page.Module, menu.Params[x], page.Language );
-                    menu.Features = feats;
+                if (menu.IsFeature) {
+                    menu.Features = new RowRef<CharaMakeCustomize>[count];
+                    for (var j = 0; j < count; j++) menu.Features[j] = new RowRef<CharaMakeCustomize>(page.Module, menu.Params[j], page.Language);
                 }
-
                 menus[i] = menu;
             }
-
-            return new CharaMakeType( row ) {
-                ExcelPage = page,
-                RowOffset = offset,
-                Race = page.ReadRowRef<Race>( 0, offset ),
-                Tribe = page.ReadRowRef<Tribe>( 1, offset ),
-                Gender = page.ReadColumn<sbyte>( 2, offset ),
-                FeatureMake = new RowRef<HairMakeType>( page.Module, row, page.Language ),
-                FacialFeatures = features,
-                Menus = menus
-            };
+            return new CharaMakeType(row) { ExcelPage = page, RowOffset = offset, Race = native.Race,
+                Tribe = native.Tribe, Gender = native.Gender,
+                FeatureMake = new RowRef<HairMakeType>(page.Module, row, page.Language),
+                FacialFeatures = features, Voices = System.Linq.Enumerable.ToArray(native.VoiceStruct), Menus = menus };
         }
     }
 }

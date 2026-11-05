@@ -5,7 +5,7 @@ using VfxEditor.Utils;
 namespace VfxEditor.Data.Excel {
     // https://github.com/ktisis-tools/Ktisis/blob/748922b02395ef9a700e3fe446f2fa2d6db0a63f/Ktisis/Data/Excel/CharaMakeCustomize.cs
 
-    [Sheet( "CharaMakeCustomize" )]
+    [Sheet("CharaMakeCustomize", 3272514419u)]
     public struct CharaMakeCustomize( uint row ) : IExcelRow<CharaMakeCustomize> {
         public ExcelPage ExcelPage { get; private set; }
         public uint RowOffset { get; private set; }
@@ -21,15 +21,16 @@ namespace VfxEditor.Data.Excel {
         public byte FaceType { get; set; }
 
         static CharaMakeCustomize IExcelRow<CharaMakeCustomize>.Create( ExcelPage page, uint offset, uint row ) {
+            var native = new Lumina.Excel.Sheets.CharaMakeCustomize(page, offset, row);
             return new CharaMakeCustomize( row ) {
                 ExcelPage = page,
                 RowOffset = offset,
-                FeatureId = page.ReadColumn<byte>( 0, offset ),
-                Icon = page.ReadColumn<uint>( 1, offset ),
-                Data = page.ReadColumn<ushort>( 2, offset ),
-                IsPurchasable = page.ReadColumn<bool>( 3, offset ),
-                Hint = page.ReadRowRef<Lobby>( 4, offset ),
-                FaceType = page.ReadColumn<byte>( 6, offset )
+                FeatureId = native.FeatureID,
+                Icon = native.Icon,
+                Data = native.UnlockLink,
+                IsPurchasable = native.IsPurchasable,
+                Hint = native.Hint,
+                FaceType = native.Unknown0
             };
         }
     }
