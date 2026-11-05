@@ -7,6 +7,8 @@ namespace VfxEditor.Data.Excel {
 
     [Sheet( "CharaMakeCustomize" )]
     public struct CharaMakeCustomize( uint row ) : IExcelRow<CharaMakeCustomize> {
+        public ExcelPage ExcelPage { get; private set; }
+        public uint RowOffset { get; private set; }
         public readonly uint RowId => row;
 
         public string Name { get; set; } = "";
@@ -20,6 +22,8 @@ namespace VfxEditor.Data.Excel {
 
         static CharaMakeCustomize IExcelRow<CharaMakeCustomize>.Create( ExcelPage page, uint offset, uint row ) {
             return new CharaMakeCustomize( row ) {
+                ExcelPage = page,
+                RowOffset = offset,
                 FeatureId = page.ReadColumn<byte>( 0, offset ),
                 Icon = page.ReadColumn<uint>( 1, offset ),
                 Data = page.ReadColumn<ushort>( 2, offset ),

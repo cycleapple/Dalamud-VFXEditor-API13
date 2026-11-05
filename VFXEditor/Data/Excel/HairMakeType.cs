@@ -6,6 +6,8 @@ using VfxEditor.Utils;
 namespace VfxEditor.Data.Excel {
     [Sheet( "HairMakeType" )]
     public struct HairMakeType( uint row ) : IExcelRow<HairMakeType> {
+        public ExcelPage ExcelPage { get; private set; }
+        public uint RowOffset { get; private set; }
         public readonly uint RowId => row;
 
         // Properties
@@ -25,6 +27,8 @@ namespace VfxEditor.Data.Excel {
             var hairStartIndex = page.ReadColumn<uint>( 66, offset );
             var facePaintStartIndex = page.ReadColumn<uint>( 82, offset );
             return new HairMakeType( row ) {
+                ExcelPage = page,
+                RowOffset = offset,
                 HairStartIndex = hairStartIndex,
                 FacepaintStartIndex = facePaintStartIndex,
                 HairStyles = GetRange( page, hairStartIndex, HairLength ).ToList(),

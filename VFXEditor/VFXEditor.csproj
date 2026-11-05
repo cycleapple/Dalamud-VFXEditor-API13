@@ -1,4 +1,4 @@
-<Project Sdk="Dalamud.NET.Sdk/13.0.0">
+<Project Sdk="Dalamud.NET.Sdk/14.0.1">
     <PropertyGroup>
         <AssemblyTitle>VFXEditor</AssemblyTitle>
         <Company></Company>
@@ -175,7 +175,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Update="DalamudPackager" Version="13.0.0" />
+      <PackageReference Update="DalamudPackager" Version="14.0.1" />
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Include="Localization/zh-TW.json" LogicalName="VfxEditor.Localization.zh-TW.json" />

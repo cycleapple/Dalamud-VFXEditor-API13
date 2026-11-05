@@ -34,6 +34,8 @@ namespace VfxEditor.Data.Excel {
 
     [Sheet( "CharaMakeType" )]
     public struct CharaMakeType( uint row ) : IExcelRow<CharaMakeType> {
+        public ExcelPage ExcelPage { get; private set; }
+        public uint RowOffset { get; private set; }
         // Consts
 
         public const int MenuCt = 28;
@@ -92,6 +94,8 @@ namespace VfxEditor.Data.Excel {
             }
 
             return new CharaMakeType( row ) {
+                ExcelPage = page,
+                RowOffset = offset,
                 Race = page.ReadRowRef<Race>( 0, offset ),
                 Tribe = page.ReadRowRef<Tribe>( 1, offset ),
                 Gender = page.ReadColumn<sbyte>( 2, offset ),
